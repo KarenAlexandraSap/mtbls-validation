@@ -1,0 +1,74 @@
+{
+    "Study Factor Type": {
+        "defaultValue": null,
+        "additionalTerms": true,
+        "additionalOntologies": true,
+        "terms": [
+            {
+                "term": "timepoint",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000724"
+            },
+            {
+                "term": "treatment",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000727"
+            },
+            {
+                "term": "genotype",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000513"
+            },
+            {
+                "term": "age",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000246"
+            },
+            {
+                "term": "diet",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002755"
+            },
+            {
+                "term": "disease",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000408"
+            },
+            {
+                "term": "disease staging",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000410"
+            },
+            {
+                "term": "exposure",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0000487"
+            },
+            {
+                "term": "biological replicate",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002091"
+            },
+            {
+                "term": "technical replicate",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002090"
+            },
+            {
+                "term": "Collection Date",
+                "term_source_ref": "NCIT",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCIT_C81286"
+            }
+        ],
+        "ontologies": [
+            "MTBLS",
+            "EFO",
+            "ENVO",
+            "MESH",
+            "CHEBI",
+            "CHMO",
+            "NCIT",
+            "PO"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "prioritisedOrganismRefSources": [
+        "MTBLS",
+        "NCBITaxon",
+        "WoRMs",
+        "EFO",
+        "BTO",
+        "NCIT",
+        "CHEBI",
+        "CHMO",
+        "PO"
+    ]
+}

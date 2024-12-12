@@ -1,0 +1,23 @@
+{
+    "prioritisedDefaultTermRefSources": [
+        "OBI",
+        "EFO",
+        "CHMO",
+        "NCIT",
+        "NCBITaxon",
+        "MTBLS",
+        "MS",
+        "BTO",
+        "CHEBI",
+        "UO",
+        "MESH",
+        "BAO",
+        "OMIT",
+        "GO",
+        "ENVO",
+        "MSIO",
+        "PO",
+        "MONDO",
+        "WoRMs"
+    ]
+}

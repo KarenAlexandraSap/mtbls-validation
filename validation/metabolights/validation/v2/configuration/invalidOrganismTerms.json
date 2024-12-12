@@ -1,0 +1,31 @@
+{
+    "invalidOrganismTerms": [
+        "cat",
+        "dog",
+        "mouse",
+        "horse",
+        "flower",
+        "fish",
+        "leave",
+        "root",
+        "mice",
+        "steam",
+        "bacteria",
+        "value",
+        "food",
+        "matrix",
+        "mus",
+        "rat",
+        "blood",
+        "urine",
+        "plasma",
+        "hair",
+        "fur",
+        "skin",
+        "saliva",
+        "fly",
+        "unknown",
+        "undefined",
+        "n/a"
+    ]
+}

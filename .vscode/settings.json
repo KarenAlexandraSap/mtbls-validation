@@ -1,0 +1,12 @@
+{
+  "opa.roots": ["${workspaceFolder}/validation"],
+  "opa.bundleMode": false,
+  "opa.strictMode": true,
+  "opa.schema": "${workspaceFolder}/validation/schemas",
+  "files.exclude": {
+    "**/__pycache__": true,
+    ".*cache*": true,
+    ".*coverage*": true,
+    
+},
+}

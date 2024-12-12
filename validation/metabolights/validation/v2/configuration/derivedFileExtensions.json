@@ -1,0 +1,23 @@
+{
+    "derivedFileExtensions": [
+        ".mzml",
+        ".imzml",
+        ".wiff",
+        ".nmrml",
+        ".mzxml",
+        ".xml",
+        ".mzdata",
+        ".cef",
+        ".cnx",
+        ".peakml",
+        ".xy",
+        ".smp",
+        ".scan",
+        ".dx",
+        ".msp",
+        ".xlsx",
+        ".cdf",
+        ".mgf",
+        ".zip"
+    ]
+}

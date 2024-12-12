@@ -1,0 +1,66 @@
+{
+    "Characteristics[Organism part]": {
+        "defaultValue": null,
+        "additionalTerms": true,
+        "additionalOntologies": true,
+        "terms": [        {
+            "term": "blood plasma",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0000131"
+        },
+        {
+            "term": "blood serum",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0000133"
+        },
+        {
+            "term": "urine",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0001419"
+        },
+        {
+            "term": "feces",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0000440"
+        },
+        {
+            "term": "leaf",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0000713"
+        },
+        {
+            "term": "exocarp",
+            "term_source_ref": "BTO",
+            "term_accession_number": "http://purl.obolibrary.org/obo/BTO_0000733"
+        },
+        {
+            "term": "Whole Organism",
+            "term_source_ref": "NCIT",
+            "term_accession_number": "http://purl.obolibrary.org/obo/NCIT_C13413"
+        },
+        {
+            "term": "exometabolome",
+            "term_source_ref": "MTBLS",
+            "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000131"
+        },
+        {
+            "term": "endometabolome",
+            "term_source_ref": "MTBLS",
+            "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000125"
+        },
+        {
+            "term": "blank",
+            "term_source_ref": "MTBLS",
+            "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_002304"
+        }],
+        "ontologies": [
+            "BTO",
+            "NCIT",
+            "MTBLS",
+            "EFO",
+            "PO",
+            "ENVO",
+            "CHEBI"
+        ]
+    }
+}

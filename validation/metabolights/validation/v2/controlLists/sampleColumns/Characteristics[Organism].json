@@ -1,0 +1,68 @@
+{
+    "Characteristics[Organism]": {
+        "defaultValue": null,
+        "additionalTerms": true,
+        "additionalOntologies": true,
+        "terms": [        
+            {
+                "term": "Homo sapiens",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+            },
+            {
+                "term": "Mus musculus",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            },
+            {
+                "term": "Rattus norvegicus",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_10116"
+            },
+            {
+                "term": "Arabidopsis thaliana",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_3702"
+            },
+            {
+                "term": "Vitis vinifera",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_29760"
+            },
+            {
+                "term": "Escherichia coli",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_562"
+            },
+            {
+                "term": "Trypanosoma brucei",
+                "term_source_ref": "NCBITaxon",
+                "term_accession_number": "http://purl.obolibrary.org/obo/NCBITaxon_5691"
+            },
+            {
+                "term": "sea water",
+                "term_source_ref": "ENVO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/ENVO_00002149"
+            },
+            {
+                "term": "blank",
+                "term_source_ref": "MTBLS",
+                "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_002304"
+            },
+            {
+                "term": "reference compound",
+                "term_source_ref": "MSIO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/MSIO_0000023"
+            }
+    ],
+        "ontologies": [
+            "NCBITaxon",
+            "ENVO",
+            "MTBLS",
+            "WoRMs",
+            "EFO",
+            "NCIT",
+            "MSIO"
+        ]
+    }
+}

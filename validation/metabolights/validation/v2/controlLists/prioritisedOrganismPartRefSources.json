@@ -1,0 +1,10 @@
+{
+    "prioritisedOrganismPartRefSources": [
+        "MTBLS",
+        "BTO",
+        "EFO",
+        "PO",
+        "CHEBI",
+        "BAO"
+    ]
+}

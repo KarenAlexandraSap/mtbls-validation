@@ -1,0 +1,704 @@
+{
+    "Unit": {
+        "defaultValue": null,
+        "additionalTerms": true,
+        "additionalOntologies": true,
+        "terms": [
+            {
+                "term": "absorbed dose unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000129"
+            },
+            {
+                "term": "ampere",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000011"
+            },
+            {
+                "term": "angle unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000121"
+            },
+            {
+                "term": "area unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000047"
+            },
+            {
+                "term": "atmosphere unit",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0005212"
+            },
+            {
+                "term": "attomole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000044"
+            },
+            {
+                "term": "base unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000045"
+            },
+            {
+                "term": "candela",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000014"
+            },
+            {
+                "term": "cell concentration unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000200"
+            },
+            {
+                "term": "cells per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000201"
+            },
+            {
+                "term": "centimeter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000015"
+            },
+            {
+                "term": "colony forming unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000210"
+            },
+            {
+                "term": "colony forming unit per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000213"
+            },
+            {
+                "term": "concentration unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000051"
+            },
+            {
+                "term": "count unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000189"
+            },
+            {
+                "term": "cubic centimeter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000097"
+            },
+            {
+                "term": "dalton",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000221"
+            },
+            {
+                "term": "day",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000033"
+            },
+            {
+                "term": "deciliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000209"
+            },
+            {
+                "term": "degree",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000185"
+            },
+            {
+                "term": "degree celsius",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000027"
+            },
+            {
+                "term": "degree fahrenheit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000195"
+            },
+            {
+                "term": "density unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000182"
+            },
+            {
+                "term": "derived mass unit",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0001703"
+            },
+            {
+                "term": "derived temperature unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000126"
+            },
+            {
+                "term": "derived time unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000149"
+            },
+            {
+                "term": "derived unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000046"
+            },
+            {
+                "term": "dimensionless unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000186"
+            },
+            {
+                "term": "electric current unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000004"
+            },
+            {
+                "term": "femtogram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000026"
+            },
+            {
+                "term": "femtoliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000104"
+            },
+            {
+                "term": "femtometer",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0001721"
+            },
+            {
+                "term": "femtomolar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000073"
+            },
+            {
+                "term": "femtomole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000043"
+            },
+            {
+                "term": "femtomole per nanogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0005314"
+            },
+            {
+                "term": "fraction",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000191"
+            },
+            {
+                "term": "gram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000021"
+            },
+            {
+                "term": "gram per kilogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002897"
+            },
+            {
+                "term": "gram per kilogram per day",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004371"
+            },
+            {
+                "term": "gram per liter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000175"
+            },
+            {
+                "term": "gram per meter squared",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002898"
+            },
+            {
+                "term": "Gray",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000134"
+            },
+            {
+                "term": "hour",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000032"
+            },
+            {
+                "term": "illuminance unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000115"
+            },
+            {
+                "term": "inch",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004387"
+            },
+            {
+                "term": "International Unit",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002927"
+            },
+            {
+                "term": "International Unit per milliliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002928"
+            },
+            {
+                "term": "joule per square centimeter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004427"
+            },
+            {
+                "term": "joule per square meter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004414"
+            },
+            {
+                "term": "kelvin",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000012"
+            },
+            {
+                "term": "kilogram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000009"
+            },
+            {
+                "term": "length unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000001"
+            },
+            {
+                "term": "liter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000099"
+            },
+            {
+                "term": "luminous intensity unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000007"
+            },
+            {
+                "term": "lux",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000116"
+            },
+            {
+                "term": "magnetic flux density unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000227"
+            },
+            {
+                "term": "mass percent",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000163"
+            },
+            {
+                "term": "mass unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000002"
+            },
+            {
+                "term": "meter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000008"
+            },
+            {
+                "term": "microeinstein per square meter per second",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000160"
+            },
+            {
+                "term": "microgram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000023"
+            },
+            {
+                "term": "microgram per day",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004378"
+            },
+            {
+                "term": "microgram per gram body weight",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0007055"
+            },
+            {
+                "term": "microgram per kilogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002899"
+            },
+            {
+                "term": "microgram per kilogram per day",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002929"
+            },
+            {
+                "term": "microgram per liter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000301"
+            },
+            {
+                "term": "microgram per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000274"
+            },
+            {
+                "term": "microgram per square centimeter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004370"
+            },
+            {
+                "term": "microliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000101"
+            },
+            {
+                "term": "microliter per liter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004413"
+            },
+            {
+                "term": "micrometer",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000017"
+            },
+            {
+                "term": "micromolar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000064"
+            },
+            {
+                "term": "micromole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000039"
+            },
+            {
+                "term": "micromole per kilogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002900"
+            },
+            {
+                "term": "micromole per liter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002901"
+            },
+            {
+                "term": "microsecond",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000029"
+            },
+            {
+                "term": "milli-International Unit per milliliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004379"
+            },
+            {
+                "term": "milligram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000022"
+            },
+            {
+                "term": "milligram per day",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004419"
+            },
+            {
+                "term": "milligram per deciliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004374"
+            },
+            {
+                "term": "milligram per kilogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002902"
+            },
+            {
+                "term": "milligram per kilogram body weight",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0005354"
+            },
+            {
+                "term": "milligram per kilogram per day",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002930"
+            },
+            {
+                "term": "milligram per liter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000273"
+            },
+            {
+                "term": "milligram per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000176"
+            },
+            {
+                "term": "milligram per square meter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004373"
+            },
+            {
+                "term": "milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000098"
+            },
+            {
+                "term": "milliliter per kilogram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000198"
+            },
+            {
+                "term": "milliliter per liter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000207"
+            },
+            {
+                "term": "millimeter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000016"
+            },
+            {
+                "term": "millimolar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000063"
+            },
+            {
+                "term": "millimole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000040"
+            },
+            {
+                "term": "minute",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000031"
+            },
+            {
+                "term": "molar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000062"
+            },
+            {
+                "term": "molar mass unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000055"
+            },
+            {
+                "term": "mole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000013"
+            },
+            {
+                "term": "mole per liter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004381"
+            },
+            {
+                "term": "month",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000035"
+            },
+            {
+                "term": "nanogram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000024"
+            },
+            {
+                "term": "nanogram per liter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004382"
+            },
+            {
+                "term": "nanogram per microliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004383"
+            },
+            {
+                "term": "nanogram per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000275"
+            },
+            {
+                "term": "nanoliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000102"
+            },
+            {
+                "term": "nanometer",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000018"
+            },
+            {
+                "term": "nanomolar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000065"
+            },
+            {
+                "term": "nanomole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000041"
+            },
+            {
+                "term": "Number of molecules",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004368"
+            },
+            {
+                "term": "part per billion",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000170"
+            },
+            {
+                "term": "part per million",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000169"
+            },
+            {
+                "term": "percent",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000187"
+            },
+            {
+                "term": "picogram",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000025"
+            },
+            {
+                "term": "picogram per milliliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004385"
+            },
+            {
+                "term": "picoliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000103"
+            },
+            {
+                "term": "picometer",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000020"
+            },
+            {
+                "term": "picomolar",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000066"
+            },
+            {
+                "term": "picomole",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000042"
+            },
+            {
+                "term": "picomole per 10^6 cells",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004388"
+            },
+            {
+                "term": "picomole per microliter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0005313"
+            },
+            {
+                "term": "pressure unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000109"
+            },
+            {
+                "term": "rad",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000135"
+            },
+            {
+                "term": "radiation unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000127"
+            },
+            {
+                "term": "second",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000010"
+            },
+            {
+                "term": "square meter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000080"
+            },
+            {
+                "term": "substance unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000006"
+            },
+            {
+                "term": "temperature unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000005"
+            },
+            {
+                "term": "tesla",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000228"
+            },
+            {
+                "term": "time unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000003"
+            },
+            {
+                "term": "total particulate matter per liter",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004386"
+            },
+            {
+                "term": "unit of flow rate",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004418"
+            },
+            {
+                "term": "unit of molarity",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000061"
+            },
+            {
+                "term": "unit per kilogram",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002931"
+            },
+            {
+                "term": "unit per milliliter",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000178"
+            },
+            {
+                "term": "volume percent",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000165"
+            },
+            {
+                "term": "volume unit",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000095"
+            },
+            {
+                "term": "week",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000034"
+            },
+            {
+                "term": "weight percent",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0002904"
+            },
+            {
+                "term": "weight percent by volume",
+                "term_source_ref": "EFO",
+                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004384"
+            },
+            {
+                "term": "year",
+                "term_source_ref": "UO",
+                "term_accession_number": "http://purl.obolibrary.org/obo/UO_0000036"
+            }
+        ],
+        "ontologies": [
+            "UO",
+            "MTBLS",
+            "EFO"
+        ]
+    }
+}

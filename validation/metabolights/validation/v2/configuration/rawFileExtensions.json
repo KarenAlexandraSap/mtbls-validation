@@ -1,0 +1,23 @@
+{
+    "rawFileExtensions": [
+        ".raw",
+        ".d",
+        ".raw.zip",
+        ".d.zip",
+        ".idb",
+        ".cdf",
+        ".wiff",
+        ".scan",
+        ".dat",
+        ".cmp",
+        ".cdf.cmp",
+        ".lcd",
+        ".abf",
+        ".jpf",
+        ".xps",
+        ".mgf",
+        ".qgd",
+        ".hr",
+        ".zip"
+    ]
+}
