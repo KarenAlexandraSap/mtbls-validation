@@ -25,7 +25,7 @@ def create_summary_files(rules: dict[str, pd.Series]):
         version_content = json.loads(f.read())
     version = version_content["version"]
 
-    violations_file = f"json/violations_{version}.json"
+    violations_file = "json/violations.json"
     violations, summary = get_items(rules)
     violations_json = [x.model_dump() for x in violations]
     summary_json = [x.model_dump() for x in summary]
@@ -38,6 +38,9 @@ def create_summary_files(rules: dict[str, pd.Series]):
     with open(violations_file, "w") as f:
         json.dump(versioned_content, f, indent=4)
 
+    summary_file = "validation/metabolights/validation/v2/configuration/rules.json"
+    with open(summary_file, "w") as f:
+        json.dump({"rules": versioned_content}, f, indent=4)
     with open("docs/MetaboLightsRules.md", "w") as f:
         f.write(
             "| # |RULE ID              | TYPE                | TITLE                    | DESCRIPTION                  |\n"

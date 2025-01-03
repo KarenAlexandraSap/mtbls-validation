@@ -1,6 +1,6 @@
 {
-    "validation_version": "2.0.6",
-    "created_at": "2025-01-03T12:28:38.517940+00:00",
+    "validation_version": "2.0.7",
+    "created_at": "2025-01-03T22:45:12.344453+00:00",
     "violations": [
         {
             "rule_id": "rule___100_100_001_01",

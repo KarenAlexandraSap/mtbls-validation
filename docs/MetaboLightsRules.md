@@ -12,7 +12,7 @@
 | 10 | rule___100_200_001_04 | ERROR | There is no parser information for sample file. | Define sample file in parserMessages. |
 | 11 | rule___100_200_001_05 | ERROR | There is no sample file for the study. | Define a sample file for the study. |
 | 12 | rule___100_200_001_06 | ERROR | There are multiple sample files. | Define only one sample file for the study. |
-| 13 | rule___100_200_001_08 | ERROR | Sample file name not correct pattern. | Sample file name must start with 's_', contain study identifier and have extension '.txt'. |
+| 13 | rule___100_200_001_08 | ERROR | Sample file name not correct pattern. | Sample file name must start with 's_', contain study identifer and have extension '.txt'. |
 | 14 | rule___100_200_001_09 | ERROR | Sample file is not referenced in i_Investigation.txt file. | Update i_Investigation.txt  file to reference the sample file or delete it. |
 | 15 | rule___100_300_001_01 | ERROR | There is a critical file parse error for the assay file. | There is a critical file parse error in the assay file. |
 | 16 | rule___100_300_001_02 | ERROR | There is a file parse error for the assay file. | There is a file parse error for the assay file. |
@@ -27,7 +27,7 @@
 | 25 | rule___100_400_001_02 | ERROR | There is a file parse error for the metabolite assignment file. | There is a file parse error for the metabolite assignment file. |
 | 26 | rule___100_400_001_04 | ERROR | There is no parser information for metabolite assignment file. | Define metabolite assignment file in parserMessages. |
 | 27 | rule___100_400_001_05 | ERROR | Technology type not defined for metabolite assignment file. | Assignment file technology type should be defined to execute file type validation rules. |
-| 28 | rule___100_400_001_06 | ERROR | Metabolite assignment file is not referenced in assay file(s). | Update assay files to reference the metabolite assignment or delete it. |
+| 28 | rule___100_400_001_06 | ERROR | Metabolite assignment file is not referenced in assay file(s). | Update assay files to reference the metabolite assignement or delete it. |
 | 29 | rule___100_400_001_07 | ERROR | Metabolite assignment file name not correct pattern. | Metabolite assignment file name must start with 'm_' and have extension '.tsv'. |
 | 30 | rule___100_400_001_08 | ERROR | Metabolite assignment file name contains invalid characters. | Use only .-_A-Za-z0-9 characters for an metabolite assignment file name. e.g. m_REQ2025010211233_LC-MS_negative_reverse-phase_metabolite_profiling_v2_maf.tsv |
 | 31 | rule_a_100_100_001_01 | ERROR | Invalid multi-column structure in assay file. | There is an invalid multi-column structure in assay file. Check column order. |
@@ -164,7 +164,7 @@
 | 162 | rule_a_200_090_002_06 | WARNING | Ontology Term Source REF defined for empty unit ontology terms. | Select unit ontology terms and/or change ontology Term Source REF. |
 | 163 | rule_a_200_090_002_07 | WARNING | Term Source REF of ontology terms is empty. | Term Source REF of ontology terms should be defined. A prioritised control list is defined. Review and select from the prioritised control list if possible. |
 | 164 | rule_a_200_090_002_08 | WARNING | Term Source REF of unit ontology terms is empty. | Term Source REF of unit ontology terms should be defined. A prioritised control list is defined. Review and select from the prioritised control list if possible. |
-| 165 | rule_a_200_090_002_09 | WARNING | Term not in prioritied control list. | A prioritised control list is defined. Review and select from the prioritised control list if possible. |
+| 165 | rule_a_200_090_002_09 | WARNING | Term not in prioritised control list. | A prioritised control list is defined. Review and select from the prioritised control list if possible. |
 | 166 | rule_a_200_090_002_10 | WARNING | Term Accession Number of the given term is different than accession number in control list. | Use same Term Accession Number for the term in control list. |
 | 167 | rule_a_200_090_002_11 | WARNING | Empty term with an accession number in control list. | Fill term value for the given accession number in control list. |
 | 168 | rule_a_200_090_002_12 | WARNING | Term Source REF for the given accession is different. | Use correct ontology Term Source REF for the accession number. |
