@@ -1,0 +1,45 @@
+variables:
+  VALIDATION_VERSION: "2.0.6"
+  CONFIGURATION: "${CI_COMMIT_REF_NAME}"
+  BUILD_NUMBER: "${VALIDATION_VERSION}_${CONFIGURATION}_${CI_PIPELINE_ID}_${CI_COMMIT_SHORT_SHA}"
+  TARGET_FILE_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${CI_PROJECT_NAME}/$BUILD_NUMBER/bundle.tar.gz"
+  LATEST_TARGET_FILE_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${CI_PROJECT_NAME}/$CONFIGURATION/bundle.tar.gz"
+workflow:
+  rules:
+  - if: $CI_COMMIT_BRANCH == "test" || $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "development"
+stages:
+- build
+
+01_configuration_parameters:
+  stage: build
+  script:
+  - id
+  - echo "CI_BUILDS_DIR $CI_BUILDS_DIR"
+  - echo "CI_REGISTRY_USER $CI_REGISTRY_USER"
+  - echo "CI_REGISTRY $CI_REGISTRY"
+  - echo "BRANCH $CI_COMMIT_REF_NAME"
+  - echo "BUILD_NUMBER $BUILD_NUMBER"
+  - echo "CI_PIPELINE_ID $CI_PIPELINE_ID"
+  - echo "CI_COMMIT_SHORT_SHA $CI_COMMIT_SHORT_SHA"
+  - echo "CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE"
+  - echo "VALIDATION_VERSION $VALIDATION_VERSION"
+  - echo "CI_API_V4_URL $CI_API_V4_URL"
+  - echo "CI_PROJECT_ID $CI_PROJECT_ID"
+  - echo "CI_PROJECT_NAME $CI_PROJECT_NAME"
+  - echo "TARGET_FILE_URL $TARGET_FILE_URL"
+  - echo "LATEST_TARGET_FILE_URL $LATEST_TARGET_FILE_URL"
+
+02_build_bundle:
+  stage: build
+  script:
+  - cd validation
+  - rm -f bundle.tar.gz
+  - opa test . -v
+  - opa build  --ignore tests --ignore input.json .
+  - echo "$TARGET_FILE_URL"
+  - |-
+    curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file bundle.tar.gz "$TARGET_FILE_URL"
+  - echo "$LATEST_TARGET_FILE_URL"
+  - |-
+    curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file bundle.tar.gz "$LATEST_TARGET_FILE_URL"
+  - rm -f bundle.tar.gz

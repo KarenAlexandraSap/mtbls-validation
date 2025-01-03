@@ -265,7 +265,7 @@ rule___100_200_001_06 contains result if {
 
 # METADATA
 # title: Sample file name not correct pattern.
-# description: Sample file name must start with 's_', contain study identifer and have extension '.txt'.
+# description: Sample file name must start with 's_', contain study identifier and have extension '.txt'.
 # custom:
 #  rule_id: rule___100_200_001_08
 #  type: ERROR
@@ -480,8 +480,8 @@ rule___100_300_001_09 contains result if {
 }
 
 # METADATA
-# title: There are invalid characters in assay file name.
-# description: Use only .- _A-Za-z0-9 characters for an metabolite assignment file name.
+# title: Assay file name contains invalid characters.
+# description: Use only .-_A-Za-z0-9 characters for an assay file name. e.g. a_REQ2025010211233_LC-MS_negative_reverse-phase_metabolite_profiling.txt
 # custom:
 #  rule_id: rule___100_300_001_10
 #  type: ERROR
@@ -637,8 +637,8 @@ rule___100_400_001_07 contains result if {
 }
 
 # METADATA
-# title: There are invalid characters in metabolite assignment file name.
-# description: Use only .- _A-Za-z0-9 characters for an metabolite assignment file name.
+# title: Metabolite assignment file name contains invalid characters.
+# description: Use only .-_A-Za-z0-9 characters for an metabolite assignment file name. e.g. m_REQ2025010211233_LC-MS_negative_reverse-phase_metabolite_profiling_v2_maf.tsv
 # custom:
 #  rule_id: rule___100_400_001_08
 #  type: ERROR

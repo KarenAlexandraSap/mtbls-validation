@@ -407,11 +407,11 @@ rule_a_200_090_003_04 contains result if {
 }
 
 # METADATA
-# title: Required columns has empty values in assay file.
+# title: Required columns have empty values in assay file.
 # description: All required column values should be defined in assay file.
 # custom:
 #  rule_id: rule_a_200_090_004_01
-#  type: WARNING
+#  type: ERROR
 #  priority: HIGH
 #  section: assay.general
 rule_a_200_090_004_01 contains result if {
@@ -610,8 +610,8 @@ rule_a_200_200_001_01 contains result if {
 }
 
 # METADATA
-# title: There are invalid characters in metabolite assignment file name in assay file.
-# description: Use only .- _A-Za-z0-9 characters for an metabolite assignment file name in assay file.
+# title: Metabolite assignment file name contains invalid characters in assay file.
+# description: Use only .-_A-Za-z0-9 characters for an metabolite assignment file name in assay file.
 # custom:
 #  rule_id: rule_a_200_200_001_02
 #  type: ERROR

@@ -1,8 +1,8 @@
 import glob
+
 import pandas as pd
 
 from scripts.utils import get_rules
-
 
 metadata_lines = [
     "# METADATA",
@@ -30,12 +30,12 @@ def update_files(rules: dict[str, pd.Series]):
             total_lines = len(rows)
             for line in range(total_lines):
                 if (line + 5) < total_lines:
-                    medata_header = True
+                    metadata_header = True
                     for i in range(8):
                         if not rows[line + i].startswith(metadata_lines[i]):
-                            medata_header = False
+                            metadata_header = False
                             break
-                    if medata_header:
+                    if metadata_header:
                         rule_id = rows[line + 4].split(":")[1].strip()
                         if rule_id in rules:
                             rule = rules[rule_id]
@@ -45,14 +45,19 @@ def update_files(rules: dict[str, pd.Series]):
                             rows[line + 5] = get_value(rule, "type", "  ")
                             rows[line + 6] = get_value(rule, "priority", "  ")
                             rows[line + 7] = get_value(rule, "section", "  ")
-                            
+
         if updated:
             print(f"Updating file: {file}")
             with open(file, "w") as f:
                 f.writelines(rows)
 
+
 def get_value(rule, key: str, padding: str = " "):
-    return f"#{padding}{key}: " + " ".join(rule[key.upper()].strip().split()).replace(":", " ")+ "\n"
+    return (
+        f"#{padding}{key}: "
+        + " ".join(rule[key.upper()].strip().split()).replace(":", " ")
+        + "\n"
+    )
 
 
 if __name__ == "__main__":

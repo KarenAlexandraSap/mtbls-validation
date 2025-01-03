@@ -95,7 +95,7 @@ rule_i_100_200_001_01 contains result if {
 #  priority: MEDIUM
 #  section: investigation.investigation
 rule_i_100_200_002_01 contains result if {
-	pattern := "^MTBLS[1-9]([0-9]+)?$"
+	pattern := `^(MTBLS|REQ)\d{1,20}$`
 	input.investigation.identifier
 	not regex.match(pattern, input.investigation.identifier)
 	msg := sprintf("Investigation identifier '%v' does not match pattern", [input.investigation.identifier])
@@ -109,7 +109,7 @@ rule_i_100_200_002_01 contains result if {
 # description: Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).
 # custom:
 #  rule_id: rule_i_100_200_003_01
-#  type: ERROR
+#  type: WARNING
 #  priority: MEDIUM
 #  section: investigation.studies
 rule_i_100_200_003_01 contains result if {
@@ -125,7 +125,7 @@ rule_i_100_200_003_01 contains result if {
 # description: Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).
 # custom:
 #  rule_id: rule_i_100_200_004_01
-#  type: ERROR
+#  type: WARNING
 #  priority: MEDIUM
 #  section: investigation.studies
 rule_i_100_200_004_01 contains result if {
@@ -256,7 +256,7 @@ rule_i_100_300_001_02 contains result if {
 #  priority: CRITICAL
 #  section: investigation.studies
 rule_i_100_300_002_01 contains result if {
-	pattern := "^MTBLS[1-9]([0-9]+)?$"
+	pattern := `^(MTBLS|REQ)\d{1,20}$`
 	some i
 	input.investigation.studies[i].identifier
 	not regex.match(pattern, input.investigation.studies[i].identifier)
@@ -326,7 +326,7 @@ rule_i_100_300_004_01 contains result if {
 # description: Study Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).
 # custom:
 #  rule_id: rule_i_100_300_005_01
-#  type: ERROR
+#  type: WARNING
 #  priority: MEDIUM
 #  section: investigation.studies
 rule_i_100_300_005_01 contains result if {
@@ -1373,7 +1373,7 @@ rule_i_100_350_002_01 contains result if {
 
 # METADATA
 # title: Study Protocol Description length less than 40 characters.
-# description: Study Protocol Descripton should be defined with length equal or greater than 40 characters.
+# description: Study Protocol Description should be defined with length equal or greater than 40 characters.
 # custom:
 #  rule_id: rule_i_100_350_003_01
 #  type: ERROR
@@ -1391,8 +1391,26 @@ rule_i_100_350_003_01 contains result if {
 }
 
 # METADATA
+# title: Study Protocol Description contains only template message.
+# description: Study Protocol Description should be updated. Do not use template message.
+# custom:
+#  rule_id: rule_i_100_350_003_03
+#  type: ERROR
+#  priority: HIGH
+#  section: investigation.studyProtocols
+rule_i_100_350_003_03 contains result if {
+	min_count := 40
+	some i, j
+	protocol := input.investigation.studies[i].studyProtocols.protocols[j]
+	startswith(lower(protocol.description), "please update this")
+	msg := sprintf("Description of study protocol '%v' description starts with template message, protocol index: %v", [protocol.name, j + 1])
+	source := input.investigationFilePath
+	result := f.format(rego.metadata.rule(), msg, source)
+}
+
+# METADATA
 # title: Non-printable characters in Study Protocol Description.
-# description: Study Protocol Descripton should contain only printable characters.
+# description: Study Protocol Description should contain only printable characters.
 # custom:
 #  rule_id: rule_i_100_350_003_02
 #  type: ERROR

@@ -138,7 +138,7 @@ rule_f_400_090_001_04 contains result if {
 # description: Folder reference in data file column is not allowed. If data file type is a folder, compress it with zip utility tool and reference compressed data file.
 # custom:
 #  rule_id: rule_f_400_090_001_07
-#  type: ERROR
+#  type: WARNING
 #  priority: HIGH
 #  section: files.general
 rule_f_400_090_001_07 contains result if {
@@ -165,7 +165,7 @@ rule_f_400_090_001_07 contains result if {
 # custom:
 #  rule_id: rule_f_400_090_001_08
 #  type: WARNING
-#  priority: CRITICAL
+#  priority: HIGH
 #  section: files.general
 rule_f_400_090_001_08 contains result if {
     some file_name, sheet in input.assays
@@ -187,7 +187,7 @@ rule_f_400_090_001_08 contains result if {
 
 # METADATA
 # title: Uploaded data file names contain invalid characters.
-# description: Use only .- _A-Za-z0-9 characters for data file name.
+# description: Use only .-_A-Za-z0-9 characters for data file name.
 # custom:
 #  rule_id: rule_f_400_090_001_09
 #  type: ERROR

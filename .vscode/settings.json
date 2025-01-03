@@ -9,4 +9,11 @@
     ".*coverage*": true,
     
 },
+"cSpell.words": [
+  "metabolights",
+  "MTBLS",
+  "rego",
+  "sprintf",
+  "wiff"
+],
 }

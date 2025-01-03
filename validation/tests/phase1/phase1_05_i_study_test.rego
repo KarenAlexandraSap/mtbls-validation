@@ -82,6 +82,19 @@ test_rule_i_100_300_002_01_no_violation_02 if {
 	count(result) == 0
 }
 
+
+# METADATA
+# title: Investigation identifier is valid.
+# description: Investigation identifier is valid.
+test_rule_i_100_300_002_01_no_violation_03 if {
+	result := rules.rule_i_100_300_002_01 with input as {
+		"investigation": {"studies": [{"identifier": "REQ20250101111112"}]},
+		"investigationFilePath": "i_Investigation.txt",
+	}
+	count(result) == 0
+}
+
+
 # METADATA
 # title: Investigation identifier is not valid.
 # description: Investigation identifier is lowercase.

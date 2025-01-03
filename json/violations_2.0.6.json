@@ -1,6 +1,6 @@
 {
-    "validation_version": "2.0.5",
-    "created_at": "2024-12-12T14:30:55.504389+00:00",
+    "validation_version": "2.0.6",
+    "created_at": "2025-01-03T12:28:38.517940+00:00",
     "violations": [
         {
             "rule_id": "rule___100_100_001_01",
@@ -136,8 +136,8 @@
         },
         {
             "rule_id": "rule___100_300_001_10",
-            "title": "There are invalid characters in assay file name.",
-            "description": "Use only .- _A-Za-z0-9 characters for an metabolite assignment file name.",
+            "title": "Assay file name contains invalid characters.",
+            "description": "Use only .-_A-Za-z0-9 characters for an assay file name. e.g. a_REQ2025010211233_LC-MS_negative_reverse-phase_metabolite_profiling.txt",
             "type": "ERROR"
         },
         {
@@ -178,8 +178,8 @@
         },
         {
             "rule_id": "rule___100_400_001_08",
-            "title": "There are invalid characters in metabolite assignment file name.",
-            "description": "Use only .- _A-Za-z0-9 characters for an metabolite assignment file name.",
+            "title": "Metabolite assignment file name contains invalid characters.",
+            "description": "Use only .-_A-Za-z0-9 characters for an metabolite assignment file name. e.g. m_REQ2025010211233_LC-MS_negative_reverse-phase_metabolite_profiling_v2_maf.tsv",
             "type": "ERROR"
         },
         {
@@ -261,6 +261,12 @@
             "type": "ERROR"
         },
         {
+            "rule_id": "rule_a_200_090_004_01",
+            "title": "Required columns have empty values in assay file.",
+            "description": "All required column values should be defined in assay file.",
+            "type": "ERROR"
+        },
+        {
             "rule_id": "rule_a_200_090_004_02",
             "title": "Values do not meet minimum length requirement.",
             "description": "Each row should have a value equal or greater than the minimum length.",
@@ -292,8 +298,8 @@
         },
         {
             "rule_id": "rule_a_200_200_001_02",
-            "title": "There are invalid characters in metabolite assignment file name in assay file.",
-            "description": "Use only .- _A-Za-z0-9 characters for an metabolite assignment file name in assay file.",
+            "title": "Metabolite assignment file name contains invalid characters in assay file.",
+            "description": "Use only .-_A-Za-z0-9 characters for an metabolite assignment file name in assay file.",
             "type": "ERROR"
         },
         {
@@ -345,15 +351,9 @@
             "type": "ERROR"
         },
         {
-            "rule_id": "rule_f_400_090_001_07",
-            "title": "Folders are referenced in assay file.",
-            "description": "Folder reference in data file column is not allowed. If data file type is a folder, compress it with zip utility tool and reference compressed data file.",
-            "type": "ERROR"
-        },
-        {
             "rule_id": "rule_f_400_090_001_09",
             "title": "Uploaded data file names contain invalid characters.",
-            "description": "Use only .- _A-Za-z0-9 characters for data file name.",
+            "description": "Use only .-_A-Za-z0-9 characters for data file name.",
             "type": "ERROR"
         },
         {
@@ -377,19 +377,7 @@
         {
             "rule_id": "rule_i_100_200_002_01",
             "title": "Investigation Identifier not valid.",
-            "description": "Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}).",
-            "type": "ERROR"
-        },
-        {
-            "rule_id": "rule_i_100_200_003_01",
-            "title": "Investigation Submission Date not valid.",
-            "description": "Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
-            "type": "ERROR"
-        },
-        {
-            "rule_id": "rule_i_100_200_004_01",
-            "title": "Investigation Public Release Date not valid.",
-            "description": "Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
+            "description": "Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}<positive_number>).",
             "type": "ERROR"
         },
         {
@@ -426,18 +414,6 @@
             "rule_id": "rule_i_100_300_004_01",
             "title": "Study Description length less than 60 characters.",
             "description": "Study Description should be defined with length equal or greater than 60 characters. Please use abstract of first publication.",
-            "type": "ERROR"
-        },
-        {
-            "rule_id": "rule_i_100_300_005_01",
-            "title": "Study Submission Date not valid.",
-            "description": "Study Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
-            "type": "ERROR"
-        },
-        {
-            "rule_id": "rule_i_100_300_006_01",
-            "title": "Study Public Release Date not valid.",
-            "description": "Study Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
             "type": "ERROR"
         },
         {
@@ -587,13 +563,19 @@
         {
             "rule_id": "rule_i_100_350_003_01",
             "title": "Study Protocol Description length less than 40 characters.",
-            "description": "Study Protocol Descripton should be defined with length equal or greater than 40 characters.",
+            "description": "Study Protocol Description should be defined with length equal or greater than 40 characters.",
             "type": "ERROR"
         },
         {
             "rule_id": "rule_i_100_350_003_02",
             "title": "Non-printable characters in Study Protocol Description.",
-            "description": "Study Protocol Descripton should contain only printable characters.",
+            "description": "Study Protocol Description should contain only printable characters.",
+            "type": "ERROR"
+        },
+        {
+            "rule_id": "rule_i_100_350_003_03",
+            "title": "Study Protocol Description contains only template message.",
+            "description": "Study Protocol Description should be updated. Do not use template message.",
             "type": "ERROR"
         },
         {
@@ -855,6 +837,12 @@
             "type": "ERROR"
         },
         {
+            "rule_id": "rule_s_200_090_002_04",
+            "title": "Ontology Term Source REF defined for empty ontology terms.",
+            "description": "Select ontology terms and/or change ontology Term Source REF.",
+            "type": "ERROR"
+        },
+        {
             "rule_id": "rule_s_200_090_004_01",
             "title": "Empty value is found in a required column.",
             "description": "Complete all values in required columns.",
@@ -1047,12 +1035,6 @@
             "type": "WARNING"
         },
         {
-            "rule_id": "rule_a_200_090_004_01",
-            "title": "Required columns has empty values in assay file.",
-            "description": "All required column values should be defined in assay file.",
-            "type": "WARNING"
-        },
-        {
             "rule_id": "rule_a_200_100_001_02",
             "title": "Values for Sample Name column not unique in assay file.",
             "description": "Often Sample Name column values will be unique.",
@@ -1086,6 +1068,12 @@
             "rule_id": "rule_a_200_600_002_01",
             "title": "Scan Polarity column values are not same as assay file name",
             "description": "Values for Scan Polarity column not same as assay file name",
+            "type": "WARNING"
+        },
+        {
+            "rule_id": "rule_f_400_090_001_07",
+            "title": "Folders are referenced in assay file.",
+            "description": "Folder reference in data file column is not allowed. If data file type is a folder, compress it with zip utility tool and reference compressed data file.",
             "type": "WARNING"
         },
         {
@@ -1140,6 +1128,30 @@
             "rule_id": "rule_i_100_200_001_01",
             "title": "Investigation Title length less than 10 characters.",
             "description": "Investigation Title should be defined with length equal or greater than 10 characters. Please use same title as first publication.",
+            "type": "WARNING"
+        },
+        {
+            "rule_id": "rule_i_100_200_003_01",
+            "title": "Investigation Submission Date not valid.",
+            "description": "Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
+            "type": "WARNING"
+        },
+        {
+            "rule_id": "rule_i_100_200_004_01",
+            "title": "Investigation Public Release Date not valid.",
+            "description": "Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
+            "type": "WARNING"
+        },
+        {
+            "rule_id": "rule_i_100_300_005_01",
+            "title": "Study Submission Date not valid.",
+            "description": "Study Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
+            "type": "WARNING"
+        },
+        {
+            "rule_id": "rule_i_100_300_006_01",
+            "title": "Study Public Release Date not valid.",
+            "description": "Study Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
             "type": "WARNING"
         },
         {
@@ -1368,12 +1380,6 @@
             "rule_id": "rule_s_200_090_002_03",
             "title": "Ontology Term Source REF not referenced in investigation file.",
             "description": "All ontology Term Source REFs should be referenced in ONTOLOGY SOURCE REFERENCE section in i_Investigation.txt.",
-            "type": "WARNING"
-        },
-        {
-            "rule_id": "rule_s_200_090_002_04",
-            "title": "Ontology Term Source REF defined for empty ontology terms.",
-            "description": "Select ontology terms and/or change ontology Term Source REF.",
             "type": "WARNING"
         },
         {

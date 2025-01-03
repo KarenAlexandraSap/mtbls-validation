@@ -103,7 +103,7 @@ rule_s_200_090_002_03 contains result if {
 # description: Select ontology terms and/or change ontology Term Source REF.
 # custom:
 #  rule_id: rule_s_200_090_002_04
-#  type: WARNING
+#  type: ERROR
 #  priority: MEDIUM
 #  section: sample.general
 rule_s_200_090_002_04 contains result if {
