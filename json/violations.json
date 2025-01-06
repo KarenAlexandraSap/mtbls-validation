@@ -1,6 +1,6 @@
 {
-    "validation_version": "2.0.7",
-    "created_at": "2025-01-03T22:45:12.344453+00:00",
+    "validation_version": "2.0.8",
+    "created_at": "2025-01-06T11:08:00.427839+00:00",
     "violations": [
         {
             "rule_id": "rule___100_100_001_01",
@@ -77,7 +77,7 @@
         {
             "rule_id": "rule___100_200_001_08",
             "title": "Sample file name not correct pattern.",
-            "description": "Sample file name must start with 's_', contain study identifer and have extension '.txt'.",
+            "description": "Sample file name must start with 's_', contain study identifier and have extension '.txt'.",
             "type": "ERROR"
         },
         {
@@ -167,7 +167,7 @@
         {
             "rule_id": "rule___100_400_001_06",
             "title": "Metabolite assignment file is not referenced in assay file(s).",
-            "description": "Update assay files to reference the metabolite assignement or delete it.",
+            "description": "Update assay files to reference the metabolite assignment or delete it.",
             "type": "ERROR"
         },
         {
@@ -411,9 +411,21 @@
             "type": "ERROR"
         },
         {
+            "rule_id": "rule_i_100_300_003_03",
+            "title": "Study Title contains only template message.",
+            "description": "Study title should be updated. Do not use template message 'Please update the study title'.",
+            "type": "ERROR"
+        },
+        {
             "rule_id": "rule_i_100_300_004_01",
             "title": "Study Description length less than 60 characters.",
             "description": "Study Description should be defined with length equal or greater than 60 characters. Please use abstract of first publication.",
+            "type": "ERROR"
+        },
+        {
+            "rule_id": "rule_i_100_300_004_02",
+            "title": "Study abstract/description contains only template message.",
+            "description": "Study abstract/description should be updated. Do not use template message 'Please update the study abstract/description'.",
             "type": "ERROR"
         },
         {

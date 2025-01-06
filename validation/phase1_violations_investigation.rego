@@ -304,6 +304,25 @@ rule_i_100_300_003_02 contains result if {
 	result := f.format(rego.metadata.rule(), msg, source)
 }
 
+
+# METADATA
+# title: Study title contains only template message.
+# description: Study title should be updated. Do not use template message.
+# custom:
+#  rule_id: rule_i_100_300_003_03
+#  type: ERROR
+#  priority: HIGH
+#  section: investigation.studies
+rule_i_100_300_003_03 contains result if {
+	
+	some idx, study in input.investigation.studies
+	startswith(lower(study.title), "please update")
+	msg := sprintf("Study (index %v) title starts with template message. value: '%v'", [idx, study.title])
+	source := input.investigationFilePath
+	result := f.format(rego.metadata.rule(), msg, source)
+}
+
+
 # METADATA
 # title: Study Description length less than 60 characters.
 # description: Study Description should be defined with length equal or greater than 60 characters. Please use abstract of first publication.
@@ -316,6 +335,24 @@ rule_i_100_300_004_01 contains result if {
 	min_count = 60
 	count(input.investigation.studies[i].description) < min_count
 	msg := sprintf("Study description should be at least %v characters for %v. Current length: '%v'", [min_count, input.investigation.studies[i].identifier, count(input.investigation.studies[i].description)])
+	source := input.investigationFilePath
+	result := f.format(rego.metadata.rule(), msg, source)
+}
+
+
+
+# METADATA
+# title: Study abstract/description contains only template message.
+# description: Study abstract/description should be updated. Do not use template message.
+# custom:
+#  rule_id: rule_i_100_300_004_02
+#  type: ERROR
+#  priority: HIGH
+#  section: investigation.studies
+rule_i_100_300_004_02 contains result if {
+	some idx, study in input.investigation.studies
+	startswith(lower(study.description), "please update")
+	msg := sprintf("Study (index %v) abstract/description starts with template message. value: '%v'", [idx, study.description])
 	source := input.investigationFilePath
 	result := f.format(rego.metadata.rule(), msg, source)
 }
@@ -1399,11 +1436,10 @@ rule_i_100_350_003_01 contains result if {
 #  priority: HIGH
 #  section: investigation.studyProtocols
 rule_i_100_350_003_03 contains result if {
-	min_count := 40
 	some i, j
 	protocol := input.investigation.studies[i].studyProtocols.protocols[j]
-	startswith(lower(protocol.description), "please update this")
-	msg := sprintf("Description of study protocol '%v' description starts with template message, protocol index: %v", [protocol.name, j + 1])
+	startswith(lower(protocol.description), "please update")
+	msg := sprintf("Description of study protocol '%v' description starts with template message, protocol index: %v: value: '%v'", [protocol.name, j + 1, protocol.description])
 	source := input.investigationFilePath
 	result := f.format(rego.metadata.rule(), msg, source)
 }

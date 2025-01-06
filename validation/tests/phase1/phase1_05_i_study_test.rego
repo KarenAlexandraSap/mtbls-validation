@@ -202,6 +202,34 @@ test_rule_i_100_300_003_02_violation_01 if {
 	count(result) == 1
 }
 
+
+#########################################################################################################
+# rule_i_100_300_003_03
+#########################################################################################################
+
+# METADATA
+# title: Study title is valid.
+# description: Study title is valid.
+test_rule_i_100_300_003_03_no_violation_01 if {
+	result := rules.rule_i_100_300_003_03 with input as {
+		"investigation": {"studies": [{"identifier": "MTBLS1", "title": "Valid study title"}]},
+		"investigationFilePath": "i_Investigation.txt",
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Study title has template message.
+# description: Study title contains template message.
+test_rule_i_100_300_003_03_violation_01 if {
+	result := rules.rule_i_100_300_003_03 with input as {
+		"investigation": {"studies": [{"identifier": "MTBLS1", "title": "Please update"}]},
+		"investigationFilePath": "i_Investigation.txt",
+	}
+	count(result) == 1
+}
+
+
 #########################################################################################################
 # rule_i_100_300_004_01
 #########################################################################################################
@@ -249,6 +277,35 @@ test_rule_i_100_300_004_01_violation_02 if {
 	}
 	count(result) == 1
 }
+
+
+
+#########################################################################################################
+# rule_i_100_300_004_02
+#########################################################################################################
+
+# METADATA
+# title: Study title is valid.
+# description: Study title is valid.
+test_rule_i_100_300_004_02_no_violation_01 if {
+	result := rules.rule_i_100_300_004_02 with input as {
+		"investigation": {"studies": [{"identifier": "MTBLS1", "description": "Valid study title with long content and valid description."}]},
+		"investigationFilePath": "i_Investigation.txt",
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Study title has template message.
+# description: Study title contains template message.
+test_rule_i_100_300_004_02_violation_01 if {
+	result := rules.rule_i_100_300_004_02 with input as {
+		"investigation": {"studies": [{"identifier": "MTBLS1", "description": "Please update"}]},
+		"investigationFilePath": "i_Investigation.txt",
+	}
+	count(result) == 1
+}
+
 
 #########################################################################################################
 # rule_i_100_300_005_01
@@ -367,169 +424,3 @@ test_rule_i_100_300_006_01_violation_03 if {
 	}
 	count(result) == 1
 }
-
-# #########################################################################################################
-# # rule_i_100_300_000_01
-# #########################################################################################################
-# # METADATA
-# # title: There is no study section error.
-# # description: There is no study section error.
-# test_rule_i_100_300_000_01_success_01 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 1
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_01 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as [f.parser_message("rule_i_100_300_001_01", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_02 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as [f.parser_message("rule_i_100_300_001_02", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_03 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as [f.parser_message("rule_i_100_300_002_01", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_04 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as [f.parser_message("rule_i_100_300_003_01", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_05 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as [f.parser_message("rule_i_100_300_003_02", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_06 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as [f.parser_message("rule_i_100_300_004_01", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_07 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as [f.parser_message("rule_i_100_300_005_01", "i_Investigation.txt", "ERROR")]
-# 		with rule_i_100_300_006_01 as []
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
-# # METADATA
-# # title: There is a study section error.
-# # description: There is a study section error.
-# test_rule_i_100_300_000_01_no_success_08 if {
-# 	result := rules.rule_i_100_300_000_01 with rule_i_100_300_001_01 as []
-# 		with rule_i_100_300_001_02 as []
-# 		with rule_i_100_300_002_01 as []
-# 		with rule_i_100_300_003_01 as []
-# 		with rule_i_100_300_003_02 as []
-# 		with rule_i_100_300_004_01 as []
-# 		with rule_i_100_300_005_01 as []
-# 		with rule_i_100_300_006_01 as [f.parser_message("rule_i_100_300_006_01", "i_Investigation.txt", "ERROR")]
-# 		with input as {
-# 			"parserMessages": {"i_Investigation.txt": []},
-# 			"investigationFilePath": "i_Investigation.txt",
-# 		}
-# 	count(result) == 0
-# }
