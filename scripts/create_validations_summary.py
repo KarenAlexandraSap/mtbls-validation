@@ -88,6 +88,7 @@ def get_items(rules):
                 str(rule["TYPE"].strip()) if rule["TYPE"] else PolicyMessageType.INFO
             ),
             section=str(rule["SECTION"].split(".")[0]),
+            priority=str(rule["PRIORITY"].split(".")[0]),
         )
         if len(rule_id) < 15:
             summary.append(item)

@@ -47,6 +47,7 @@ violations_set := {
     data.metabolights.validation.v2.phase3.violations, 
     data.metabolights.validation.v2.phase4.violations
 }
+
 summary_set := {
     data.metabolights.validation.v2.phase1.summary, 
     data.metabolights.validation.v2.phase2.summary, 

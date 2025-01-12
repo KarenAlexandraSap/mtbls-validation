@@ -16,3 +16,4 @@ class Violation(BaseModel):
     description: str = ""
     type: PolicyMessageType = PolicyMessageType.INFO
     section: str = ""
+    priority: str = ""
