@@ -284,60 +284,60 @@ test_rule_s_100_100_001_05_violation_01 if {
 # # rule_s_100_100_001_06
 # #########################################################################################################
 
-# # METADATA
-# # title: There is one factor column in the sample file.
-# # description: There is one factor column in the sample file.
-# test_rule_s_100_100_001_06_no_violation_01 if {
-# 	result := rules.rule_s_100_100_001_06 with input as {
-# 		"investigationFilePath": "i_Investigation.txt",
-# 		"samples": {"s_MTBLS1.txt": {"table": {
-# 			"rowOffset": 0, "totalRowCount": 0,
-# 			"headers": [
-# 				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 1},
-# 				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 10},
-# 				{"columnCategory": "Factor Value", "columnStructure": "", "columnHeader": "Factor Value[Age]", "columnIndex": 11},
-# 				{"columnCategory": "Characteristics", "columnStructure": "", "columnHeader": "Characteristics[Organism part]", "columnIndex": 12},
-# 				{"columnCategory": "", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Source Name", "columnIndex": 13},
-# 				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 13},
-# 			],
-# 		}}},
-# 		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
-# 		"parserMessages": {"s_MTBLS1.txt": []},
-# 	}
-# 		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_FILE_HEADERS as {
-# 			{"columnHeader": "Sample Name", "required": true},
-# 			{"columnHeader": "Characteristics[Organism]", "required": true},
-# 		}
-# 	count(result) == 0
-# }
+# METADATA
+# title: There is one factor column in the sample file.
+# description: There is one factor column in the sample file.
+test_rule_s_100_100_001_06_no_violation_01 if {
+	result := rules.rule_s_100_100_001_06 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 1},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 10},
+				{"columnCategory": "Factor Value", "columnStructure": "", "columnHeader": "Factor Value[Age]", "columnIndex": 11},
+				{"columnCategory": "Characteristics", "columnStructure": "", "columnHeader": "Characteristics[Organism part]", "columnIndex": 12},
+				{"columnCategory": "", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Source Name", "columnIndex": 13},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 13},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_FILE_HEADERS as {
+			{"columnHeader": "Sample Name", "required": true},
+			{"columnHeader": "Characteristics[Organism]", "required": true},
+		}
+	count(result) == 0
+}
 
-# # METADATA
-# # title: There is no factor column in the sample file.
-# # description: There is no factor column in the sample file.
-# test_rule_s_100_100_001_06_violation_01 if {
-# 	result := rules.rule_s_100_100_001_06 with input as {
-# 		"investigationFilePath": "i_Investigation.txt",
-# 		"samples": {"s_MTBLS1.txt": {"table": {
-# 			"rowOffset": 0, "totalRowCount": 0,
-# 			"headers": [
-# 				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 1},
-# 				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 10},
-# 				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 11},
-# 				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 13},
-# 			],
-# 		}}},
-# 		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
-# 		"parserMessages": {"s_MTBLS1.txt": []},
-# 	}
-# 		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_FILE_HEADERS as {
-# 			{"columnHeader": "Sample Name", "required": true},
-# 			{"columnHeader": "Characteristics[Organism]", "required": true},
-# 			{"columnHeader": "Characteristics[Organism part]", "required": true},
-# 			{"columnHeader": "Source Name", "required": true},
-# 			{"columnHeader": "Factor[Age]", "required": false},
-# 		}
-# 	count(result) == 1
-# }
+# METADATA
+# title: There is no factor column in the sample file.
+# description: There is no factor column in the sample file.
+test_rule_s_100_100_001_06_violation_01 if {
+	result := rules.rule_s_100_100_001_06 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 1},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 10},
+				{"columnCategory": "Protocol", "columnStructure": "", "columnHeader": "Protocol REF", "columnIndex": 11},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 13},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_FILE_HEADERS as {
+			{"columnHeader": "Sample Name", "required": true},
+			{"columnHeader": "Characteristics[Organism]", "required": true},
+			{"columnHeader": "Characteristics[Organism part]", "required": true},
+			{"columnHeader": "Source Name", "required": true},
+			{"columnHeader": "Factor[Age]", "required": false},
+		}
+	count(result) == 1
+}
 
 #########################################################################################################
 # rule_s_100_100_001_07
@@ -647,6 +647,381 @@ test_rule_s_100_100_001_10_violation_01 if {
 				{"columnHeader": "Sample Name", "required": true},
 			],
 		}]
+	count(result) == 1
+}
+
+
+
+#########################################################################################################
+# rule_s_100_100_001_11
+#########################################################################################################
+
+# METADATA
+# title: Valid Factor Value columns in sample file.
+# description: Valid Factor Value columns in sample file.
+test_rule_s_100_100_001_11_no_violation_01 if {
+	result := rules.rule_s_100_100_001_11 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_HEADER_NAMES as {
+		"Characteristics[Organism]", "Characteristics[Organism part]", "Factor Value[Age]",  "Sample Name", "Source Name"
+	}
+	with data.metabolights.validation.v2.templates.sampleFileHeaderTemplates as [{
+			"version": "v1.0",
+			"headers": [
+				{"columnHeader": "Source Name", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Organism]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Organism part]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Variant]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Sample type]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Protocol REF", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Sample Name", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+			],
+		}]
+
+	count(result) == 0
+}
+
+# METADATA
+# title: Invalid Factor Value columns in sample file.
+# description: Invalid Factor Value columns in sample file.
+test_rule_s_100_100_001_11_violation_01 if {
+	result := rules.rule_s_100_100_001_11 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_HEADER_NAMES as {
+		"Characteristics[Organism]", "Characteristics[Organism part]", "Factor Value[Age]",  "Sample Name", "Source Name"
+	}
+	with data.metabolights.validation.v2.templates.sampleFileHeaderTemplates as [{
+			"version": "v1.0",
+			"headers": [
+				{"columnHeader": "Source Name", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Organism]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Organism part]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Variant]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Characteristics[Sample type]", "required": true, "columnStructure": "ONTOLOGY_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Protocol REF", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+				{"columnHeader": "Sample Name", "required": true, "columnStructure": "SINGLE_COLUMN", "columnIndex": 0},
+			],
+		}]
+	count(result) == 1
+}
+
+
+#########################################################################################################
+# rule_s_100_100_001_12
+#########################################################################################################
+
+# METADATA
+# title: Valid Factor Value columns in sample file.
+# description: Valid Factor Value columns in sample file.
+test_rule_s_100_100_001_12_no_violation_01 if {
+	result := rules.rule_s_100_100_001_12 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Invalid Factor Value columns in sample file.
+# description: Invalid Factor Value columns in sample file.
+test_rule_s_100_100_001_12_violation_01 if {
+	result := rules.rule_s_100_100_001_12 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Factor Value", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [{"name": "Age"}, {"name": "Year"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 1
+}
+
+
+
+#########################################################################################################
+# rule_s_100_100_001_13
+#########################################################################################################
+
+# METADATA
+# title: expected Factor Value columns in sample file.
+# description: expected Factor Value columns in sample file.
+test_rule_s_100_100_001_13_no_violation_01 if {
+	result := rules.rule_s_100_100_001_13 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_HEADER_NAMES as {"Characteristics[Organism]", "Characteristics[Organism part]"}
+	count(result) == 0
+}
+
+# METADATA
+# title: Missing Factor Value columns in sample file.
+# description: Missing Factor Value columns in sample file.
+test_rule_s_100_100_001_13_violation_01 if {
+	result := rules.rule_s_100_100_001_13 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [{"name": "Age"}, {"name": "Year"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.phase1.definitions._DEFAULT_SAMPLE_HEADER_NAMES as {"Characteristics[Organism part]"}
+
+	count(result) == 1
+}
+
+#########################################################################################################
+# rule_s_100_100_001_14
+#########################################################################################################
+
+# METADATA
+# title: expected Factor Value columns in sample file.
+# description: expected Factor Value columns in sample file.
+test_rule_s_100_100_001_14_no_violation_01 if {
+	result := rules.rule_s_100_100_001_14 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Missing Factor Value columns in sample file.
+# description: Missing Factor Value columns in sample file.
+test_rule_s_100_100_001_14_violation_01 if {
+	result := rules.rule_s_100_100_001_14 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 5},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 13},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [{"name": "Age"}, {"name": "Year"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 1
+}
+
+#########################################################################################################
+# rule_s_100_100_001_15
+#########################################################################################################
+
+# METADATA
+# title: expected Factor Value columns in sample file.
+# description: expected Factor Value columns in sample file.
+test_rule_s_100_100_001_15_no_violation_01 if {
+	result := rules.rule_s_100_100_001_15 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Missing Factor Value columns in sample file.
+# description: Missing Factor Value columns in sample file.
+test_rule_s_100_100_001_15_violation_01 if {
+	result := rules.rule_s_100_100_001_15 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [{"name": "Age"}, {"name": "Year"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 1
+}
+
+
+#########################################################################################################
+# rule_s_100_100_001_16
+#########################################################################################################
+
+# METADATA
+# title: expected Factor Value columns in sample file.
+# description: expected Factor Value columns in sample file.
+test_rule_s_100_100_001_16_no_violation_01 if {
+	result := rules.rule_s_100_100_001_16 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": [ {"name": "Age"}]}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	count(result) == 0
+}
+
+# METADATA
+# title: Unexpected Factor Value columns in sample file.
+# description: Unexpected Factor Value columns in sample file.
+test_rule_s_100_100_001_16_violation_01 if {
+	result := rules.rule_s_100_100_001_16 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"samples": {"s_MTBLS1.txt": {"table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnIndex": 0},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Sample]", "columnIndex": 1},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]", "columnIndex": 2},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism part]", "columnIndex": 5},
+				{"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]", "columnIndex": 8},
+				{"columnCategory": "Comment", "columnStructure": "", "columnHeader": "Comment[Organism]", "columnIndex": 11},
+				{"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Age]", "columnIndex": 12},
+				{"columnCategory": "Protocol", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Protocol REF", "columnIndex": 15},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnIndex": 16},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt", "studyFactors": { "factors": []}}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
 	count(result) == 1
 }
 

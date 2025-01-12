@@ -1,5 +1,7 @@
 import datetime
 import json
+from pathlib import Path
+from typing import OrderedDict
 
 import pandas as pd
 
@@ -41,12 +43,32 @@ def create_summary_files(rules: dict[str, pd.Series]):
     summary_file = "validation/metabolights/validation/v2/configuration/rules.json"
     with open(summary_file, "w") as f:
         json.dump({"rules": versioned_content}, f, indent=4)
+
+    section_violations: OrderedDict[str, list[Violation]] = OrderedDict()
+    for item in violations:
+        if item.section not in section_violations:
+            section_violations[item.section] = []
+        section_violations[item.section].append(item)
+    validations_path = Path("docs/validation-rules")
+    validations_path.mkdir(parents=True, exist_ok=True)
+    for section in section_violations:
+        with open(
+            f"docs/validation-rules/{section.removesuffix('s')}-validation-rules.md",
+            "w",
+        ) as f:
+            f.write(
+                "| # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |\n"
+                "|---|---------|-------|--------|-------------|\n"
+            )
+            for idx, item in enumerate(section_violations[section]):
+                f.write(
+                    f"| {idx + 1} | {item.rule_id} | {item.type.value} | {item.title} | {item.description} |\n"
+                )
+
     with open("docs/MetaboLightsRules.md", "w") as f:
         f.write(
-            "| # |RULE ID              | TYPE                | TITLE                    | DESCRIPTION                  |\n"
-        )
-        f.write(
-            "|---|---------------------|---------------------|--------------------------|------------------------------|\n"
+            "| # |RULE ID  | TYPE  | TITLE   | DESCRIPTION  |\n"
+            "|---|---------|-------|---------|--------------|\n"
         )
         for idx, item in enumerate(violations):
             f.write(
@@ -65,13 +87,14 @@ def get_items(rules):
             type=PolicyMessageType(
                 str(rule["TYPE"].strip()) if rule["TYPE"] else PolicyMessageType.INFO
             ),
+            section=str(rule["SECTION"].split(".")[0]),
         )
         if len(rule_id) < 15:
             summary.append(item)
         else:
             violations.append(item)
     for items in (violations, summary):
-        items.sort(key=lambda x: x.type.value + x.rule_id)
+        items.sort(key=lambda x: x.rule_id)
     return violations, summary
 
 

@@ -44,7 +44,7 @@ rule___100_100_001_02 contains result if {
 #  rule_id: rule___100_100_100_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input.parserMessages
+#  section: investigation.parserMessages
 rule___100_100_100_01 contains result if {
 	some j
 	file_name := input.investigationFilePath
@@ -63,7 +63,7 @@ rule___100_100_100_01 contains result if {
 #  rule_id: rule___100_100_100_02
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input.parserMessages
+#  section: investigation.parserMessages
 rule___100_100_100_02 contains result if {
 	file_name := input.investigationFilePath
 
@@ -82,7 +82,7 @@ rule___100_100_100_02 contains result if {
 #  rule_id: rule___100_100_100_03
 #  type: WARNING
 #  priority: HIGH
-#  section: input.parserMessages
+#  section: investigation.parserMessages
 rule___100_100_100_03 contains result if {
 	file_name := input.investigationFilePath
 	message := input.parserMessages[file_name][j]
@@ -102,7 +102,7 @@ rule___100_100_100_03 contains result if {
 #  rule_id: rule___100_100_100_04
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input
+#  section: investigation.general
 rule___100_100_100_04 contains result if {
 	configuration := data.metabolights.validation.v2.configuration
 	input.investigationFilePath != configuration.investigationFileName
@@ -117,7 +117,7 @@ rule___100_100_100_04 contains result if {
 #  rule_id: rule___100_100_100_05
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input.parserMessages
+#  section: investigation.parserMessages
 rule___100_100_100_05 contains result if {
 	template_file_name := data.metabolights.validation.v2.configuration.investigationFileName
 	not input.parserMessages[template_file_name]
@@ -134,7 +134,7 @@ rule___100_100_100_05 contains result if {
 #  rule_id: rule___100_100_100_06
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input
+#  section: investigation.general
 rule___100_100_100_06 contains result if {
 	referenced_files := { input.investigationFilePath }
 
@@ -158,7 +158,7 @@ rule___100_100_100_06 contains result if {
 #  rule_id: rule___100_200_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: investigation.parserMessages
+#  section: samples.parserMessages
 rule___100_200_001_01 contains result if {
 	input.samples[fileName]
 	values := {x |
@@ -178,7 +178,7 @@ rule___100_200_001_01 contains result if {
 #  rule_id: rule___100_200_001_02
 #  type: ERROR
 #  priority: HIGH
-#  section: investigation.parserMessages
+#  section: samples.parserMessages
 rule___100_200_001_02 contains result if {
 	input.samples[fileName]
 	values := {x |
@@ -198,7 +198,7 @@ rule___100_200_001_02 contains result if {
 #  rule_id: rule___100_200_001_03
 #  type: WARNING
 #  priority: MEDIUM
-#  section: input
+#  section: samples.parserMessages
 rule___100_200_001_03 contains result if {
 	input.samples[fileName]
 	values := {x |
@@ -215,10 +215,10 @@ rule___100_200_001_03 contains result if {
 # title: There is no parser information for sample file.
 # description: Define sample file in parserMessages.
 # custom:
-#  rule_id: rule___100_200_100_03
+#  rule_id: rule___100_200_001_04
 #  type: ERROR
 #  priority: HIGH
-#  section: input
+#  section: samples.parserMessages
 rule___100_200_001_04 contains result if {
 	some file_name, _ in input.samples
 	not input.parserMessages[file_name]
@@ -234,7 +234,7 @@ rule___100_200_001_04 contains result if {
 #  rule_id: rule___100_200_001_05
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input
+#  section: samples.parserMessages
 rule___100_200_001_05 contains result if {
 	count(input.samples) == 0
 
@@ -251,7 +251,7 @@ rule___100_200_001_05 contains result if {
 #  rule_id: rule___100_200_001_06
 #  type: ERROR
 #  priority: CRITICAL
-#  section: input
+#  section: samples.general
 rule___100_200_001_06 contains result if {
 	count(input.samples) > 1
 	count(input.investigation.studies) == 1
@@ -264,7 +264,7 @@ rule___100_200_001_06 contains result if {
 
 
 # METADATA
-# title: Sample file name not correct pattern.
+# title: Sample file name pattern is not correct.
 # description: Sample file name must start with 's_', contain study identifier and have extension '.txt'.
 # custom:
 #  rule_id: rule___100_200_001_08
@@ -313,7 +313,7 @@ rule___100_200_001_09 contains result if {
 #  rule_id: rule___100_300_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.general
+#  section: assays.general
 rule___100_300_001_01 contains result if {
 	some file_name, _ in input.assays
 	values := {x |
@@ -333,7 +333,7 @@ rule___100_300_001_01 contains result if {
 #  rule_id: rule___100_300_001_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule___100_300_001_02 contains result if {
 	input.assays[fileName]
 	values := {x |
@@ -353,7 +353,7 @@ rule___100_300_001_02 contains result if {
 #  rule_id: rule___100_300_001_03
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule___100_300_001_03 contains result if {
 	input.assays[fileName]
 	values := {x |
@@ -373,7 +373,7 @@ rule___100_300_001_03 contains result if {
 #  rule_id: rule___100_300_001_04
 #  type: ERROR
 #  priority: HIGH
-#  section: input
+#  section: assays.general
 rule___100_300_001_04 contains result if {
 	some file_name, _ in input.assays
 	not input.parserMessages[file_name]
@@ -389,7 +389,7 @@ rule___100_300_001_04 contains result if {
 #  rule_id: rule___100_300_001_05
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.general
+#  section: assays.general
 rule___100_300_001_05 contains result if {
 	count(input.assays) == 0
 	msg := "There is no assay file for study in input data."
@@ -507,7 +507,7 @@ rule___100_300_001_10 contains result if {
 #  rule_id: rule___100_400_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.parserMessages
 rule___100_400_001_01 contains result if {
 	input.metaboliteAssignments[fileName]
 	values := {x |
@@ -527,7 +527,7 @@ rule___100_400_001_01 contains result if {
 #  rule_id: rule___100_400_001_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.parserMessages
 rule___100_400_001_02 contains result if {
 	input.metaboliteAssignments[fileName]
 	values := {x |
@@ -547,7 +547,7 @@ rule___100_400_001_02 contains result if {
 #  rule_id: rule___100_400_001_03
 #  type: WARNING
 #  priority: MEDIUM
-#  section: assignment.general
+#  section: metabolites.parserMessages
 rule___100_400_001_03 contains result if {
 	input.metaboliteAssignments[fileName]
 	values := {x |
@@ -567,7 +567,7 @@ rule___100_400_001_03 contains result if {
 #  rule_id: rule___100_400_001_04
 #  type: ERROR
 #  priority: HIGH
-#  section: input
+#  section: metabolites.parserMessages
 rule___100_400_001_04 contains result if {
 	some file_name, _ in input.metaboliteAssignments
 	not input.parserMessages[file_name]
@@ -584,7 +584,7 @@ rule___100_400_001_04 contains result if {
 #  rule_id: rule___100_400_001_05
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule___100_400_001_05 contains result if {
 	some file_name, assignment in input.metaboliteAssignments
 	count(input.metaboliteAssignments[file_name].assayTechnique.name) == 0
@@ -596,12 +596,12 @@ rule___100_400_001_05 contains result if {
 
 # METADATA
 # title: Metabolite assignment file is not referenced in assay file(s).
-# description: Update assay files to reference the metabolite assignement or delete it.
+# description: Update assay files to reference the metabolite assignment or delete it.
 # custom:
 #  rule_id: rule___100_400_001_06
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule___100_400_001_06 contains result if {
 	all_files := { x |
 		some x, _ in input.metaboliteAssignments
@@ -626,7 +626,7 @@ rule___100_400_001_06 contains result if {
 #  rule_id: rule___100_400_001_07
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule___100_400_001_07 contains result if {
 	pattern := `^m_(.+)\.tsv$`
 	some file_name, _ in input.metaboliteAssignments
@@ -643,7 +643,7 @@ rule___100_400_001_07 contains result if {
 #  rule_id: rule___100_400_001_08
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule___100_400_001_08 contains result if {
 	some file, maf in input.metaboliteAssignments
 

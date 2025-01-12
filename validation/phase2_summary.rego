@@ -121,8 +121,8 @@ rule_a_200_500 contains result if {
 
 
 # METADATA
-# title: Validation summary for chromotography protocol section in assay file.
-# description: There is no chromotography protocol section specific errors in assay files.
+# title: Validation summary for chromatography protocol section in assay file.
+# description: There is no chromatography protocol section specific errors in assay files.
 # custom:
 #  rule_id: rule_a_200_600
 #  section: assays.data_transformation

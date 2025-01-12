@@ -237,7 +237,7 @@ rule_a_100_100_001_09 contains result if {
 
 # METADATA
 # title: Column header name defined in template is not unique in assay file.
-# description: Default column header name (except Data File columns) should be unique in assay file.
+# description: Default column header name (except Data File and Protocol REF columns) should be unique in assay file.
 # custom:
 #  rule_id: rule_a_100_100_001_10
 #  type: WARNING
@@ -247,15 +247,14 @@ rule_a_100_100_001_10 contains result if {
 	templates := data.metabolights.validation.v2.templates
 	def := data.metabolights.validation.v2.phase1.definitions
 	some file_name, _ in input.assays
-	default_headers := def._DEFAULT_ASSAY_HEADER_NAMES[file_name]
+	# print(input.assays[file_name].table.headers)
 	header_names := {header.columnHeader: same_headers |
 		some header_set in def._DEFAULT_ASSAY_HEADERS[file_name]
+
 		header_set.version == "v1.0"
 		some header in header_set.headers
-		header.columnCategory != "Comment"
-		header.columnCategory != "Parameter Value"
-		header.columnCategory != "Parameter"
-		header.columnCategory != "Protocol"
+		not startswith(header.columnHeader, "Comment[")
+		not startswith(header.columnHeader, "Protocol REF")
 		not endswith(header.columnHeader, " Data File")
 		same_headers := [ idx |
 			some x in input.assays[file_name].table.headers
@@ -263,12 +262,14 @@ rule_a_100_100_001_10 contains result if {
 			idx := x.columnIndex + 1 
 		]
 	}
+
 	matches := {sprintf("[Multiple '%v' columns. Column indices: '%v']", [x1, x2]) |
 		some header_name, column_indices in header_names
 		count(column_indices) > 1
 		x1 := header_name
 		x2 := column_indices
 	}
+
 	count(matches) > 0
 	result := f.format_with_file_and_values(rego.metadata.rule(), file_name, matches)
 }
@@ -284,19 +285,19 @@ rule_a_100_100_001_10 contains result if {
 #  section: assays.columns
 rule_a_100_100_001_11 contains result if {
 	some file_name, assay in input.assays
+	some study in input.investigation.studies
 	input.investigation.studies
 	parameter_names := { x.term | 
-		some protocol in input.investigation.studies[0].studyProtocols.protocols
+		some protocol in study.studyProtocols.protocols
 		some x in protocol.parameters
 	}
 	assay_parameters := { param | 
 		some header in assay.table.headers
-		header.columnCategory == "Parameter Value"
 		count(header.columnHeader) > 0
+		startswith(header.columnHeader, "Parameter Value[")
 		param1 := replace(header.columnHeader, "Parameter Value[", "")
 		param := replace(param1, "]", "")
 	}
-	
 	matches = assay_parameters - parameter_names
 
 	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Assay parameter(s) not referenced in i_Investigation.txt", matches)

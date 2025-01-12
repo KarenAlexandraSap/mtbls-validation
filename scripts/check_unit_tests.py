@@ -3,7 +3,6 @@ import re
 
 from scripts.utils import get_rules
 
-
 metadata_lines = [
     "# METADATA",
     "# title:",

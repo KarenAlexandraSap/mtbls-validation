@@ -87,11 +87,11 @@ rule_i_100_200_001_01 contains result if {
 
 
 # METADATA
-# title: Investigation Title length less than 10 characters.
-# description: Investigation Title should be defined with length equal or greater than 10 characters. Please use same title as first publication.
+# title: Investigation Identifier not valid.
+# description: Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}<positive_number>).
 # custom:
-#  rule_id: rule_i_100_200_001_01
-#  type: WARNING
+#  rule_id: rule_i_100_200_002_01
+#  type: ERROR
 #  priority: MEDIUM
 #  section: investigation.investigation
 rule_i_100_200_002_01 contains result if {
@@ -306,8 +306,8 @@ rule_i_100_300_003_02 contains result if {
 
 
 # METADATA
-# title: Study title contains only template message.
-# description: Study title should be updated. Do not use template message.
+# title: Study Title contains only template message.
+# description: Study title should be updated. Do not use template message 'Please update the study title'.
 # custom:
 #  rule_id: rule_i_100_300_003_03
 #  type: ERROR
@@ -343,7 +343,7 @@ rule_i_100_300_004_01 contains result if {
 
 # METADATA
 # title: Study abstract/description contains only template message.
-# description: Study abstract/description should be updated. Do not use template message.
+# description: Study abstract/description should be updated. Do not use template message 'Please update the study abstract/description'.
 # custom:
 #  rule_id: rule_i_100_300_004_02
 #  type: ERROR
@@ -376,11 +376,11 @@ rule_i_100_300_005_01 contains result if {
 }
 
 # METADATA
-# title: Study public release date should be a valid date.
-# description: Study public release date should be a valid date and ISO8601 (e.g., 2023-01-01) format.
+# title: Study Public Release Date not valid.
+# description: Study Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).
 # custom:
-#  rule_id: rule_i_100_300_006_02
-#  type: ERROR
+#  rule_id: rule_i_100_300_006_01
+#  type: WARNING
 #  priority: MEDIUM
 #  section: investigation.studies
 rule_i_100_300_006_01 contains result if {

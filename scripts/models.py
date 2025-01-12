@@ -1,4 +1,5 @@
 from enum import Enum
+
 from pydantic import BaseModel
 
 
@@ -14,3 +15,4 @@ class Violation(BaseModel):
     title: str = ""
     description: str = ""
     type: PolicyMessageType = PolicyMessageType.INFO
+    section: str = ""

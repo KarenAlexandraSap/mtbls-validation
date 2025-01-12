@@ -83,6 +83,8 @@
                     "controlLists": null,
                     "defaultColumnIndex": 6,
                     "defaultValue": null,
+                    "maxLength": 0,
+                    "minLength": 0,
                     "required": false
                 },
                 {
@@ -105,6 +107,8 @@
                     "controlLists": null,
                     "defaultColumnIndex": 8,
                     "defaultValue": null,
+                    "maxLength": 0,
+                    "minLength": 0,
                     "required": false
                 },
                 {
@@ -115,6 +119,8 @@
                     "controlLists": null,
                     "defaultColumnIndex": 9,
                     "defaultValue": null,
+                    "maxLength": 0,
+                    "minLength": 0,
                     "required": false
                 },
                 {
@@ -136,6 +142,8 @@
                     "columnPrefix": "",
                     "controlLists": null,
                     "defaultColumnIndex": 11,
+                    "maxLength": 0,
+                    "minLength": 0,
                     "defaultValue": null,
                     "required": false
                 },

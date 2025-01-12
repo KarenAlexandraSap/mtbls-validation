@@ -230,6 +230,78 @@ test_rule_m_100_100_001_03_violation_01 if {
 	count(result) == 1
 }
 
+
+
+#########################################################################################################
+# rule_m_100_100_001_04
+#########################################################################################################
+
+# METADATA
+# title: Metabolite assignment file has no empty column headers.
+# description: Metabolite assignment file has empty column headers.
+test_rule_m_100_100_001_04_no_violation_01 if {
+	result := rules.rule_m_100_100_001_04 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"metaboliteAssignments": {"m_MTBLS1.txt": {"assayTechnique": {"name": "LC-MS", "mainTechnique": "MS"}, "table": {
+			"rowOffset": 0, "totalRowCount": 0,
+			"headers": [
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "database_identifier", "columnIndex": 1},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "chemical_formula", "columnIndex": 2},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "smiles", "columnIndex": 3},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "inchi", "columnIndex": 4},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "metabolite_identification", "columnIndex": 5},
+			],
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.templates.assignmentFileHeaderTemplates as {"MS": [{
+			"version": "v1.0",
+			"headers": [
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "database_identifier", "defaultColumnIndex": 1},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "chemical_formula", "defaultColumnIndex": 2},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "smiles", "defaultColumnIndex": 3},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "inchi", "defaultColumnIndex": 4},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "metabolite_identification", "defaultColumnIndex": 5},
+			],
+		}]}
+	count(result) == 0
+}
+
+# METADATA
+# title: Metabolite assignment file has no empty column headers.
+# description: Metabolite assignment file has empty column headers.
+test_rule_m_100_100_001_04_violation_01 if {
+	result := rules.rule_m_100_100_001_04 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"metaboliteAssignments": {
+			"m_MTBLS1.txt": {"assayTechnique": {"name": "LC-MS", "mainTechnique": "MS"}, "table": {
+				"rowOffset": 0, "totalRowCount": 0,
+				"headers": [
+					{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "database_identifier", "columnIndex": 1},
+					{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "chemical_formula", "columnIndex": 2},
+					{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "inchi", "columnIndex": 3},
+					{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "metabolite_identification", "columnIndex": 4},
+					{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "metabolite_identification", "columnIndex": 5},
+				],
+			}},
+		},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+		with data.metabolights.validation.v2.templates.assignmentFileHeaderTemplates as {"MS": [{
+			"version": "v1.0",
+			"headers": [
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "database_identifier", "defaultColumnIndex": 1},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "chemical_formula", "defaultColumnIndex": 2},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "metabolite_identification", "columnIndex": 3},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "smiles", "defaultColumnIndex": 4},
+				{"columnPrefix": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "inchi", "defaultColumnIndex": 5},
+			],
+		}]}
+	count(result) == 1
+}
+
 #########################################################################################################
 # rule_m_100_100_002_01
 #########################################################################################################

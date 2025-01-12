@@ -18,7 +18,7 @@ import data.metabolights.validation.v2.functions as f
 #  rule_id: rule_m_100_100_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_001_01 contains result if {
 	some file_name, _ in input.metaboliteAssignments
 	
@@ -44,7 +44,7 @@ rule_m_100_100_001_01 contains result if {
 #  rule_id: rule_m_100_100_001_02
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_001_02 contains result if {
 	
 	some file_name, _ in input.metaboliteAssignments
@@ -82,7 +82,7 @@ rule_m_100_100_001_02 contains result if {
 #  rule_id: rule_m_100_100_001_03
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_001_03 contains result if {
 	input.metaboliteAssignments[i]
 	headers := {sprintf("[column index: %v]", [y]) |
@@ -105,7 +105,7 @@ rule_m_100_100_001_03 contains result if {
 #  rule_id: rule_m_100_100_001_04
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_001_04 contains result if {
 	templates := data.metabolights.validation.v2.templates
 	def := data.metabolights.validation.v2.phase1.definitions
@@ -115,8 +115,7 @@ rule_m_100_100_001_04 contains result if {
 	template.version == "v1.0"
 	header_names := {header.columnHeader: same_headers |
 		some header in template.headers
-
-		header.columnCategory != "Comment"
+		not startswith(header.columnHeader, "Comment[")
 		same_headers := [ idx |
 			some x in input.metaboliteAssignments[file_name].table.headers
 			x.columnHeader == header.columnHeader
@@ -141,7 +140,7 @@ rule_m_100_100_001_04 contains result if {
 #  rule_id: rule_m_100_100_002_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_002_01 contains result if {
 	some file_name, assignment in input.metaboliteAssignments
 
@@ -178,7 +177,7 @@ rule_m_100_100_002_01 contains result if {
 #  rule_id: rule_m_100_100_002_02
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_002_02 contains result if {
 	count(rule_m_100_100_002_01) == 0
 
@@ -228,7 +227,7 @@ rule_m_100_100_002_02 contains result if {
 #  rule_id: rule_m_100_100_004_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_004_01 contains result if {
 	referenced_files := { file_name | some _, file_name in input.assays[_].referencedAssignmentFiles }
 	some assignment_file_name, _ in input.metaboliteAssignments
@@ -246,7 +245,7 @@ rule_m_100_100_004_01 contains result if {
 #  rule_id: rule_m_100_100_005_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_005_01 contains result if {
 	pattern := `^m_.+\.tsv$`
 	count(input.metaboliteAssignments) > 0
@@ -265,7 +264,7 @@ rule_m_100_100_005_01 contains result if {
 #  rule_id: rule_m_100_100_006_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_006_01 contains result if {
 	some file_name, assignment in input.metaboliteAssignments
 	assignment.table.rowOffset == 0
@@ -285,7 +284,7 @@ rule_m_100_100_006_01 contains result if {
 #  rule_id: rule_m_100_100_006_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_100_100_006_02 contains result if {
 	some file_name, assignment in input.metaboliteAssignments
 	assignment.table.rowOffset == 0

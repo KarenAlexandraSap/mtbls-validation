@@ -22,7 +22,7 @@ import input.assays
 #  rule_id: rule_a_200_090_001_01
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_001_01 contains result if {
 	some file_name, sheet in input.assays
 	some column_index, column_name in sheet.table.columns
@@ -48,7 +48,7 @@ rule_a_200_090_001_01 contains result if {
 #  rule_id: rule_a_200_090_002_01
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, _ in sheet.table.headers
@@ -64,7 +64,7 @@ rule_a_200_090_002_01 contains result if {
 #  rule_id: rule_a_200_090_002_02
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_02 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -92,7 +92,7 @@ rule_a_200_090_002_02 contains result if {
 #  rule_id: rule_a_200_090_002_03
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_03 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, _ in sheet.table.headers
@@ -108,7 +108,7 @@ rule_a_200_090_002_03 contains result if {
 #  rule_id: rule_a_200_090_002_04
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_04 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, _ in sheet.table.headers
@@ -122,7 +122,7 @@ rule_a_200_090_002_04 contains result if {
 #  rule_id: rule_a_200_090_002_05
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_05 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, _ in sheet.table.headers
@@ -137,7 +137,7 @@ rule_a_200_090_002_05 contains result if {
 #  rule_id: rule_a_200_090_002_06
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_06 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, _ in sheet.table.headers
@@ -151,7 +151,7 @@ rule_a_200_090_002_06 contains result if {
 #  rule_id: rule_a_200_090_002_07
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_07 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -171,7 +171,7 @@ rule_a_200_090_002_07 contains result if {
 #  rule_id: rule_a_200_090_002_08
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_08 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -190,7 +190,7 @@ rule_a_200_090_002_08 contains result if {
 #  rule_id: rule_a_200_090_002_09
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_09 contains result if {
 	some file_name, sheet in input.assays
 	some _, header in sheet.table.headers
@@ -229,7 +229,7 @@ rule_a_200_090_002_09 contains result if {
 #  rule_id: rule_a_200_090_002_10
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_10 contains result if {
 	some file_name, sheet in input.assays
 	some _, header in sheet.table.headers
@@ -270,7 +270,7 @@ rule_a_200_090_002_10 contains result if {
 #  rule_id: rule_a_200_090_002_11
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_11 contains result if {
 	some file_name, sheet in input.assays
 	some _, header in sheet.table.headers
@@ -311,7 +311,7 @@ rule_a_200_090_002_11 contains result if {
 #  rule_id: rule_a_200_090_002_12
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_002_12 contains result if {
 	some file_name, sheet in input.assays
 	some _, header in sheet.table.headers
@@ -357,7 +357,7 @@ rule_a_200_090_002_12 contains result if {
 #  rule_id: rule_a_200_090_003_01
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_003_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -371,7 +371,7 @@ rule_a_200_090_003_01 contains result if {
 #  rule_id: rule_a_200_090_003_02
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_003_02 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -385,7 +385,7 @@ rule_a_200_090_003_02 contains result if {
 #  rule_id: rule_a_200_090_003_03
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_003_03 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -399,7 +399,7 @@ rule_a_200_090_003_03 contains result if {
 #  rule_id: rule_a_200_090_003_04
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_003_04 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -413,7 +413,7 @@ rule_a_200_090_003_04 contains result if {
 #  rule_id: rule_a_200_090_004_01
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_004_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -440,7 +440,7 @@ rule_a_200_090_004_01 contains result if {
 #  rule_id: rule_a_200_090_004_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_004_02 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -466,7 +466,7 @@ rule_a_200_090_004_02 contains result if {
 #  rule_id: rule_a_200_090_004_03
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_004_03 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -492,7 +492,7 @@ rule_a_200_090_004_03 contains result if {
 #  rule_id: rule_a_200_090_005_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.general
+#  section: assays.general
 rule_a_200_090_005_01 contains result if {
 	some file_name, sheet in input.assays
 
@@ -535,7 +535,7 @@ rule_a_200_090_005_01 contains result if {
 #  rule_id: rule_a_200_100_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.general
+#  section: assays.general
 rule_a_200_100_001_01 contains result if {
 	some file_name, sheet in input.assays
 	some _, sample_sheet in input.samples
@@ -561,7 +561,7 @@ rule_a_200_100_001_01 contains result if {
 #  rule_id: rule_a_200_100_001_02
 #  type: WARNING
 #  priority: MEDIUM
-#  section: assay.general
+#  section: assays.general
 rule_a_200_100_001_02 contains result if {
 	some file_name, sheet in input.assays
 	some _, sample_sheet in input.samples
@@ -587,7 +587,7 @@ rule_a_200_100_001_02 contains result if {
 #  rule_id: rule_a_200_200_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.metabolite_identification
+#  section: assays.metabolite_identification
 rule_a_200_200_001_01 contains result if {
 	pattern := `^m_.+\.tsv$`
 	assays[assayFileName]
@@ -616,7 +616,7 @@ rule_a_200_200_001_01 contains result if {
 #  rule_id: rule_a_200_200_001_02
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.metabolite_identification
+#  section: assays.metabolite_identification
 rule_a_200_200_001_02 contains result if {
 	pattern := `^m_.+\.tsv$`
 	assays[assayFileName]
@@ -650,7 +650,7 @@ rule_a_200_200_001_02 contains result if {
 #  rule_id: rule_a_200_300_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.mass_spectrometry
+#  section: assays.mass_spectrometry
 rule_a_200_300_001_01 contains result if {
 	some file_name, sheet in input.assays
 	sheet.assayTechnique.mainTechnique == "MS"
@@ -687,7 +687,7 @@ rule_a_200_300_001_01 contains result if {
 #  rule_id: rule_a_200_300_001_02
 #  type: WARNING
 #  priority: HIGH
-#  section: assay.mass_spectrometry
+#  section: assays.mass_spectrometry
 rule_a_200_300_001_02 contains result if {
 	some file_name, sheet in input.assays
 	sheet.assayTechnique.mainTechnique == "MS"
@@ -725,7 +725,7 @@ rule_a_200_300_001_02 contains result if {
 #  rule_id: rule_a_200_300_001_03
 #  type: ERROR
 #  priority: HIGH
-#  section: assay.mass_spectrometry
+#  section: assays.mass_spectrometry
 rule_a_200_300_001_03 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -752,7 +752,7 @@ rule_a_200_300_001_03 contains result if {
 #  rule_id: rule_a_200_300_002_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assay.mass_spectrometry
+#  section: assays.mass_spectrometry
 rule_a_200_300_002_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -771,13 +771,13 @@ rule_a_200_300_002_01 contains result if {
 }
 
 # METADATA
-# title: Derived Spectral Data Files, Acquisition Parameter Data File and Free Induction Decay Data File values are empty in NMR assay.
+# title: Derived Spectral Data Files, Acquisition Parameter Data File and Free Induction Decay Data File values are empty in NMR assays.
 # description: At least one file should be defined in Derived Spectral Data Files, Free Induction Decay Data File or Acquisition Parameter Data File columns.
 # custom:
 #  rule_id: rule_a_200_400_001_01
 #  type: ERROR
 #  priority: CRITICAL
-#  section: assay.nmr_assay
+#  section: assays.nmr_assay
 rule_a_200_400_001_01 contains result if {
 	some file_name, sheet in input.assays
 	sheet.assayTechnique.mainTechnique == "NMR"
@@ -814,7 +814,7 @@ rule_a_200_400_001_01 contains result if {
 #  rule_id: rule_a_200_400_002_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assay.nmr_assay
+#  section: assays.nmr_assay
 rule_a_200_400_002_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
@@ -833,13 +833,13 @@ rule_a_200_400_002_01 contains result if {
 }
 
 # METADATA
-# title: File extension is not correct in Derived Spectral Data File column.
-# description: Derived Spectral Data File extension should be in control list.
+# title: Values for Derived Spectral Data File column not correct extension in assay file.
+# description: All Derived Spectral Data File column values should have extension found in control list.
 # custom:
-#  rule_id: rule_a_200_100_002_01
-#  type: WARNING
+#  rule_id: rule_a_200_500_001_01
+#  type: ERROR
 #  priority: HIGH
-#  section: assay.general
+#  section: assays.data_transformation
 rule_a_200_500_001_01 contains result if {
 	some file_name, sheet in input.assays
 	some _, sample_sheet in input.samples
@@ -868,22 +868,27 @@ rule_a_200_500_001_01 contains result if {
 #  rule_id: rule_a_200_600_001_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assay.chromatography
+#  section: assays.chromatography
 rule_a_200_600_001_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
-	header.columnCategory == "Parameter Value"
 	header.columnHeader == "Parameter Value[Column type]"
 	column_name := header.columnName
-	# print(header.columnHeader)
+	column_types = {x |
+		some x in sheet.table.data[column_name]
+	}
+
+	count(column_types) == 1
+	some column_type_name in column_types
+	count(column_type_name) > 0
 	techniques := {technique |
 		some header_name, items in data.metabolights.validation.v2.controlLists.assayColumns
 		header_name == "Parameter Value[Column type]"
-		some cell in sheet.table.data[column_name]
-		count(cell) > 0
-		some value in items.controlList[0].values
-		value.term == cell
-		some technique in items.controlList[0].techniques
+		some controlList in items.controlList
+		some value in controlList.values
+		column_type_name == value.term
+
+		some technique in controlList.techniques			
 	}
 	count(techniques) == 1
 	values_str := concat(", ", techniques)
@@ -898,41 +903,30 @@ rule_a_200_600_001_01 contains result if {
 #  rule_id: rule_a_200_600_002_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assay.chromatography
+#  section: assays.chromatography
 rule_a_200_600_002_01 contains result if {
 	some file_name, sheet in input.assays
 	some header_index, header in sheet.table.headers
-	header.columnCategory == "Parameter Value"
-	header.columnHeader == "Parameter Value[Column type]"
+	header.columnHeader == "Parameter Value[Scan polarity]"
 	column_name := header.columnName
-	# print(header.columnHeader)
+	scan_polarities = {x |
+		some x in sheet.table.data[column_name]
+	}
+	count(scan_polarities) == 1
+	some scan_polarity in scan_polarities
+	scan_polarity in {"positive", "negative", "alternating"}
+	
 	techniques := {technique |
 		some header_name, items in data.metabolights.validation.v2.controlLists.assayColumns
-		header_name == "Parameter Value[Column type]"
-		some cell in sheet.table.data[column_name]
-		count(cell) > 0
-		some value in items.controlList[0].values
-		value.term == cell
-		some technique in items.controlList[0].techniques
+		header_name == "Parameter Value[Scan polarity]"
+		some controlList in items.controlList
+		some value in controlList.values
+		scan_polarity == value.term
+
+		some technique in controlList.techniques			
 	}
-	count(techniques) == 1
-	
-	values_str := concat(", ", techniques)
-	contains(file_name, values_str)
-	polarities := {polarity |
-		some polarity_column in sheet.table.headers
-		polarity_column.columnHeader == "Parameter Value[Scan polarity]"
-		some polarity in sheet.table.data[polarity_column.columnName]
-		count(polarity) > 0
-	}
-	count(polarities) == 1
+	count(techniques) > 0
+	not contains(file_name, scan_polarity)
 
-	polarity_str := concat(", ", polarities)
-
-	polarity_str in {"positive", "negative", "alternating"}
-
-	not contains(file_name, polarity_str)
-	# print(polarity_str, file_name)
-
-	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Expected scan polarity value in assay filename", polarities)
+	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Expected scan polarity value in assay filename", scan_polarities)
 }

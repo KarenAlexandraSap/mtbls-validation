@@ -18,7 +18,7 @@ import data.metabolights.validation.v2.phase2.definitions as def
 #  rule_id: rule_s_200_090_001_01
 #  type: ERROR
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_001_01 contains result if {
 	some file_name, samples_sheet in input.samples
 	some column_index, column_name in samples_sheet.table.columns
@@ -50,7 +50,7 @@ rule_s_200_090_001_01 contains result if {
 #  rule_id: rule_s_200_090_002_01
 #  type: WARNING
 #  priority: MEDIUM
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_01 contains result if {
 	some file_name, _ in input.samples
 	some column_index, header in input.samples[file_name].table.headers
@@ -69,7 +69,7 @@ rule_s_200_090_002_01 contains result if {
 #  rule_id: rule_s_200_090_002_02
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_02 contains result if {
 	some file_name, sheet in input.samples
 	some column_index, header in sheet.table.headers
@@ -91,7 +91,7 @@ rule_s_200_090_002_02 contains result if {
 #  rule_id: rule_s_200_090_002_03
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_03 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 
@@ -105,7 +105,7 @@ rule_s_200_090_002_03 contains result if {
 #  rule_id: rule_s_200_090_002_04
 #  type: ERROR
 #  priority: MEDIUM
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_04 contains result if {
 	some file_name, sheet in input.samples
 	some header_index, header in sheet.table.headers
@@ -122,7 +122,7 @@ rule_s_200_090_002_04 contains result if {
 #  rule_id: rule_s_200_090_002_05
 #  type: WARNING
 #  priority: MEDIUM
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_05 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	templates := data.metabolights.validation.v2.templates
@@ -140,7 +140,7 @@ rule_s_200_090_002_05 contains result if {
 #  rule_id: rule_s_200_090_002_06
 #  type: WARNING
 #  priority: MEDIUM
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_06 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	result := f.term_source_ref_is_defined_for_empty_unit(rego.metadata.rule(), input.samples, fileName, columnIndex)
@@ -153,7 +153,7 @@ rule_s_200_090_002_06 contains result if {
 #  rule_id: rule_s_200_090_002_07
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_07 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	templates := data.metabolights.validation.v2.templates
@@ -171,7 +171,7 @@ rule_s_200_090_002_07 contains result if {
 #  rule_id: rule_s_200_090_002_08
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_002_08 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	templates := data.metabolights.validation.v2.templates
@@ -189,7 +189,7 @@ rule_s_200_090_002_08 contains result if {
 #  rule_id: rule_s_200_090_003_01
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_003_01 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	result := f.accession_number_min_length_check_for_term(rego.metadata.rule(), input.samples, fileName, columnIndex, 3)
@@ -202,7 +202,7 @@ rule_s_200_090_003_01 contains result if {
 #  rule_id: rule_s_200_090_003_02
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_003_02 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	result := f.accession_number_min_length_check_for_unit(rego.metadata.rule(), input.samples, fileName, columnIndex, 3)
@@ -215,7 +215,7 @@ rule_s_200_090_003_02 contains result if {
 #  rule_id: rule_s_200_090_003_03
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_003_03 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	result := f.accession_number_is_defined_for_empty_term(rego.metadata.rule(), input.samples, fileName, columnIndex)
@@ -228,7 +228,7 @@ rule_s_200_090_003_03 contains result if {
 #  rule_id: rule_s_200_090_003_04
 #  type: WARNING
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_003_04 contains result if {
 	input.samples[fileName].table.headers[columnIndex]
 	result := f.accession_number_is_defined_for_empty_unit(rego.metadata.rule(), input.samples, fileName, columnIndex)
@@ -241,7 +241,7 @@ rule_s_200_090_003_04 contains result if {
 #  rule_id: rule_s_200_090_004_01
 #  type: ERROR
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_004_01 contains result if {
 	some file_name, _ in input.samples
 	row_offset := input.samples[file_name].table.rowOffset
@@ -268,7 +268,7 @@ rule_s_200_090_004_01 contains result if {
 #  rule_id: rule_s_200_090_004_02
 #  type: ERROR
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_004_02 contains result if {
 	some file_name, _ in input.samples
 	some _, template in data.metabolights.validation.v2.templates.sampleFileHeaderTemplates
@@ -293,7 +293,7 @@ rule_s_200_090_004_02 contains result if {
 #  rule_id: rule_s_200_090_004_03
 #  type: ERROR
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_004_03 contains result if {
 	some file_name, _ in input.samples
 	some _, template in data.metabolights.validation.v2.templates.sampleFileHeaderTemplates
@@ -317,7 +317,7 @@ rule_s_200_090_004_03 contains result if {
 #  rule_id: rule_s_200_090_005_01
 #  type: ERROR
 #  priority: HIGH
-#  section: sample.general
+#  section: samples.general
 rule_s_200_090_005_01 contains result if {
 	file_column_header := "Protocol REF"
 	some file_name, sheet in input.samples

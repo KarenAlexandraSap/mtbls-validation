@@ -20,7 +20,7 @@ import rego.v1
 #  rule_id: rule_m_300_090_001_01
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_300_090_001_01 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some column_index, column_name in sheet.table.columns
@@ -46,7 +46,7 @@ rule_m_300_090_001_01 contains result if {
 #  rule_id: rule_m_300_090_005_01
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_300_090_005_01 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 
@@ -73,7 +73,7 @@ rule_m_300_090_005_01 contains result if {
 #  rule_id: rule_m_300_090_005_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_300_090_005_02 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
@@ -99,7 +99,7 @@ rule_m_300_090_005_02 contains result if {
 #  rule_id: rule_m_300_090_005_03
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.general
+#  section: metabolites.general
 rule_m_300_090_005_03 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
@@ -125,7 +125,7 @@ rule_m_300_090_005_03 contains result if {
 #  rule_id: rule_m_300_100_001_01
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.lcms
+#  section: metabolites.lcms
 rule_m_300_100_001_01 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
@@ -150,7 +150,7 @@ rule_m_300_100_001_01 contains result if {
 #  rule_id: rule_m_300_100_001_02
 #  type: ERROR
 #  priority: HIGH
-#  section: assignment.lcms
+#  section: metabolites.lcms
 rule_m_300_100_001_02 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
@@ -181,7 +181,7 @@ rule_m_300_100_001_02 contains result if {
 #  rule_id: rule_m_300_100_001_03
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.lcms
+#  section: metabolites.lcms
 rule_m_300_100_001_03 contains result if {
 	pattern := `^[0-9]*(\.[0-9]+)?(\|[0-9]*(\.[0-9]+)?)*$`
 
@@ -207,7 +207,7 @@ rule_m_300_100_001_03 contains result if {
 #  rule_id: rule_m_300_200_001_01
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.nmr
+#  section: metabolites.nmr
 rule_m_300_200_001_01 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
@@ -231,7 +231,7 @@ rule_m_300_200_001_01 contains result if {
 #  rule_id: rule_m_300_200_001_02
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.nmr
+#  section: metabolites.nmr
 rule_m_300_200_001_02 contains result if {
 	pattern := `^[0-9]*(\.[0-9]+)?(\|[0-9]*(\.[0-9]+)?)*$`
 
@@ -257,13 +257,14 @@ rule_m_300_200_001_02 contains result if {
 #  rule_id: rule_m_300_200_001_03
 #  type: WARNING
 #  priority: CRITICAL
-#  section: assignment.nmr
+#  section: metabolites.nmr
 rule_m_300_200_001_03 contains result if {
 	some file_name, sheet in input.metaboliteAssignments
 	some header_index, header in sheet.table.headers
 
 	sheet.assayTechnique.mainTechnique == "NMR"
 	header.columnHeader == "multiplicity"
+
 	values := {sprintf("Row: %v", [j]) |
 		some row, value in sheet.table.data[header.columnName]
 		count(trim_space(value)) == 0

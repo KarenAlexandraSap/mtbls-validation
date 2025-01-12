@@ -22,8 +22,6 @@ rule_f_400_090 contains result if {
 	)
 }
 
-
-
 # METADATA
 # title: Validation summary for FILES folder content errors.
 # description: There is no study FILES folder validation error.
