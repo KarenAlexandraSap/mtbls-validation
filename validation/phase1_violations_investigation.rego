@@ -1428,23 +1428,6 @@ rule_i_100_350_003_01 contains result if {
 }
 
 # METADATA
-# title: Study Protocol Description contains only template message.
-# description: Study Protocol Description should be updated. Do not use template message.
-# custom:
-#  rule_id: rule_i_100_350_003_03
-#  type: ERROR
-#  priority: HIGH
-#  section: investigation.studyProtocols
-rule_i_100_350_003_03 contains result if {
-	some i, j
-	protocol := input.investigation.studies[i].studyProtocols.protocols[j]
-	startswith(lower(protocol.description), "please update")
-	msg := sprintf("Description of study protocol '%v' description starts with template message, protocol index: %v: value: '%v'", [protocol.name, j + 1, protocol.description])
-	source := input.investigationFilePath
-	result := f.format(rego.metadata.rule(), msg, source)
-}
-
-# METADATA
 # title: Non-printable characters in Study Protocol Description.
 # description: Study Protocol Description should contain only printable characters.
 # custom:
@@ -1465,6 +1448,23 @@ rule_i_100_350_003_02 contains result if {
 	count(matches_set) > 0
 	matches_set_str := concat(", ", matches_set)
 	msg := sprintf("Non printible chars in protocol '%v'. Description of study %v: Phrases that contain non accepted characters: '%v'", [protocol.name, input.investigation.studies[i].identifier, matches_set_str])
+	source := input.investigationFilePath
+	result := f.format(rego.metadata.rule(), msg, source)
+}
+
+# METADATA
+# title: Study Protocol Description contains only template message.
+# description: Study Protocol Description should be updated. Do not use template message.
+# custom:
+#  rule_id: rule_i_100_350_003_03
+#  type: ERROR
+#  priority: HIGH
+#  section: investigation.studyProtocols
+rule_i_100_350_003_03 contains result if {
+	some i, j
+	protocol := input.investigation.studies[i].studyProtocols.protocols[j]
+	startswith(lower(protocol.description), "please update")
+	msg := sprintf("Description of study protocol '%v' description starts with template message, protocol index: %v: value: '%v'", [protocol.name, j + 1, protocol.description])
 	source := input.investigationFilePath
 	result := f.format(rego.metadata.rule(), msg, source)
 }
