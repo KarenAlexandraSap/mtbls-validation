@@ -11,7 +11,7 @@
 | 9 | Parameter Value[Column model] | single column |  | True | 5 | - |
 | 10 | Parameter Value[Column type] | single column |  | True | 5 | - |
 | 11 | Parameter Value[Guard column] | single column |  | False | - | - |
-| 12 | Parameter Value[Detector] | single column |  | False | - | - |
+| 12 | Parameter Value[Detector] | single column |  | True | 1 | - |
 | 13 | Parameter Value[Signal range] | single column |  | False | - | - |
 | 14 | Parameter Value[Resolution] | single column |  | False | - | - |
 | 15 | Labeled Extract Name | single column |  | False | - | - |

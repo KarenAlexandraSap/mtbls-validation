@@ -221,7 +221,7 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": false
                 },
                 {
                     "columnCategory": "Parameter",
@@ -235,7 +235,7 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": false
                 },
                 {
                     "columnCategory": "Basic",

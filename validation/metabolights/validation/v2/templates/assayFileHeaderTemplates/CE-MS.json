@@ -35,7 +35,7 @@
                 "defaultValue": null,
                 "maxLength": 0,
                 "minLength": 0,
-                "required": true
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -187,8 +187,8 @@
                 "defaultColumnIndex": 19,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "ONTOLOGY_COLUMN",
@@ -199,8 +199,8 @@
                 "defaultColumnIndex": 22,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",

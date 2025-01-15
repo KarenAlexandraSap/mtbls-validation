@@ -146,8 +146,8 @@
                 "defaultColumnIndex": 15,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -160,8 +160,8 @@
                 "defaultColumnIndex": 16,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
