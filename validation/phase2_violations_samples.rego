@@ -683,8 +683,8 @@ rule_s_200_200_002_01 contains result if {
 }
 
 # METADATA
-# title: Factor value column is empty.
-# description: At least one data should be defined in Factor Value column.
+# title: Factor value column is not complete.
+# description: At least two values should be defined in Factor Value column..
 # custom:
 #  rule_id: rule_s_200_200_002_02
 #  type: ERROR
@@ -700,7 +700,7 @@ rule_s_200_200_002_02 contains result if {
 			some x in sheet.table.data[column_name]
 			count(trim_space(x)) > 0
 		}
-		count(vals) == 0
+		count(vals) < 2
 	}
 	
 	result := f.format_with_values(rego.metadata.rule(), file_name, header.columnIndex + 1, header.columnHeader, violated_values)

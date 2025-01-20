@@ -609,7 +609,7 @@ result := rules.rule_f_400_100_001_01 with input as {
 
 			],
 			"data": {
-				"Sample Name": ["1", "2", "3", "4"],
+				"Sample Name": ["123", "233", "333", "3332"],
 				"Raw Spectral Data File": ["FILES/dataX.raw", "data2-da.raw", "FILES/da_ta3.raw", "FILES/data5A.raw"],
 				"Derived Spectral Data File": ["FILES/derived_data1.raw", "FILES/de$rived_dataX.raw", "FILES/derived_data3.raw", "FILES/derived_data4.raw"],
 				"Free Induction Decay Data File": ["FILES/fid_001.zip", "FILES/fid_0:01.zip", "FILES/fid_00x.zip", "FILES/fid_001.zip"],
@@ -621,7 +621,6 @@ result := rules.rule_f_400_100_001_01 with input as {
 		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}]},
 		"parserMessages": {"s_MTBLS1.txt": []},
 	}
-
 	count(result) == 1
 }
 

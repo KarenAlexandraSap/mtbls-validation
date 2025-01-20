@@ -268,7 +268,7 @@ rule_f_400_090_003_01 contains result if {
 #  priority: HIGH
 #  section: files.general
 rule_f_400_100_001_01 contains result if {
-	pattern := `FILES/.*([isa]_.+\.txt|m_.+\.tsv)$`    
+	pattern := `FILES/(.+/)?([isa]_.+\.txt|m_.+\.tsv)$`    
     violated_values := { file_name | 
 		some file_name, _ in input.studyFolderMetadata.files
         regex.match(pattern, file_name)

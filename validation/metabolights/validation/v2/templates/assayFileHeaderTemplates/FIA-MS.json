@@ -85,6 +85,18 @@
                 "required": true
             },
             {
+                "columnCategory": "Basic",
+                "columnHeader": "Labeled Extract Name",
+                "columnPrefix": "",
+                "columnStructure": "SINGLE_COLUMN",
+                "controlLists": null,
+                "defaultColumnIndex": 7,
+                "defaultValue": null,
+                "maxLength": 0,
+                "minLength": 0,
+                "required": false
+              },
+            {
                 "columnStructure": "ONTOLOGY_COLUMN",
                 "columnCategory": "ontologyColumn",
                 "columnHeader": "Label",

@@ -11,8 +11,8 @@
                     "controlLists": null,
                     "defaultColumnIndex": 0,
                     "defaultValue": null,
-                    "maxLength": 0,
-                    "minLength": 0,
+                    "maxLength": 128,
+                    "minLength": 3,
                     "required": true
                 },
                 {
@@ -87,7 +87,7 @@
                     "defaultColumnIndex": 14,
                     "defaultValue": null,
                     "maxLength": 128,
-                    "minLength": 1,
+                    "minLength": 3,
                     "required": true
                 }
             ],

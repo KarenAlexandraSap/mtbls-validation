@@ -17,8 +17,8 @@
 | 15 | Parameter Value[Scan polarity] | single column |  | True | 1 | - |
 | 16 | Parameter Value[Scan m/z range] | single column |  | True | 1 | - |
 | 17 | Parameter Value[Instrument] | ontology column |  | True | 1 | - |
-| 18 | Parameter Value[Ion source] | ontology column |  | False | 1 | - |
-| 19 | Parameter Value[Mass analyzer] | ontology column |  | False | 1 | - |
+| 18 | Parameter Value[Ion source] | ontology column |  | False | - | - |
+| 19 | Parameter Value[Mass analyzer] | ontology column |  | False | - | - |
 | 20 | MS Assay Name | single column |  | False | - | - |
 | 21 | Raw Spectral Data File | single column |  | False | - | - |
 | 22 | Protocol REF | single column | Data transformation | False | - | - |

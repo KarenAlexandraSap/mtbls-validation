@@ -1520,23 +1520,25 @@ test_rule_s_200_090_004_01_no_violation_01 if {
 		"samples": {"s_MTBLS1.txt": {"table": {
 			"rowOffset": 0, "totalRowCount": 4,
 			"headers": [
+				{"columnCategory": "Basic", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnName": "Source Name",  "columnIndex": 0},
 				{
 					"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]",
-					"columnName": "Characteristics[Organism]", "columnIndex": 0,
+					"columnName": "Characteristics[Organism]", "columnIndex": 1,
 					"additionalColumns": ["Term Source REF", "Term Accession Number"],
 					"controlLists": {"termSourceRef": "prioritisedOrganismRefSources"},
 				},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF", "columnIndex": 1},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number", "columnIndex": 2},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF", "columnIndex": 2},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number", "columnIndex": 3},
 				{
 					"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]",
-					"columnName": "Characteristics[Variant]", "columnIndex": 3,
+					"columnName": "Characteristics[Variant]", "columnIndex": 4,
 					"additionalColumns": ["Term Source REF", "Term Accession Number"],
 				},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF.1", "columnIndex": 4},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number.1", "columnIndex": 5},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF.1", "columnIndex":5},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number.1", "columnIndex": 6},
 			],
 			"columns": [
+				"Source Name",
 				"Characteristics[Organism]",
 				"Term Source REF",
 				"Term Accession Number",
@@ -1545,6 +1547,7 @@ test_rule_s_200_090_004_01_no_violation_01 if {
 				"Term Accession Number.1",
 			],
 			"data": {
+				"Source Name": ["Source 1", "Source 2", "Source 3", "Source 4"],
 				"Characteristics[Organism]": ["samplex", "mus musculus ", "homo sapiens", "sapiens"],
 				"Term Source REF": ["UO", "EFO", "MTBLS", "NCBITaxon"],
 				"Term Accession Number": ["https://", "EFO", "MTBLS", "NCBITaxon"],
@@ -1564,6 +1567,18 @@ test_rule_s_200_090_004_01_no_violation_01 if {
 		with data.metabolights.validation.v2.templates.sampleFileHeaderTemplates as [{
 			"version": "v1.0",
 			"headers": [
+				{
+						"columnStructure": "SINGLE_COLUMN",
+						"columnCategory": "Basic",
+						"columnHeader": "Source Name",
+						"columnPrefix": "",
+						"controlLists": null,
+						"defaultColumnIndex": 0,
+						"defaultValue": null,
+						"maxLength": 128,
+						"minLength": 3,
+						"required": true
+				},
 				{
 					"columnStructure": "ONTOLOGY_COLUMN",
 					"columnCategory": "Characteristics",
@@ -1603,23 +1618,25 @@ test_rule_s_200_090_004_01_violation_01 if {
 		"samples": {"s_MTBLS1.txt": {"table": {
 			"rowOffset": 0, "totalRowCount": 4,
 			"headers": [
+				{"columnCategory": "Basic", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Source Name", "columnName": "Source Name",  "columnIndex": 0},
 				{
 					"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Organism]",
-					"columnName": "Characteristics[Organism]", "columnIndex": 0,
+					"columnName": "Characteristics[Organism]", "columnIndex": 1,
 					"additionalColumns": ["Term Source REF", "Term Accession Number"],
 					"controlLists": {"termSourceRef": "prioritisedOrganismRefSources"},
 				},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF", "columnIndex": 1},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number", "columnIndex": 2},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF", "columnIndex": 2},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number", "columnIndex": 3},
 				{
 					"columnCategory": "Characteristics", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Characteristics[Variant]",
-					"columnName": "Characteristics[Variant]", "columnIndex": 3,
+					"columnName": "Characteristics[Variant]", "columnIndex": 4,
 					"additionalColumns": ["Term Source REF", "Term Accession Number"],
 				},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF.1", "columnIndex": 4},
-				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number.1", "columnIndex": 5},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF.1", "columnIndex": 5},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number.1", "columnIndex": 6},
 			],
 			"columns": [
+				"Source Name",
 				"Characteristics[Organism]",
 				"Term Source REF",
 				"Term Accession Number",
@@ -1628,6 +1645,7 @@ test_rule_s_200_090_004_01_violation_01 if {
 				"Term Accession Number.1",
 			],
 			"data": {
+				"Source Name": ["1xx", "122", "", ""],
 				"Characteristics[Organism]": ["1", "2 ", "", ""],
 				"Term Source REF": ["UO", "EFO", "", " "],
 				"Term Accession Number": ["UOO", "EFO", "MTBLS", "NCBITaxon"],
@@ -1647,6 +1665,18 @@ test_rule_s_200_090_004_01_violation_01 if {
 		with data.metabolights.validation.v2.templates.sampleFileHeaderTemplates as [{
 			"version": "v1.0",
 			"headers": [
+				{
+						"columnStructure": "SINGLE_COLUMN",
+						"columnCategory": "Basic",
+						"columnHeader": "Source Name",
+						"columnPrefix": "",
+						"controlLists": null,
+						"defaultColumnIndex": 0,
+						"defaultValue": null,
+						"maxLength": 128,
+						"minLength": 3,
+						"required": true
+				},
 				{
 					"columnStructure": "ONTOLOGY_COLUMN",
 					"columnCategory": "Characteristics",
@@ -1673,8 +1703,7 @@ test_rule_s_200_090_004_01_violation_01 if {
 				},
 			],
 		}]
-
-	count(result) == 1
+	count(result) == 2
 }
 
 #########################################################################################################
@@ -4244,6 +4273,52 @@ test_rule_s_200_200_002_02_violation_01 if {
 			],
 			"data": {
 				"Factor Value[Organism]": ["", "", "", ""],
+				"Term Source REF": ["", "", "", " "],
+				"Term Accession Number": ["UOO", "EFO", "MTBLS", "NCBITaxon"],
+				"Sample Name": ["Sample 1", "Sample 2", "Sample 3", "Sample 4"],
+			},
+		}}},
+		"investigation": {"studies": [{"fileName": "s_MTBLS1.txt"}], "ontologySourceReferences": {"references": [
+			{"sourceName": "EFO"},
+			{"sourceName": "UO"},
+			{"sourceName": "MTBLS"},
+			{"sourceName": "NCBITaxon"},
+		]}},
+		"parserMessages": {"s_MTBLS1.txt": []},
+	}
+	
+	count(result) == 1
+}
+
+
+# METADATA
+# title: Term Source REFs of the factor ontology term is not in the prioritised control list.
+# description: Term Source REFs of the factor ontology term is not in the prioritised control list.
+test_rule_s_200_200_002_02_violation_02 if {
+	result := rules.rule_s_200_200_002_02 with input as {
+		"investigationFilePath": "i_Investigation.txt",
+		"assays": {"a_x.txt": {"sampleNames": ["Sample 1", "Sample 1 ", "Sample 3", "Sample 5"]}},
+		"samples": {"s_MTBLS1.txt": {"sampleNames": ["Sample 1", "Sample 1 ", "Sample 3", "Sample 2"], "table": {
+			"rowOffset": 0, "totalRowCount": 4,
+			"headers": [
+				{
+					"columnCategory": "Factor Value", "columnStructure": "ONTOLOGY_COLUMN", "columnHeader": "Factor Value[Organism]",
+					"columnName": "Factor Value[Organism]", "columnIndex": 0,
+					"additionalColumns": ["Term Source REF", "Term Accession Number"],
+					"controlLists": {"termSourceRef": "prioritisedOrganismRefSources"},
+				},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Source REF", "columnName": "Term Source REF", "columnIndex": 1},
+				{"columnCategory": "", "columnStructure": "LINKED_COLUMN", "columnHeader": "Term Accession Number", "columnName": "Term Accession Number", "columnIndex": 2},
+				{"columnCategory": "", "columnStructure": "SINGLE_COLUMN", "columnHeader": "Sample Name", "columnName": "Sample Name", "columnIndex": 6},
+			],
+			"columns": [
+				"Factor Value[Organism]",
+				"Term Source REF",
+				"Term Accession Number",
+				"Sample Name",
+			],
+			"data": {
+				"Factor Value[Organism]": ["Sample", "", "", ""],
 				"Term Source REF": ["", "", "", " "],
 				"Term Accession Number": ["UOO", "EFO", "MTBLS", "NCBITaxon"],
 				"Sample Name": ["Sample 1", "Sample 2", "Sample 3", "Sample 4"],

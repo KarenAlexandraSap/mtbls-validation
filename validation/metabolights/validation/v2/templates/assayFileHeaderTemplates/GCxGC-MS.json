@@ -244,7 +244,7 @@
                     "defaultColumnIndex": 25,
                     "defaultValue": null,
                     "maxLength": 0,
-                    "minLength": 1,
+                    "minLength": 0,
                     "required": false
                 },
                 {
@@ -258,7 +258,7 @@
                     "defaultColumnIndex": 28,
                     "defaultValue": null,
                     "maxLength": 0,
-                    "minLength": 1,
+                    "minLength": 0,
                     "required": false
                 },
                 {
