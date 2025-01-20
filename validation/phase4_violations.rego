@@ -415,3 +415,44 @@ rule_f_400_100_001_06 contains result if {
     
     result := f.format_with_file_description_and_values(rego.metadata.rule(), "FILES", ".wiff files without wiff.scan pair",violated_values)}
 
+
+
+# METADATA
+# title: Unexpected files / folders within study root folder.
+# description: Only reference metadata files and FILES folder are allowed within study root folder. Sample and assay files must be referenced in i_Investigation.txt. All metabolite Assignment files must be referenced in assay files. Multiple investigation files and all other files are not allowed.
+# custom:
+#  rule_id: rule_f_400_100_001_07
+#  type: ERROR
+#  priority: CRITICAL
+#  section: files.general
+rule_f_400_100_001_07 contains result if {
+    metadata_files := { file_name | 
+		some file_name, _ in input.studyFolderMetadata.files
+        not startswith(file_name, "FILES")
+	}
+    study_folders := { file_name | 
+		some file_name, _ in input.studyFolderMetadata.folders
+        not startswith(file_name, "FILES")
+	}
+    referenced_sample_files := { x |
+		some _, study in input.investigation.studies
+		x := study.fileName
+	}
+	referenced_assay_files := { x |
+		some _, study in input.investigation.studies
+		some _, assay in study.studyAssays.assays
+		x := assay.fileName
+	}
+	referenced_maf_files := { x |
+		some _, assay in input.assays
+		some x in assay.referencedAssignmentFiles
+	}
+    investigation_files = {input.investigationFilePath}
+    all_referenced_files = referenced_sample_files | referenced_assay_files | referenced_maf_files | investigation_files
+    all_files = metadata_files | study_folders
+	extra_files = all_files - all_referenced_files
+
+    count(extra_files) > 0
+
+    result := f.format_with_file_and_values(rego.metadata.rule(), "FILES", extra_files)
+}

@@ -26,5 +26,5 @@
 | 24 | rule_m_300_100_001_02 | ERROR | retention_time column has empty values in metabolite assignment file. | All 'retention_time' column values should be defined in metabolite assignment file for LC-MS / GC-MS. |
 | 25 | rule_m_300_100_001_03 | WARNING | Some retention_time column values are not numeric in metabolite assignment file. | All 'retention_time' column values should be numeric. |
 | 26 | rule_m_300_200_001_01 | WARNING | Values for chemical_shift column not in metabolite assignment file. | All 'chemical_shift' column values should be defined in metabolite assignment file. |
-| 27 | rule_m_300_200_001_02 | WARNING | Values for chemical_shift column not numeric in metabolite assignment file. | All 'chemical_shift' column values should be numeric. |
-| 28 | rule_m_300_200_001_03 | WARNING | Values for multiplicity column not in metabolite assignment file. | All 'multiplicity' column values should be defined in metabolite assignment file. |
+| 27 | rule_m_300_200_001_02 | WARNING | Values for chemical_shift column not numeric in metabolite assignment file for NMR assays. | All 'chemical_shift' column values should be numeric for NMR assays. |
+| 28 | rule_m_300_200_001_03 | WARNING | Values for multiplicity column not in metabolite assignment file for NMR assays. | All 'multiplicity' column values should be defined in metabolite assignment file for NMR assays. |

@@ -20,7 +20,7 @@
 | 18 | rule_s_100_100_001_10 | ERROR | Order of factor column header is not correct in sample file. | Order of factor column header is not correct in sample file. All factor columns should be defined after Sample Name column. |
 | 19 | rule_s_100_100_001_11 | ERROR | Column header structure is not correct in sample file. | Column header structure is not correct in sample file. Any ontology and unit column should have the leading columns, Term Source REF and Term Accession Number. Single columns must not have leading columns. |
 | 20 | rule_s_100_100_001_12 | ERROR | Factor Value column structure is not correct in sample file. | Factor Value column structure should be ontology (with Term Source REF and Term Accession Number) or a value with unit (and Term Source REF and Term Accession Number) in sample file. |
-| 21 | rule_s_100_100_001_13 | ERROR | Additional characteristics column structure is not correct in sample file. | Additional characteristics column structure should be ontology in sample file. |
+| 21 | rule_s_100_100_001_13 | ERROR | Additional characteristics column structure is not correct in sample file. | Additional characteristics column structure should be ontology (with Term Source REF and Term Accession Number) or a value with unit (and Term Source REF and Term Accession Number) in sample file. |
 | 22 | rule_s_100_100_001_14 | ERROR | Multiple Characteristics / Factor Value columns with same header are not allowed in sample file. | Characteristics and Factor Value column headers should be unique in sample file. |
 | 23 | rule_s_100_100_001_15 | ERROR | Missing Factor Value columns in sample file. | There should be a Factor Value column in sample file for each study factor. |
 | 24 | rule_s_100_100_001_16 | ERROR | Unexpected Factor Value columns in sample file. | There should be a study factor for each Factor Value column in sample file. |
@@ -54,5 +54,5 @@
 | 52 | rule_s_200_200_001_01 | ERROR | Sample name values are not unique in sample file. | All sample names should be unique in sample file. |
 | 53 | rule_s_200_200_001_02 | ERROR | Values for Sample Name column not in any assay file. | Each sample name should be referenced at least one time in assay files. |
 | 54 | rule_s_200_200_002_01 | WARNING | There are empty values in factor column. | Factor values should be set for each row. |
-| 55 | rule_s_200_200_002_02 | ERROR | Factor value column is empty. | At least one data should be defined in Factor Value column. |
+| 55 | rule_s_200_200_002_02 | ERROR | Factor value column is not complete. | At least two values should be defined in Factor Value column. |
 | 56 | rule_s_200_200_003_01 | WARNING | Term Source REFs of the factor ontology term is not in the prioritised control list. | We highly recommend to use the prioritised Ontology Source Refs for the factor ontology term. |

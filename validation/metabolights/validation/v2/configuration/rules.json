@@ -1,7 +1,7 @@
 {
     "rules": {
-        "validation_version": "2.0.10",
-        "created_at": "2025-01-20T11:17:29.675846+00:00",
+        "validation_version": "2.0.11",
+        "created_at": "2025-01-20T12:56:51.797248+00:00",
         "violations": [
             {
                 "rule_id": "rule___100_100_001_01",
@@ -350,14 +350,14 @@
             {
                 "rule_id": "rule_a_100_100_001_10",
                 "title": "Column header name defined in template is not unique in assay file.",
-                "description": "Default column header name (except Data File columns) should be unique in assay file.",
+                "description": "Default column header name (except Data File and Protocol REF columns) should be unique in assay file.",
                 "type": "WARNING",
                 "section": "assays",
                 "priority": "HIGH"
             },
             {
                 "rule_id": "rule_a_100_100_001_11",
-                "title": "Assay Parameter Values names not in investigation file.",
+                "title": "Assay Parameter Value names not in investigation file.",
                 "description": "Assay Parameter Value names must be referenced in i_Investigation.txt.",
                 "type": "ERROR",
                 "section": "assays",
@@ -778,6 +778,14 @@
                 "type": "ERROR",
                 "section": "files",
                 "priority": "HIGH"
+            },
+            {
+                "rule_id": "rule_f_400_100_001_07",
+                "title": "Unexpected files / folders within study root folder.",
+                "description": "Only reference metadata files and FILES folder are allowed within study root folder. Sample and assay files must be referenced in i_Investigation.txt. All metabolite Assignment files must be referenced in assay files. Multiple investigation files and all other files are not allowed.",
+                "type": "ERROR",
+                "section": "files",
+                "priority": "CRITICAL"
             },
             {
                 "rule_id": "rule_i_100_100_001_01",
@@ -1573,16 +1581,16 @@
             },
             {
                 "rule_id": "rule_m_300_200_001_02",
-                "title": "Values for chemical_shift column not numeric in metabolite assignment file.",
-                "description": "All 'chemical_shift' column values should be numeric.",
+                "title": "Values for chemical_shift column not numeric in metabolite assignment file for NMR assays.",
+                "description": "All 'chemical_shift' column values should be numeric for NMR assays.",
                 "type": "WARNING",
                 "section": "metabolites",
                 "priority": "CRITICAL"
             },
             {
                 "rule_id": "rule_m_300_200_001_03",
-                "title": "Values for multiplicity column not in metabolite assignment file.",
-                "description": "All 'multiplicity' column values should be defined in metabolite assignment file.",
+                "title": "Values for multiplicity column not in metabolite assignment file for NMR assays.",
+                "description": "All 'multiplicity' column values should be defined in metabolite assignment file for NMR assays.",
                 "type": "WARNING",
                 "section": "metabolites",
                 "priority": "CRITICAL"
@@ -1686,7 +1694,7 @@
             {
                 "rule_id": "rule_s_100_100_001_13",
                 "title": "Additional characteristics column structure is not correct in sample file.",
-                "description": "Additional characteristics column structure should be ontology in sample file.",
+                "description": "Additional characteristics column structure should be ontology (with Term Source REF and Term Accession Number) or a value with unit (and Term Source REF and Term Accession Number) in sample file.",
                 "type": "ERROR",
                 "section": "samples",
                 "priority": "CRITICAL"
@@ -1957,8 +1965,8 @@
             },
             {
                 "rule_id": "rule_s_200_200_002_02",
-                "title": "Factor value column is empty.",
-                "description": "At least one data should be defined in Factor Value column.",
+                "title": "Factor value column is not complete.",
+                "description": "At least two values should be defined in Factor Value column.",
                 "type": "ERROR",
                 "section": "samples",
                 "priority": "HIGH"

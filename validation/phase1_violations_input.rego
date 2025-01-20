@@ -143,7 +143,6 @@ rule___100_100_100_06 contains result if {
 		startswith(file, "i_")
 	}
 	extra_files = all_files - referenced_files
-	print(extra_files)
 	count(extra_files) > 0
 	some file_name in extra_files
 

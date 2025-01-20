@@ -276,7 +276,7 @@ rule_a_100_100_001_10 contains result if {
 
 
 # METADATA
-# title: Assay Parameter Values names not in investigation file.
+# title: Assay Parameter Value names not in investigation file.
 # description: Assay Parameter Value names must be referenced in i_Investigation.txt.
 # custom:
 #  rule_id: rule_a_100_100_001_11

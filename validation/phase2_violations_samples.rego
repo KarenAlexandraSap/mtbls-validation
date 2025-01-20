@@ -684,7 +684,7 @@ rule_s_200_200_002_01 contains result if {
 
 # METADATA
 # title: Factor value column is not complete.
-# description: At least two values should be defined in Factor Value column..
+# description: At least two values should be defined in Factor Value column.
 # custom:
 #  rule_id: rule_s_200_200_002_02
 #  type: ERROR

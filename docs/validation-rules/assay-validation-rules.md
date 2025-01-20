@@ -19,8 +19,8 @@
 | 17 | rule_a_100_100_001_07 | ERROR | Empty columns in assay file. | Empty columns must not exist in assay file. All column headers should be defined. |
 | 18 | rule_a_100_100_001_08 | ERROR | Order of default column header is not correct in assay file. | Order of default column header is not correct in assay file. |
 | 19 | rule_a_100_100_001_09 | WARNING | Multiple Parameter Value columns with same header are not allowed in assay file. | Parameter Value column headers should be unique in assay file. |
-| 20 | rule_a_100_100_001_10 | WARNING | Column header name defined in template is not unique in assay file. | Default column header name (except Data File columns) should be unique in assay file. |
-| 21 | rule_a_100_100_001_11 | ERROR | Assay Parameter Values names not in investigation file. | Assay Parameter Value names must be referenced in i_Investigation.txt. |
+| 20 | rule_a_100_100_001_10 | WARNING | Column header name defined in template is not unique in assay file. | Default column header name (except Data File and Protocol REF columns) should be unique in assay file. |
+| 21 | rule_a_100_100_001_11 | ERROR | Assay Parameter Value names not in investigation file. | Assay Parameter Value names must be referenced in i_Investigation.txt. |
 | 22 | rule_a_100_100_002_01 | ERROR | Assay file not referenced in investigation file. | Assay file must be referenced in i_Investigation.txt. |
 | 23 | rule_a_100_100_005_01 | ERROR | There is no row in assay file. | No row is defined in assay file. Add more than one row (run). Please ensure all xxx, including controls, QCs, standards, etc, are referenced. |
 | 24 | rule_a_100_100_005_02 | ERROR | There is only one row in assay file. | Only one row is defined in assay file. Add more than one row (run). Please ensure all xxx, including controls, QCs, standards, etc, are referenced. |

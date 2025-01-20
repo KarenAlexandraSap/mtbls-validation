@@ -225,8 +225,8 @@ rule_m_300_200_001_01 contains result if {
 }
 
 # METADATA
-# title: Values for chemical_shift column not numeric in metabolite assignment file.
-# description: All 'chemical_shift' column values should be numeric.
+# title: Values for chemical_shift column not numeric in metabolite assignment file for NMR assays.
+# description: All 'chemical_shift' column values should be numeric for NMR assays.
 # custom:
 #  rule_id: rule_m_300_200_001_02
 #  type: WARNING
@@ -251,8 +251,8 @@ rule_m_300_200_001_02 contains result if {
 }
 
 # METADATA
-# title: Values for multiplicity column not in metabolite assignment file.
-# description: All 'multiplicity' column values should be defined in metabolite assignment file.
+# title: Values for multiplicity column not in metabolite assignment file for NMR assays.
+# description: All 'multiplicity' column values should be defined in metabolite assignment file for NMR assays.
 # custom:
 #  rule_id: rule_m_300_200_001_03
 #  type: WARNING
