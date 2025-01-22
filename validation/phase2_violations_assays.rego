@@ -600,6 +600,7 @@ rule_a_200_200_001_01 contains result if {
 	violatedValues := [x |
 		some j
 		value := assays[assayFileName].table.data[columnName][j]
+		count(value) > 0
 		not regex.match(pattern, value)
 		x := sprintf("[row: %03v, name: '%v']", [(rowOffset + j) + 1, value])
 	]

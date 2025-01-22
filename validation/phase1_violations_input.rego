@@ -120,6 +120,7 @@ rule___100_100_100_04 contains result if {
 #  section: investigation.parserMessages
 rule___100_100_100_05 contains result if {
 	template_file_name := data.metabolights.validation.v2.configuration.investigationFileName
+	input.parserMessages
 	not input.parserMessages[template_file_name]
 
 	msg := sprintf("There is no parser information for '%v' in input data", [template_file_name])

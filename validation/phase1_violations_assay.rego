@@ -79,12 +79,12 @@ rule_a_100_100_001_03 contains result if {
 #  priority: CRITICAL
 #  section: assays.columns
 rule_a_100_100_001_04 contains result if {
-	some file_name, _ in input.assays
+	some file_name, assay in input.assays
 
-	headers := {x | some j; x := input.assays[i].table.headers[j]}
+	# headers := {x | some header in assay.table.headers}
 	def := data.metabolights.validation.v2.phase1.definitions 
 	values := {sprintf("[column: %v, header: '%v']", [x, y]) |
-		some header in headers
+		some header in assay.headers
 
 		not header.columnHeader in def._DEFAULT_ASSAY_HEADER_NAMES[file_name]
 		header.columnCategory != "Parameter Value"
