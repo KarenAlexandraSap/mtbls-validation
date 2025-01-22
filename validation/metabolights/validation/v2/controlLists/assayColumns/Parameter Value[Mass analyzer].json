@@ -3,7 +3,7 @@
         "controlList": [
             {
                 "techniques": [
-                    "LC-MS", "GC-MS", "DI-MS"
+                    "LC-MS", "GC-MS", "DI-MS", "MSImaging", "CE-MS", "FIA-MS", "GCxGC-MS", "MALDI-MS"
                 ],
                 "columnType": "ONTOLOGY_COLUMN",
                 "values":  [

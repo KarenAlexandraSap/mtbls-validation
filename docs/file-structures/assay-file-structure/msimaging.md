@@ -2,9 +2,9 @@
 |---|--------|-------------------|----------------|----------|------------|------------|
 | 1 | Sample Name | single column |  | True | 1 | - |
 | 2 | Protocol REF | single column | Preparation | True | - | - |
-| 3 | Parameter Value[Sample mounting] | single column |  | False | - | - |
-| 4 | Parameter Value[Sample preservation] | single column |  | False | - | - |
-| 5 | Parameter Value[Tissue modification] | single column |  | False | - | - |
+| 3 | Parameter Value[Sample mounting] | single column |  | True | 1 | - |
+| 4 | Parameter Value[Sample preservation] | single column |  | True | 1 | - |
+| 5 | Parameter Value[Tissue modification] | single column |  | True | 1 | - |
 | 6 | Parameter Value[Sectioning instrument] | single column |  | False | - | - |
 | 7 | Parameter Value[Section thickness] | single column and unit ontology |  | False | - | - |
 | 8 | Parameter Value[Matrix] | single column |  | False | - | - |
@@ -12,7 +12,7 @@
 | 10 | Extract Name | single column |  | False | - | - |
 | 11 | Labeled Extract Name | single column |  | False | - | - |
 | 12 | Protocol REF | single column | Mass spectrometry | True | - | - |
-| 13 | Parameter Value[Scan polarity] | single column |  | True | - | - |
+| 13 | Parameter Value[Scan polarity] | single column |  | True | 1 | - |
 | 14 | Parameter Value[Scan m/z range] | single column |  | True | 1 | - |
 | 15 | Parameter Value[Instrument] | single column |  | True | 1 | - |
 | 16 | Parameter Value[Instrument manufacturer] | single column |  | False | - | - |
@@ -31,29 +31,29 @@
 | 29 | Parameter Value[Detector] | single column |  | False | - | - |
 | 30 | Parameter Value[Detector mode] | single column |  | False | - | - |
 | 31 | Parameter Value[Resolving power] | single column |  | True | 1 | - |
-| 32 | Parameter Value[Resolving power m/z] | single column |  | False | - | - |
+| 32 | Parameter Value[Resolving power m/z] | single column |  | True | 1 | - |
 | 33 | Parameter Value[Native spectrum identifier format] | single column |  | False | - | - |
 | 34 | Parameter Value[Data file content] | single column |  | False | - | - |
 | 35 | Parameter Value[Spectrum representation] | single column |  | False | - | - |
-| 36 | Parameter Value[Raw data file format] | single column |  | True | 1 | - |
-| 37 | Parameter Value[Instrument software] | single column |  | True | 1 | - |
-| 38 | Parameter Value[Instrument software version] | single column |  | True | 1 | - |
+| 36 | Parameter Value[Raw data file format] | single column |  | False | - | - |
+| 37 | Parameter Value[Instrument software] | single column |  | False | - | - |
+| 38 | Parameter Value[Instrument software version] | single column |  | False | - | - |
 | 39 | Parameter Value[Line scan direction] | single column |  | True | 1 | - |
 | 40 | Parameter Value[Linescan sequence] | single column |  | True | 1 | - |
 | 41 | Parameter Value[Scan pattern] | single column |  | True | 1 | - |
 | 42 | Parameter Value[Scan type] | single column |  | True | 1 | - |
-| 43 | Parameter Value[Number of scans] | single column |  | True | 1 | - |
+| 43 | Parameter Value[Number of scans] | single column |  | False | - | - |
 | 44 | MS Assay Name | single column |  | False | - | - |
 | 45 | Raw Spectral Data File | single column |  | False | - | - |
 | 46 | Protocol REF | single column | Histology | True | - | - |
-| 47 | Parameter Value[Stain] | single column |  | True | 1 | - |
-| 48 | Parameter Value[High-res image] | single column |  | True | 1 | - |
-| 49 | Parameter Value[Low-res image] | single column |  | True | 1 | - |
+| 47 | Parameter Value[Stain] | single column |  | False | - | - |
+| 48 | Parameter Value[High-res image] | single column |  | False | - | - |
+| 49 | Parameter Value[Low-res image] | single column |  | False | - | - |
 | 50 | Protocol REF | single column | Data transformation | True | - | - |
 | 51 | Normalization Name | single column |  | False | - | - |
 | 52 | Derived Spectral Data File | single column |  | False | - | - |
-| 53 | Parameter Value[Data Transformation software] | single column |  | True | 1 | - |
-| 54 | Parameter Value[Data Transformation software version] | single column |  | True | 1 | - |
+| 53 | Parameter Value[Data Transformation software] | single column |  | False | - | - |
+| 54 | Parameter Value[Data Transformation software version] | single column |  | False | - | - |
 | 55 | Protocol REF | single column | Metabolite identification | True | - | - |
 | 56 | Data Transformation Name | single column |  | False | - | - |
 | 57 | Metabolite Assignment File | single column |  | True | 1 | - |

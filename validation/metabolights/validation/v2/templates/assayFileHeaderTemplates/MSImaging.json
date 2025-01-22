@@ -34,8 +34,8 @@
                 "defaultColumnIndex": 2,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 0,
-                "required": false
+                "minLength": 1,
+                "required": true
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -46,8 +46,8 @@
                 "defaultColumnIndex": 3,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 0,
-                "required": false
+                "minLength": 1,
+                "required": true
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -58,8 +58,8 @@
                 "defaultColumnIndex": 4,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 0,
-                "required": false
+                "minLength": 1,
+                "required": true
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -154,7 +154,7 @@
                 "defaultColumnIndex": 15,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 0,
+                "minLength": 1,
                 "required": true
             },
             {
@@ -382,8 +382,8 @@
                 "defaultColumnIndex": 49,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 0,
-                "required": false
+                "minLength": 1,
+                "required": true
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -430,8 +430,8 @@
                 "defaultColumnIndex": 53,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -442,8 +442,8 @@
                 "defaultColumnIndex": 54,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -454,8 +454,8 @@
                 "defaultColumnIndex": 55,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -516,8 +516,8 @@
                 "defaultColumnIndex": 60,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -567,8 +567,8 @@
                 "defaultColumnIndex": 64,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -579,8 +579,8 @@
                 "defaultColumnIndex": 65,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -591,8 +591,8 @@
                 "defaultColumnIndex": 66,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -641,8 +641,8 @@
                 "defaultColumnIndex": 70,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },
             {
                 "columnStructure": "SINGLE_COLUMN",
@@ -653,8 +653,8 @@
                 "defaultColumnIndex": 71,
                 "defaultValue": null,
                 "maxLength": 0,
-                "minLength": 1,
-                "required": true
+                "minLength": 0,
+                "required": false
             },            
             {
                 "columnStructure": "SINGLE_COLUMN",
