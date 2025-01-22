@@ -123,24 +123,24 @@ rule_i_100_100 contains result if {
 	)
 }
 
-# METADATA
-# title: Validation summary for Investigation section of i_Investigation.txt.
-# description: There is no error in Investigation section of i_Investigation.txt.
-# custom:
-#  rule_id: rule_i_100_200
-#  section: investigation.investigation
-#  source_file: i_Investigation.txt
-rule_i_100_200 contains result if {
-	meta := rego.metadata.rule()
-	result := f.section_summary_message(
-		data.metabolights.validation.v2.phase1.violations,
-		meta.custom.rule_id,
-		meta.title,
-		meta.description,
-		meta.custom.section,
-		meta.custom.source_file,
-	)
-}
+# # METADATA
+# # title: Validation summary for Investigation section of i_Investigation.txt.
+# # description: There is no error in Investigation section of i_Investigation.txt.
+# # custom:
+# #  rule_id: rule_i_100_200
+# #  section: investigation.investigation
+# #  source_file: i_Investigation.txt
+# rule_i_100_200 contains result if {
+# 	meta := rego.metadata.rule()
+# 	result := f.section_summary_message(
+# 		data.metabolights.validation.v2.phase1.violations,
+# 		meta.custom.rule_id,
+# 		meta.title,
+# 		meta.description,
+# 		meta.custom.section,
+# 		meta.custom.source_file,
+# 	)
+# }
 
 
 # METADATA

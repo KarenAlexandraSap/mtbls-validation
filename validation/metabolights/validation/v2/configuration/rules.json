@@ -1,7 +1,7 @@
 {
     "rules": {
-        "validation_version": "2.0.11",
-        "created_at": "2025-01-20T12:56:51.797248+00:00",
+        "validation_version": "2.0.12",
+        "created_at": "2025-01-22T09:38:45.720287+00:00",
         "violations": [
             {
                 "rule_id": "rule___100_100_001_01",
@@ -802,38 +802,6 @@
                 "type": "WARNING",
                 "section": "investigation",
                 "priority": "HIGH"
-            },
-            {
-                "rule_id": "rule_i_100_200_001_01",
-                "title": "Investigation Title length less than 10 characters.",
-                "description": "Investigation Title should be defined with length equal or greater than 10 characters. Please use same title as first publication.",
-                "type": "WARNING",
-                "section": "investigation",
-                "priority": "MEDIUM"
-            },
-            {
-                "rule_id": "rule_i_100_200_002_01",
-                "title": "Investigation Identifier not valid.",
-                "description": "Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}<positive_number>).",
-                "type": "ERROR",
-                "section": "investigation",
-                "priority": "MEDIUM"
-            },
-            {
-                "rule_id": "rule_i_100_200_003_01",
-                "title": "Investigation Submission Date not valid.",
-                "description": "Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
-                "type": "WARNING",
-                "section": "investigation",
-                "priority": "MEDIUM"
-            },
-            {
-                "rule_id": "rule_i_100_200_004_01",
-                "title": "Investigation Public Release Date not valid.",
-                "description": "Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).",
-                "type": "WARNING",
-                "section": "investigation",
-                "priority": "MEDIUM"
             },
             {
                 "rule_id": "rule_i_100_300_001_01",

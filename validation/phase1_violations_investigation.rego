@@ -70,71 +70,71 @@ rule_i_100_100_002_01 contains result if {
 #########################################################################################################
 #########################################################################################################
 
-# METADATA
-# title: Investigation Title length less than 10 characters.
-# description: Investigation Title should be defined with length equal or greater than 10 characters. Please use same title as first publication.
-# custom:
-#  rule_id: rule_i_100_200_001_01
-#  type: WARNING
-#  priority: MEDIUM
-#  section: investigation.investigation
-rule_i_100_200_001_01 contains result if {
-	count(input.investigation.title) < 25
-	msg := "Investigation title should be defined."
-	source := input.investigationFilePath
-	result := f.format(rego.metadata.rule(), msg, source)
-}
+# # METADATA
+# # title: Investigation Title length less than 10 characters.
+# # description: Investigation Title should be defined with length equal or greater than 10 characters. Please use same title as first publication.
+# # custom:
+# #  rule_id: rule_i_100_200_001_01
+# #  type: WARNING
+# #  priority: MEDIUM
+# #  section: investigation.investigation
+# rule_i_100_200_001_01 contains result if {
+# 	count(input.investigation.title) < 25
+# 	msg := "Investigation title should be defined."
+# 	source := input.investigationFilePath
+# 	result := f.format(rego.metadata.rule(), msg, source)
+# }
 
 
-# METADATA
-# title: Investigation Identifier not valid.
-# description: Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}<positive_number>).
-# custom:
-#  rule_id: rule_i_100_200_002_01
-#  type: ERROR
-#  priority: MEDIUM
-#  section: investigation.investigation
-rule_i_100_200_002_01 contains result if {
-	pattern := `^(MTBLS|REQ)\d{1,20}$`
-	input.investigation.identifier
-	not regex.match(pattern, input.investigation.identifier)
-	msg := sprintf("Investigation identifier '%v' does not match pattern", [input.investigation.identifier])
-	source := input.investigationFilePath
-	result := f.format(rego.metadata.rule(), msg, source)
-}
+# # METADATA
+# # title: Investigation Identifier not valid.
+# # description: Investigation Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}<positive_number>).
+# # custom:
+# #  rule_id: rule_i_100_200_002_01
+# #  type: ERROR
+# #  priority: MEDIUM
+# #  section: investigation.investigation
+# rule_i_100_200_002_01 contains result if {
+# 	pattern := `^(MTBLS|REQ)\d{1,20}$`
+# 	input.investigation.identifier
+# 	not regex.match(pattern, input.investigation.identifier)
+# 	msg := sprintf("Investigation identifier '%v' does not match pattern", [input.investigation.identifier])
+# 	source := input.investigationFilePath
+# 	result := f.format(rego.metadata.rule(), msg, source)
+# }
 
 
-# METADATA
-# title: Investigation Submission Date not valid.
-# description: Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).
-# custom:
-#  rule_id: rule_i_100_200_003_01
-#  type: WARNING
-#  priority: MEDIUM
-#  section: investigation.studies
-rule_i_100_200_003_01 contains result if {
-	not time.parse_ns("2006-01-02", input.investigation.submissionDate)
-	msg := sprintf("Investigation submission date '%v' is not converted to a valid date. Expected ISO8601 (e.g., 2023-01-01) format.", [input.investigation.submissionDate])
-	source := input.investigationFilePath
-	result := f.format(rego.metadata.rule(), msg, source)
-}
+# # METADATA
+# # title: Investigation Submission Date not valid.
+# # description: Investigation Submission Date should be valid date and ISO8601 format (e.g., 2023-01-01).
+# # custom:
+# #  rule_id: rule_i_100_200_003_01
+# #  type: WARNING
+# #  priority: MEDIUM
+# #  section: investigation.studies
+# rule_i_100_200_003_01 contains result if {
+# 	not time.parse_ns("2006-01-02", input.investigation.submissionDate)
+# 	msg := sprintf("Investigation submission date '%v' is not converted to a valid date. Expected ISO8601 (e.g., 2023-01-01) format.", [input.investigation.submissionDate])
+# 	source := input.investigationFilePath
+# 	result := f.format(rego.metadata.rule(), msg, source)
+# }
 
 
-# METADATA
-# title: Investigation Public Release Date not valid.
-# description: Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).
-# custom:
-#  rule_id: rule_i_100_200_004_01
-#  type: WARNING
-#  priority: MEDIUM
-#  section: investigation.studies
-rule_i_100_200_004_01 contains result if {
+# # METADATA
+# # title: Investigation Public Release Date not valid.
+# # description: Investigation Public Release Date should be valid date and ISO8601 format (e.g., 2023-01-01).
+# # custom:
+# #  rule_id: rule_i_100_200_004_01
+# #  type: WARNING
+# #  priority: MEDIUM
+# #  section: investigation.studies
+# rule_i_100_200_004_01 contains result if {
 
-	not time.parse_ns("2006-01-02", input.investigation.publicReleaseDate)
-	msg := sprintf("Investigation public release date '%v' is not converted to a valid date. Expected ISO8601 (e.g., 2023-01-01) format.", [input.investigation.publicReleaseDate])
-	source := input.investigationFilePath
-	result := f.format(rego.metadata.rule(), msg, source)
-}
+# 	not time.parse_ns("2006-01-02", input.investigation.publicReleaseDate)
+# 	msg := sprintf("Investigation public release date '%v' is not converted to a valid date. Expected ISO8601 (e.g., 2023-01-01) format.", [input.investigation.publicReleaseDate])
+# 	source := input.investigationFilePath
+# 	result := f.format(rego.metadata.rule(), msg, source)
+# }
 
 
 #########################################################################################################
