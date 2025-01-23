@@ -6,33 +6,33 @@
         "terms": [        
             {
                 "term": "experimental sample",
-                "term_source_ref": "CHMO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/CHMO_0002746"
+                "termSourceRef": "CHMO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/CHMO_0002746"
             },
             {
                 "term": "pooled quality control sample",
-                "term_source_ref": "MTBLS",
-                "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_001090"
+                "termSourceRef": "MTBLS",
+                "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_001090"
             },
             {
                 "term": "experimental blank",
-                "term_source_ref": "MTBLS",
-                "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000218"
+                "termSourceRef": "MTBLS",
+                "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000218"
             },
             {
                 "term": "solvent blank",
-                "term_source_ref": "MSIO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/MSIO_0000026"
+                "termSourceRef": "MSIO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/MSIO_0000026"
             },
             {
                 "term": "sample preparation blank",
-                "term_source_ref": "MSIO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/MSIO_0000025"
+                "termSourceRef": "MSIO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/MSIO_0000025"
             },
             {
                 "term": "reference compound mix",
-                "term_source_ref": "MSIO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/MSIO_0000024"
+                "termSourceRef": "MSIO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/MSIO_0000024"
             }
     ],
         "ontologies": [

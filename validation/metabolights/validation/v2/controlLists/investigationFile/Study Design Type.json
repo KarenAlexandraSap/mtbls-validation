@@ -6,53 +6,53 @@
         "terms": [
             {
                 "term": "untargeted metabolites",
-                "term_source_ref": "MTBLS",
-                "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000279"
+                "termSourceRef": "MTBLS",
+                "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000279"
             },
             {
                 "term": "targeted metabolites",
-                "term_source_ref": "MTBLS",
-                "term_accession_number": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000272"
+                "termSourceRef": "MTBLS",
+                "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000272"
             },
             {
                 "term": "nuclear magnetic resonance spectroscopy",
-                "term_source_ref": "CHMO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/CHMO_0000591"
+                "termSourceRef": "CHMO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/CHMO_0000591"
             },
             {
                 "term": "ultra-performance liquid chromatography-mass spectrometry",
-                "term_source_ref": "CHMO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/CHMO_0000715"
+                "termSourceRef": "CHMO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/CHMO_0000715"
             },
             {
                 "term": "gas chromatography-mass spectrometry",
-                "term_source_ref": "CHMO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/CHMO_0000497"
+                "termSourceRef": "CHMO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/CHMO_0000497"
             },
             {
                 "term": "tandem mass spectrometry",
-                "term_source_ref": "CHMO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/CHMO_0000575"
+                "termSourceRef": "CHMO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/CHMO_0000575"
             },
             {
                 "term": "Multi-omics study",
-                "term_source_ref": "PRIDE",
-                "term_accession_number": "http://purl.obolibrary.org/obo/PRIDE_0000461"
+                "termSourceRef": "PRIDE",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/PRIDE_0000461"
             },
             {
                 "term": "microbiome",
-                "term_source_ref": "EFO",
-                "term_accession_number": "http://www.ebi.ac.uk/efo/EFO_0004982"
+                "termSourceRef": "EFO",
+                "termAccessionNumber": "http://www.ebi.ac.uk/efo/EFO_0004982"
             },
             {
                 "term": "aging",
-                "term_source_ref": "NCIT",
-                "term_accession_number": "http://purl.obolibrary.org/obo/NCIT_C16269"
+                "termSourceRef": "NCIT",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/NCIT_C16269"
             },
             {
                 "term": "cancer",
-                "term_source_ref": "MONDO",
-                "term_accession_number": "http://purl.obolibrary.org/obo/MONDO_0004992"
+                "termSourceRef": "MONDO",
+                "termAccessionNumber": "http://purl.obolibrary.org/obo/MONDO_0004992"
             }
         ],
         "ontologies": [
