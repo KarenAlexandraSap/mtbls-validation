@@ -299,15 +299,17 @@ rule_f_400_100_001_02 contains result if {
     }
     count(base_names) > 0
 
-    # print(base_names)
     violated_values := { base_name: files |
         some base_name in base_names
-        same_base_name_files := { file |
+        same_base_name_files := [ file |
             some file, file_meta in input.studyFolderMetadata.files
+            not file_meta.baseName in {"fid", "ser", "acqus", "acqus2s"}
             file_meta.baseName == base_name
-        }
+
+        ]
         count(same_base_name_files) > 1
-        files := concat(", ", same_base_name_files)
+        sliced_same_basename_files := array.slice(same_base_name_files, 0, 10)
+        files := concat(", ", sliced_same_basename_files)
     }
     count(violated_values) > 0
 
