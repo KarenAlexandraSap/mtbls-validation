@@ -21,11 +21,11 @@ import data.metabolights.validation.v2.phase1.definitions as def
 #  priority: CRITICAL
 #  section: assays.columns
 rule_a_100_100_001_01 contains result if {
-	some fileName, i
-	header := input.assays[fileName].table.headers
-	header[i].columnStructure == "INVALID_MULTI_COLUMN"
-	msg := sprintf("Assay file '%v': Invalid multi-column structure for '%v'['%v'] at column index '%v'", [fileName, header[i].columnPrefix, header[i].columnHeader, header[i].columnIndex])
-	source := fileName
+	some file_name, assay_file in input.assays
+	some header in assay_file.table.headers
+	header.columnStructure == "INVALID_MULTI_COLUMN"
+	msg := sprintf("Assay file '%v': Invalid multi-column structure for '%v'['%v'] at column index '%v'", [file_name, header.columnPrefix, header.columnHeader, header.columnIndex])
+	source := file_name
 	result := f.format(rego.metadata.rule(), msg, source)
 }
 
@@ -38,11 +38,11 @@ rule_a_100_100_001_01 contains result if {
 #  priority: CRITICAL
 #  section: assays.columns
 rule_a_100_100_001_02 contains result if {
-	some fileName, i
-	header := input.assays[fileName].table.headers
-	header[i].columnStructure == "ADDITIONAL_COLUMN"
-	msg := sprintf("Assay file '%v': Unordered '%v' column ['%v'] at column index '%v'", [fileName, header[i].columnPrefix, header[i].columnHeader, header[i].columnIndex])
-	source := fileName
+	some file_name, assay_file in input.assays
+	some header in assay_file.table.headers
+	header.columnStructure == "ADDITIONAL_COLUMN"
+	msg := sprintf("Assay file '%v': Unordered '%v' column ['%v'] at column index '%v'", [file_name, header.columnPrefix, header.columnHeader, header.columnIndex])
+	source := file_name
 	result := f.format(rego.metadata.rule(), msg, source)
 }
 
@@ -55,10 +55,10 @@ rule_a_100_100_001_02 contains result if {
 #  priority: CRITICAL
 #  section: assays.columns
 rule_a_100_100_001_03 contains result if {
-	some file_name, _ in input.assays
-	some header in input.assays[file_name].table.headers
+	some file_name, assay_file in input.assays
+	some header in assay_file.table.headers
 	def := data.metabolights.validation.v2.phase1.definitions 
-	headers := {x | some j; x := input.assays[file_name].table.headers[j].columnHeader}
+	headers := {x | some j; x := assay_file.table.headers[j].columnHeader}
 	values := [sprintf("['%v']", [x]) |
 		some default_header in def._DEFAULT_ASSAY_HEADERS[file_name].headers
 		# defaults[j].required == true
@@ -79,12 +79,11 @@ rule_a_100_100_001_03 contains result if {
 #  priority: CRITICAL
 #  section: assays.columns
 rule_a_100_100_001_04 contains result if {
-	some file_name, assay in input.assays
+	some file_name, assay_file in input.assays
 
-	# headers := {x | some header in assay.table.headers}
 	def := data.metabolights.validation.v2.phase1.definitions 
 	values := {sprintf("[column: %v, header: '%v']", [x, y]) |
-		some header in assay.headers
+		some header in assay_file.headers
 
 		not header.columnHeader in def._DEFAULT_ASSAY_HEADER_NAMES[file_name]
 		header.columnCategory != "Parameter Value"
@@ -351,11 +350,10 @@ rule_a_100_100_005_01 contains result if {
 #  priority: HIGH
 #  section: assays.rows
 rule_a_100_100_005_02 contains result if {
-	input.assays[fileName].table.rowOffset == 0
-	input.assays[fileName].table.totalRowCount == 1
+	some file_name, assay_file in input.assays
+	assay_file.table.rowOffset == 0
+	assay_file.table.totalRowCount == 1
 
-	msg := sprintf("There is only one row in the file '%v'.", [fileName])
-	sourceFile := fileName
-	# sourceColumnIndex := ""
-	result := f.format(rego.metadata.rule(), msg, sourceFile)
+	msg := sprintf("There is only one row in the file '%v'.", [file_name])
+	result := f.format(rego.metadata.rule(), msg, file_name)
 }

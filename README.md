@@ -14,17 +14,43 @@ MetaboLights validation framework is dynamic and based on [Open Policy Agent](ht
 | 6  | DATA FILES | [Validation Rules](docs/validation-rules/file-validation-rules.md) | | |
 
 
+## Validate your study on local
+Step 1:  Download opa executable from [here](https://www.openpolicyagent.org/docs/latest/#running-opa) 
+
+Step 2: Create Validation Rule bundle
+```
+opa version
+
+git pull https://github.com/EBI-Metabolights/mtbls-validation.git
+cd validation
+rm -f bundle.tar.gz
+opa test . -v
+opa build  --ignore tests --ignore input.json .
+mv bundle.tar.gz ..
+cd ..
+```
+
+Step 3: Install metabolights-utils (>1.4.0)
+```
+pip install --upgrade metabolights-utils --no-cache
+# test mtbls commandline tool
+mtbls --version
+```
+
+Step 4: Create metabolights json data model (input of validation) from local storage
+```
+# First argument is path of study folder, second argument is path of output file
+mtbls model create tests/test-data/MTBLS1 -o ./MTBLS1.json
+```
+
+Step 5: Run validation:
+```
+# update input json file
+opa eval --data bundle.tar.gz 'data.metabolights.validation.v2.report.complete_report.violations' -i ./MTBLS1.json
+```
 
 ## Open Policy Agent Deployment 
 
 ### Development with vscode
 - Install Open Policy Agent extension (tsandall.opa)
-- Download opa executable from [here](https://www.openpolicyagent.org/docs/latest/#running-opa)
 
-
-### Run and test validation
-```
-cd validation
-opa test . -v
-opa build  --ignore tests .
-```
