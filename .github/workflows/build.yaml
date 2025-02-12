@@ -1,0 +1,36 @@
+name: Build application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup OPA
+      uses: open-policy-agent/setup-opa@v2
+      with:
+        version: latest
+    - name: Run OPA Tests
+      run: opa test validation
+    - name: Create bundle
+      run: |
+        cd validation
+        opa build  --ignore tests --ignore input.json -o bundle.tar.gz .
+        cd ..
+    - name: Archive bundle
+      uses: actions/upload-artifact@v4
+      with:
+        name: bundle.tar.gz
+        path: validation/bundle.tar.gz
