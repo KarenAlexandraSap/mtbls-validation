@@ -1,6 +1,6 @@
 # Sample File Prioritised Control Lists Terms
 
-### Characteristics[Organism part] 
+### Characteristics[Organism part]
 
 
 #### Configuration 
@@ -27,7 +27,7 @@
 | 9 | leaf | BTO | http://purl.obolibrary.org/obo/BTO_0000713 |
 | 10 | urine | BTO | http://purl.obolibrary.org/obo/BTO_0001419 |
 
-### Characteristics[Organism] 
+### Characteristics[Organism]
 
 
 #### Configuration 
@@ -54,7 +54,7 @@
 | 9 | reference compound | MSIO | http://purl.obolibrary.org/obo/MSIO_0000023 |
 | 10 | sea water | ENVO | http://purl.obolibrary.org/obo/ENVO_00002149 |
 
-### Characteristics[Sample type] 
+### Characteristics[Sample type]
 
 
 #### Configuration 

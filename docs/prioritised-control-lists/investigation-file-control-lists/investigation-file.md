@@ -1,6 +1,6 @@
 # Investigation File Prioritised Control Lists Terms
 
-### Study Assay Measurement Type 
+### Study Assay Measurement Type
 
 
 #### Configuration 
@@ -20,7 +20,7 @@
 | 2 | targeted metabolite profiling | MSIO | http://purl.obolibrary.org/obo/MSIO_0000100 |
 | 3 | untargeted metabolite profiling | MSIO | http://purl.obolibrary.org/obo/MSIO_0000101 |
 
-### Study Assay Technology Type 
+### Study Assay Technology Type
 
 
 #### Configuration 
@@ -39,7 +39,7 @@
 | 1 | NMR spectroscopy | OBI | http://purl.obolibrary.org/obo/OBI_0000623 |
 | 2 | mass spectrometry | OBI | http://purl.obolibrary.org/obo/OBI_0000470 |
 
-### Study Design Type 
+### Study Design Type
 
 
 #### Configuration 
@@ -66,7 +66,7 @@
 | 9 | ultra-performance liquid chromatography-mass spectrometry | CHMO | http://purl.obolibrary.org/obo/CHMO_0000715 |
 | 10 | untargeted metabolites | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000279 |
 
-### Study Factor Type 
+### Study Factor Type
 
 
 #### Configuration 
@@ -94,7 +94,7 @@
 | 10 | timepoint | EFO | http://www.ebi.ac.uk/efo/EFO_0000724 |
 | 11 | treatment | EFO | http://www.ebi.ac.uk/efo/EFO_0000727 |
 
-### Study Person Roles 
+### Study Person Roles
 
 
 #### Configuration 
@@ -122,7 +122,7 @@
 | 10 | Study Site Investigator | NCIT | http://purl.obolibrary.org/obo/NCIT_C93404 |
 | 11 | Subinvestigator | NCIT | http://purl.obolibrary.org/obo/NCIT_C54622 |
 
-### Study Protocol Components Type 
+### Study Protocol Components Type
 
 
 #### Configuration 
@@ -139,7 +139,7 @@
 | # |Term  | Term Source  | Term Accession |
 |---|------|--------------|----------------|
 
-### Study Protocol Parameter Name 
+### Study Protocol Parameter Name
 
 
 #### Configuration 
@@ -231,7 +231,7 @@
 | 74 | Voxel size |  |  |
 | 75 | Water inhibition pulse sequence name |  |  |
 
-### Study Protocol Type 
+### Study Protocol Type
 
 
 #### Configuration 
@@ -257,7 +257,7 @@
 | 8 | NMR spectroscopy | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_001111 |
 | 9 | Sample collection | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_001100 |
 
-### Study Publication Status 
+### Study Publication Status
 
 
 #### Configuration 

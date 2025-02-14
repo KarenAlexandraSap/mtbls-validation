@@ -11,10 +11,11 @@ class OntologyTerm(BaseModel):
     term: str = ""
 
 
-def create_recommended_assay_control_lists():
+def create_recommended_assay_control_lists() -> OrderedDict[
+    str, OrderedDict[str, list[OntologyTerm]]
+]:
     templates_path = "validation/metabolights/validation/v2/controlLists/assayColumns"
     assay_file_templates = [str(x) for x in Path(f"{templates_path}").glob("*.json")]
-
     recommended_terms_path = "docs/prioritised-control-lists"
     recommended_terms: OrderedDict[str, OrderedDict[str, list[OntologyTerm]]] = (
         OrderedDict()
@@ -69,11 +70,12 @@ def create_recommended_assay_control_lists():
                         f"| {item.term_accession} "
                         "|\n"
                     )
+    return recommended_terms
 
 
 def create_recommended_control_lists(
     templates_path: str, title: str = None, file_name: str = None
-):
+) -> OrderedDict[str, list[OntologyTerm]]:
     field_control_list_path = [str(x) for x in Path(f"{templates_path}").glob("*.json")]
 
     recommended_terms_path = "docs/prioritised-control-lists"
@@ -110,7 +112,7 @@ def create_recommended_control_lists(
         sorted_fields.sort(key=lambda x: x[0])
 
         for name, terms in sorted_fields:
-            fw.write(f"\n### {name} \n\n")
+            fw.write(f"\n### {name}\n\n")
             fw.write("\n#### Configuration \n\n")
             fw.write(
                 "| Parameter | Value  |\n"
@@ -134,9 +136,13 @@ def create_recommended_control_lists(
                     f"| {item.term_accession} "
                     "|\n"
                 )
+    return recommended_terms
 
 
-def create_file_stucture_documentation():
+def create_file_structure_documentation(
+    assay_controlled_terms: OrderedDict[str, OrderedDict[str, list[OntologyTerm]]],
+    sample_controlled_terms: OrderedDict[str, list[OntologyTerm]],
+):
     templates_path = "validation/metabolights/validation/v2/templates"
     sample_file_templates = [f"{templates_path}/sampleFileHeaderTemplates.json"]
     assay_file_templates = [
@@ -172,10 +178,37 @@ def create_file_stucture_documentation():
                 target_path.parent.mkdir(parents=True, exist_ok=True)
                 with target_path.open("w") as f:
                     f.write(
-                        "| # |Header  | Column Structure  | Default Value  | Required | Min Length | Max Length |\n"
-                        "|---|--------|-------------------|----------------|----------|------------|------------|\n"
+                        "| # |Header  | Column Structure  | Default Value  | Required | Min Length | Max Length | Controlled Terms |\n"
+                        "|---|--------|-------------------|----------------|----------|------------|------------|------------------|\n"
                     )
                     for idx, item in enumerate(headers):
+                        header = item["columnHeader"]
+                        controlled_terms = ""
+                        link = ""
+                        if (
+                            header in sample_controlled_terms
+                            and folder == "sample-file-structure"
+                        ):
+                            link = (
+                                header.replace(" ", "-")
+                                .lower()
+                                .replace("]", "")
+                                .replace("[", "")
+                            )
+                            controlled_terms = f"[Controlled Terms](../../../docs/prioritised-control-lists/sample-file-control-lists/sample-file.md#{link})"
+                        elif (
+                            name in assay_controlled_terms
+                            and header in assay_controlled_terms[name]
+                            and folder == "assay-file-structure"
+                        ):
+                            link = (
+                                f"{header} Column".replace(" ", "-")
+                                .lower()
+                                .replace("]", "")
+                                .replace("[", "")
+                            )
+                            controlled_terms = f"[Controlled Terms](../../../docs/prioritised-control-lists/assay-file-control-lists/{doc_file_name}#{link})"
+
                         f.write(
                             f"| {idx + 1} "
                             f"| {item['columnHeader']} "
@@ -184,13 +217,14 @@ def create_file_stucture_documentation():
                             f"| {item['required']} "
                             f"| {item['minLength'] if item['minLength'] > 0 else '-'} "
                             f"| {item['maxLength'] if item['maxLength'] > 0 else '-'} "
+                            f"| {controlled_terms}"
                             "|\n"
                         )
 
 
 if __name__ == "__main__":
-    create_file_stucture_documentation()
-    create_recommended_assay_control_lists()
+    assay_controlled_terms = create_recommended_assay_control_lists()
+
     templates_path = (
         "validation/metabolights/validation/v2/controlLists/investigationFile"
     )
@@ -202,7 +236,7 @@ if __name__ == "__main__":
     templates_path = "validation/metabolights/validation/v2/controlLists/sampleColumns"
     file_name = "sample-file"
     title = "Sample File"
-    create_recommended_control_lists(
+    sample_controlled_terms = create_recommended_control_lists(
         templates_path=templates_path, file_name=file_name, title=title
     )
 
@@ -211,4 +245,9 @@ if __name__ == "__main__":
     title = "Unit Columns"
     create_recommended_control_lists(
         templates_path=templates_path, file_name=file_name, title=title
+    )
+
+    create_file_structure_documentation(
+        assay_controlled_terms=assay_controlled_terms,
+        sample_controlled_terms=sample_controlled_terms,
     )
