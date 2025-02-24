@@ -1,3 +1,5 @@
+# Investigation Validation Rules
+
 | # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |
 |---|---------|-------|--------|-------------|
 | 1 | rule___100_100_100_01 | ERROR | There is a critical file parse error for i_Investigation.txt. | Update i_Investigation.txt file considering error messages. |

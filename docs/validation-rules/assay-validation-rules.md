@@ -1,3 +1,5 @@
+# Assays Validation Rules
+
 | # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |
 |---|---------|-------|--------|-------------|
 | 1 | rule___100_300_001_01 | ERROR | There is a critical file parse error for the assay file. | There is a critical file parse error in the assay file. |

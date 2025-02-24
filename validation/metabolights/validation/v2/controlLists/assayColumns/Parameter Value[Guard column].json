@@ -295,7 +295,7 @@
                         "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_001055"
                     },
                     {
-                        "term": "Z-Guard (0.25 mm x 10 m; Zebron) ",
+                        "term": "Z-Guard (0.25 mm x 10 m; Zebron)",
                         "termSourceRef": "MTBLS",
                         "termAccessionNumber": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_002275"
                     }

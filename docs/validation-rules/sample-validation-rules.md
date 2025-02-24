@@ -1,3 +1,5 @@
+# Samples Validation Rules
+
 | # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |
 |---|---------|-------|--------|-------------|
 | 1 | rule___100_200_001_01 | ERROR | There is a critical file parse error for the sample file. | There is a critical file parse error in the sample file. |
@@ -26,7 +28,7 @@
 | 24 | rule_s_100_100_001_16 | ERROR | Unexpected Factor Value columns in sample file. | There should be a study factor for each Factor Value column in sample file. |
 | 25 | rule_s_100_100_002_01 | ERROR | There is no row in sample file. | No row is defined in sample file. Add more than one row (sample). Please ensure all xxx, including controls, QCs, standards, etc, are referenced. |
 | 26 | rule_s_100_100_002_02 | ERROR | There is only one row in sample file. | Only one row is defined in sample file. Add more than one row (sample). Please ensure all xxx, including controls, QCs, standards, etc, are referenced. |
-| 27 | rule_s_100_100_003_01 | ERROR | Sample file not referenced in investigation file. | Only one sample file is allowed and its name should be 's_<accession number>.txt'. |
+| 27 | rule_s_100_100_003_01 | ERROR | Sample file not referenced in investigation file. | Only one sample file is allowed and its name should be 's_accession_number.txt'. |
 | 28 | rule_s_200_090_001_01 | ERROR | Values with trailing or leading spaces in sample file. | Values in sample file should not start or end with space characters. |
 | 29 | rule_s_200_090_002_01 | WARNING | Ontology Term Source REF of ontology terms not in prioritised control list. | Prioritised ontology Term Source REFs should be used for ontology terms in this column if possible. |
 | 30 | rule_s_200_090_002_02 | WARNING | Ontology Term Source REF of ontology terms not in prioritised default control list. | Prioritised default ontology Term Source REFs should be used for ontology terms in this column if possible. |
@@ -48,7 +50,7 @@
 | 46 | rule_s_200_100_001_02 | ERROR | Organism name not an ontology term. | Organism name in column Characteristics[Organism] should be defined as ontology terms. |
 | 47 | rule_s_200_100_001_03 | WARNING | Organism name should not contain colon (:) characters. | Organism should not contain the actual ontology/taxonomy name, please include just the appropriate taxonomy term. |
 | 48 | rule_s_200_100_002_01 | ERROR | User defined Characteristics column is empty. | At least one value should be defined in Characteristics column. |
-| 49 | rule_s_200_100_002_02 | WARNING | Term Source REF of the user defined characteristics ontology term is not in the priotirised control list. | We highly recommend to use the prioritised ontology Source Refs for the characteristics ontology term. |
+| 49 | rule_s_200_100_002_02 | WARNING | Term Source REF of the user defined characteristics ontology term is not in the prioritised control list. | We highly recommend to use the prioritised ontology Source Refs for the characteristics ontology term. |
 | 50 | rule_s_200_100_002_03 | WARNING | Term Source REF of the user defined characteristics ontology terms is empty | We highly recommend to use the prioritised Ontology Source Refs for the characteristics ontology term. |
 | 51 | rule_s_200_100_002_04 | WARNING | Term Accession Number of the user defined characteristics ontology terms is empty. | We highly recommend to define accession number of the selected term. |
 | 52 | rule_s_200_200_001_01 | ERROR | Sample name values are not unique in sample file. | All sample names should be unique in sample file. |

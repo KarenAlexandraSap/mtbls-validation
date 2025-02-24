@@ -13,7 +13,13 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": true,
+                    "description": "A unique identifier from a particular source (a batch of samples can have a unique Sample name as identified in the Sample table). It’s usually associated with an output spectral data filename.",
+                    "examples": [
+                        "ADG10003u_007",
+                        "Example_1",
+                        "Sample1"
+                    ]
                 },
                 {
                     "columnCategory": "Protocol",
@@ -24,7 +30,11 @@
                     "defaultValue": "Extraction",
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": true
+                    "required": true,
+                    "description": "This is the column marking the start of data pertaining to *Extraction protocol*. The 'Extraction' term MUST be present in all rows of this column.",
+                    "examples": [
+                        "Extraction"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -36,7 +46,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "This how the sample was extracted into a solvent prior to being injected into the analytical instrument of choice.",
+                    "examples": [
+                        "2 ml ethyl acetate"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -48,7 +62,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "If the sample has been subjected to chemical modification prior to injection.",
+                    "examples": [
+                        "sylilation"
+                    ]
                 },
                 {
                     "columnCategory": "Basic",
@@ -60,7 +78,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "This can be, but doesn’t have to be, the same as the ‘Sample Name’.",
+                    "examples": [
+                        "Example_1"
+                    ]
                 },
                 {
                     "columnCategory": "Protocol",
@@ -71,7 +93,11 @@
                     "defaultValue": "Chromatography",
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": true
+                    "required": true,
+                    "description": "This is the column marking the start of data pertaining to *Chromatography protocol*. The 'Chromatography' term MUST be present in all rows of this column.",
+                    "examples": [
+                        "Chromatography"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -85,7 +111,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 5,
-                    "required": true
+                    "required": true,
+                    "description": "Add the full name of the instrument you used for the Chromatographic part of this assay, including the manufacturer and model number as reported in manufacturer’s brochures, user manuals, or on their website.",
+                    "examples": [
+                        "Shimadzu GCMS-QP2010 Ultra"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -97,7 +127,9 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "Add the full name of the autosampler used for the Chromatographic part of this assay, including the manufacturer and model number as reported in manufacturer’s brochures, user manuals or website.",
+                    "examples": []
                 },
                 {
                     "columnCategory": "Parameter",
@@ -109,7 +141,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 5,
-                    "required": true
+                    "required": true,
+                    "description": "Manufacturer, model number and dimensions of the column model.",
+                    "examples": [
+                        "Zebron ZB-AAA GC(10 m x 0.25 mm; Phenomenex)"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -121,7 +157,13 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 5,
-                    "required": true
+                    "required": true,
+                    "description": "Polarity of column used. This information can be found on the manufacturer’s website.",
+                    "examples": [
+                        "low polarity",
+                        "medium polarity",
+                        "high polarity"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -133,7 +175,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "Manufacturer, model number and dimensions in the format shown in the examples.",
+                    "examples": [
+                        "Z-Guard (0.25 mm x 10 m; Zebron)"
+                    ]
                 },
                 {
                     "columnCategory": "Basic",
@@ -145,7 +191,9 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "Leave blank if you don’t have one.",
+                    "examples": []
                 },
                 {
                     "columnCategory": "ontologyColumn",
@@ -158,7 +206,9 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "If you used a chemical or biochemical marker in the sample such as a radioactive isotope of fluorescent dye which is bound to a material in order to make it detectable in an analytical instrument then enter it here.",
+                    "examples": []
                 },
                 {
                     "columnCategory": "Protocol",
@@ -169,7 +219,11 @@
                     "defaultValue": "Mass spectrometry",
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": true
+                    "required": true,
+                    "description": "This is the column marking the start of data pertaining to *Mass spectrometry protocol*. The 'Mass spectrometry' term MUST be present in all rows of this column.",
+                    "examples": [
+                        "Mass spectrometry"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -181,7 +235,12 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": true,
+                    "description": "Values should identical within each assay. If you have ‘positive’ or ‘negative’ values in the same assay then split them into separate ‘positive’ and ‘negative’ assays.",
+                    "examples": [
+                        "positive",
+                        "negative"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -193,7 +252,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": true,
+                    "description": "The range used in the assay.",
+                    "examples": [
+                        "50-400"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -207,7 +270,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 1,
-                    "required": true
+                    "required": true,
+                    "description": "Add the full name of the mass spectrometer/detector you used for this LC/MS assay, including the instrument manufacturer and model number as reported in manufacturer’s brochures, user manuals, or on their website.",
+                    "examples": [
+                        "Thermo Electron Trace DSQ"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -221,7 +288,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "Where applicable to the instrument.",
+                    "examples": [
+                        "electron ionization"
+                    ]
                 },
                 {
                     "columnCategory": "Parameter",
@@ -235,7 +306,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "The analyser/detector of the mass fragments generated during the assay.",
+                    "examples": [
+                        "quadrupole"
+                    ]
                 },
                 {
                     "columnCategory": "Basic",
@@ -247,7 +322,13 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "This can be, but doesn’t have to be, the same as the ‘Sample Name’",
+                    "examples": [
+                        "Assay_1",
+                        "Run_1",
+                        "Sample1"
+                    ]
                 },
                 {
                     "columnCategory": "File",
@@ -262,7 +343,12 @@
                     "required": false,
                     "tags": {
                         "fileType": "raw"
-                    }
+                    },
+                    "description": "This is where you should enter the Raw (unprocessed) MS data files. Please add full path of the file in the cell.",
+                    "examples": [
+                        "FILES/myfilename1.raw",
+                        "FILES/RAW_FILES/myfilename1.raw"
+                    ]
                 },
                 {
                     "columnCategory": "Protocol",
@@ -273,7 +359,11 @@
                     "defaultValue": "Data transformation",
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "This is the column marking the start of data pertaining to *Data transformation protocol*. The 'Data transformation' term MUST be present in all rows of this column.",
+                    "examples": [
+                        "Data transformation"
+                    ]
                 },
                 {
                     "columnCategory": "Basic",
@@ -285,7 +375,11 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "These should contain the normalization data files preferably as an Excel spreadsheet file. If you don’t have these then leave the cells/column blank.",
+                    "examples": [
+                        "normalized-data.xlsx"
+                    ]
                 },
                 {
                     "columnCategory": "File",
@@ -300,7 +394,12 @@
                     "required": false,
                     "tags": {
                         "fileType": "derived"
-                    }
+                    },
+                    "description": "If your data has been transformed into one of the open-source raw data formats e.g. mzML , CDF, or any other converted file, then add them here. Please add full path of the file in the cell.",
+                    "examples": [
+                        "FILES/myfilename1.mzML",
+                        "FILES/DERIVED_FILES/myfilename1.mzML"
+                    ]
                 },
                 {
                     "columnCategory": "Protocol",
@@ -311,7 +410,11 @@
                     "defaultValue": "Metabolite identification",
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": true
+                    "required": true,
+                    "description": "This is the column marking the start of data pertaining to *Metabolite identification protocol*. The 'Metabolite identification' term MUST be present in all rows of this column.",
+                    "examples": [
+                        "Metabolite identification"
+                    ]
                 },
                 {
                     "columnCategory": "Basic",
@@ -323,7 +426,10 @@
                     "defaultValue": null,
                     "maxLength": 0,
                     "minLength": 0,
-                    "required": false
+                    "required": false,
+                    "description": "These should contain the data transformation files.",
+                    "examples": [
+                    ]
                 },
                 {
                     "columnCategory": "File",
@@ -338,7 +444,11 @@
                     "required": true,
                     "tags": {
                         "fileType": "metadata_maf"
-                    }
+                    },
+                    "description": "A TSV file containing information about the metabolites investigated in the study. Information regarding database accession IDs , where in the spectra the metabolite is found and data pertaining to its abundance within the study samples should be in this file.",
+                    "examples": [
+                        "m_MTBLS1_GC-MS_positive__metabolite_profiling_v2_maf.tsv"
+                    ]
                 }
             ],
             "version": "v1.0"

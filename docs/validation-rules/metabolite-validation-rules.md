@@ -1,3 +1,5 @@
+# Metabolites Validation Rules
+
 | # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |
 |---|---------|-------|--------|-------------|
 | 1 | rule___100_400_001_01 | ERROR | There is a critical file parse error for the metabolite assignment file. | There is a critical file parse error in the metabolite assignment file. |

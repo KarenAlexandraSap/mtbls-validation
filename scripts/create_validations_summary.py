@@ -7,7 +7,7 @@ import pandas as pd
 
 from scripts.models import PolicyMessageType, Violation
 from scripts.utils import get_rules
-
+from pydantic.alias_generators import to_pascal
 metadata_lines = [
     "# METADATA",
     "# title:",
@@ -56,6 +56,7 @@ def create_summary_files(rules: dict[str, pd.Series]):
             f"docs/validation-rules/{section.removesuffix('s')}-validation-rules.md",
             "w",
         ) as f:
+            f.write(f"# {to_pascal(section)} Validation Rules\n\n")
             f.write(
                 "| # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |\n"
                 "|---|---------|-------|--------|-------------|\n"
