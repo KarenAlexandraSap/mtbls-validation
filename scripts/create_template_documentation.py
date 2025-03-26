@@ -174,15 +174,37 @@ def create_file_structure_documentation(
                 headers = templates[0]["headers"]
 
                 target_path = Path(f"docs/file-structures/{folder}/{doc_file_name}")
-
+                template_headers: list[tuple[str,str]] = []
                 target_path.parent.mkdir(parents=True, exist_ok=True)
+                template_file_name = ""
                 with target_path.open("w") as f:
+                    if folder == "maf-file-structure":
+                        header = f"MAF File Default Structure for {name} Assay"
+                        template_file_name = f"maf-file/m_template_{name}_metabolite_profiling_v2_maf.tsv"
+                    elif folder == "sample-file-structure":
+                        header = "Sample File Default Structure"
+                        template_file_name = "sample-file/s_template.txt"
+                    else:
+                        header = f"{name} Assay File Default Structure"
+                        template_file_name = f"assay-file/a_template_{name}-phase_metabolite_profiling.txt"
+                    f.write(f"# {header}\n\n")
                     f.write(
-                        "| # |Header  | Column Structure  | Default Value  | Required | Min Length | Max Length | Controlled Terms |\n"
-                        "|---|--------|-------------------|----------------|----------|------------|------------|------------------|\n"
+                        "| # |Header  | Column Structure  | Required | Min Length | Max Length | Description | Examples | Controlled Terms| Default Value  |\n"
+                        "|---|--------|-------------------|----------|------------|------------|-------------|----------|-----------------|----------------|\n"
                     )
                     for idx, item in enumerate(headers):
                         header = item["columnHeader"]
+                        
+                        template_headers.append((header, item["defaultValue"] if "defaultValue" in item and item["defaultValue"] else ""))
+                        if "columnStructure" in item:
+                            if item["columnStructure"] == "ONTOLOGY_COLUMN":
+                                template_headers.append(("Term Source REF", ""))
+                                template_headers.append(("Term Accession Number", ""))
+                            elif item["columnStructure"] == "SINGLE_COLUMN_AND_UNIT_ONTOLOGY":
+                                template_headers.append(("Unit", ""))
+                                template_headers.append(("Term Source REF", ""))
+                                template_headers.append(("Term Accession Number", ""))
+                                
                         controlled_terms = ""
                         link = ""
                         if (
@@ -213,15 +235,25 @@ def create_file_structure_documentation(
                             f"| {idx + 1} "
                             f"| {item['columnHeader']} "
                             f"| {item['columnStructure'].lower().replace('_', ' ')} "
-                            f"| {item['defaultValue'] if item['defaultValue'] else ''} "
                             f"| {item['required']} "
                             f"| {item['minLength'] if item['minLength'] > 0 else '-'} "
                             f"| {item['maxLength'] if item['maxLength'] > 0 else '-'} "
-                            f"| {controlled_terms}"
+                            f"| {item['description'] if 'description' in item else ''} "
+                            f"| {', '.join(item['examples']) if 'examples' in item else ''} "
+                            f"| {controlled_terms} "
+                            f"| {item['defaultValue'] if item['defaultValue'] else ''}"
                             "|\n"
                         )
-
-
+                    templates_folder = Path("docs/templates")
+                    template_path = templates_folder / Path(template_file_name)
+                    template_path.parent.mkdir(parents=True, exist_ok=True)
+                    with template_path.open("w") as fw:
+                        fw.write("\t".join([x[0] for x in template_headers]))
+                        fw.write("\n")
+                        fw.write("\t".join([x[1] for x in template_headers]))
+                        fw.write("\n")
+                        
+                        
 if __name__ == "__main__":
     assay_controlled_terms = create_recommended_assay_control_lists()
 

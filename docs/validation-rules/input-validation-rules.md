@@ -1,3 +1,5 @@
+# Input Validation Rules
+
 | # |RULE ID  | TYPE  | TITLE  | DESCRIPTION |
 |---|---------|-------|--------|-------------|
 | 1 | rule___100_100_001_01 | ERROR | There is no input data. | There is no input. |
