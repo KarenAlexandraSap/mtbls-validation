@@ -1,7 +1,7 @@
 {
     "rules": {
-        "validation_version": "2.0.12",
-        "created_at": "2025-01-22T20:32:28.980083+00:00",
+        "validation_version": "2.0.13",
+        "created_at": "2025-03-26T12:57:02.555338+00:00",
         "violations": [
             {
                 "rule_id": "rule___100_100_001_01",
@@ -318,7 +318,7 @@
             {
                 "rule_id": "rule_a_100_100_001_06",
                 "title": "Missing 'Protocol REF' column in assay file.",
-                "description": "Add missing Protocol REF column or related protocol section.",
+                "description": "Add missing 'Protocol REF' column or related protocol section in assay file.",
                 "type": "ERROR",
                 "section": "assays",
                 "priority": "CRITICAL"
@@ -326,7 +326,7 @@
             {
                 "rule_id": "rule_a_100_100_001_07",
                 "title": "Empty columns in assay file.",
-                "description": "Empty columns must not exist in assay file. All column headers should be defined.",
+                "description": "Empty columns must not exist in assay file. All column headers must be defined.",
                 "type": "ERROR",
                 "section": "assays",
                 "priority": "CRITICAL"
@@ -359,6 +359,14 @@
                 "rule_id": "rule_a_100_100_001_11",
                 "title": "Assay Parameter Value names not in investigation file.",
                 "description": "Assay Parameter Value names must be referenced in i_Investigation.txt.",
+                "type": "ERROR",
+                "section": "assays",
+                "priority": "CRITICAL"
+            },
+            {
+                "rule_id": "rule_a_100_100_001_12",
+                "title": "Column name defined in MetaboLights template does not exist in assay file.",
+                "description": "Add all missing columns defined in MetaboLights assay template.",
                 "type": "ERROR",
                 "section": "assays",
                 "priority": "CRITICAL"
@@ -620,6 +628,22 @@
                 "priority": "CRITICAL"
             },
             {
+                "rule_id": "rule_a_200_300_003_01",
+                "title": "Scan Polarity column values are not same as assay file name.",
+                "description": "Values for Scan Polarity column is not same as assay file name.",
+                "type": "WARNING",
+                "section": "assays",
+                "priority": "CRITICAL"
+            },
+            {
+                "rule_id": "rule_a_200_300_003_02",
+                "title": "Scan Polarity column values are not unique.",
+                "description": "Define only one scan polarity value in each assay file.",
+                "type": "ERROR",
+                "section": "assays",
+                "priority": "CRITICAL"
+            },
+            {
                 "rule_id": "rule_a_200_400_001_01",
                 "title": "Derived Spectral Data Files, Acquisition Parameter Data File and Free Induction Decay Data File values are empty in NMR assays.",
                 "description": "At least one file should be defined in Derived Spectral Data Files, Free Induction Decay Data File or Acquisition Parameter Data File columns.",
@@ -645,16 +669,8 @@
             },
             {
                 "rule_id": "rule_a_200_600_001_01",
-                "title": "Column Type column values are not same as assay file name",
+                "title": "Column Type column values are not same as assay file name.",
                 "description": "if all values in Column Type are in a control list, technique name defined in control list should be in assay file name.",
-                "type": "WARNING",
-                "section": "assays",
-                "priority": "CRITICAL"
-            },
-            {
-                "rule_id": "rule_a_200_600_002_01",
-                "title": "Scan Polarity column values are not same as assay file name",
-                "description": "Values for Scan Polarity column not same as assay file name",
                 "type": "WARNING",
                 "section": "assays",
                 "priority": "CRITICAL"
@@ -662,7 +678,7 @@
             {
                 "rule_id": "rule_f_400_090_001_01",
                 "title": "Referenced data files not within study FILES folder.",
-                "description": "Referenced data files must exist within study FILES folder. Reference data files with format FILES/<<sub folder if exists>>/<<file name>> in assay file.",
+                "description": "Referenced data files must exist within study FILES folder. Reference data files with format FILES/(sub folder if exists)/(file name) in assay file.",
                 "type": "ERROR",
                 "section": "files",
                 "priority": "CRITICAL"
@@ -670,7 +686,7 @@
             {
                 "rule_id": "rule_f_400_090_001_02",
                 "title": "Referenced data files do not start with FILES/ prefix.",
-                "description": "Reference data files with format FILES/<<sub folder if exists>>/<<file name>> in assay file.",
+                "description": "Reference data files with format FILES/(sub folder if exists>>/(file name>> in assay file.",
                 "type": "ERROR",
                 "section": "files",
                 "priority": "CRITICAL"
@@ -718,7 +734,7 @@
             {
                 "rule_id": "rule_f_400_090_002_01",
                 "title": "Referenced raw data files not within RAW_FILES folder.",
-                "description": "Referenced raw data files should be located within FILES/RAW_FILES/<<sub folder if exists>>/<<file name>> and upload your data to appropriate folder.",
+                "description": "Referenced raw data files should be located within FILES/RAW_FILES/(sub folder if exists>>/(file name>> and upload your data to appropriate folder.",
                 "type": "WARNING",
                 "section": "files",
                 "priority": "LOW"
@@ -726,7 +742,7 @@
             {
                 "rule_id": "rule_f_400_090_003_01",
                 "title": "Referenced derived data files not within DERIVED_FILES folder.",
-                "description": "Reference your derived file DERIVED_FILES/<<sub folder if exists>>/<<file name>> and upload your data to appropriate folder.",
+                "description": "Reference your derived file DERIVED_FILES/(sub folder if exists>>/(file name>> and upload your data to appropriate folder.",
                 "type": "WARNING",
                 "section": "files",
                 "priority": "LOW"
@@ -1854,15 +1870,15 @@
             {
                 "rule_id": "rule_s_200_100_001_01",
                 "title": "Organism name not an ontology term.",
-                "description": "Organism name in column Characteristics[Organism] should be defined as ontology terms. Choose the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.",
+                "description": "Organism name in column Characteristics[Organism] should be defined as an ontology term. Select the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.",
                 "type": "ERROR",
                 "section": "samples",
                 "priority": "CRITICAL"
             },
             {
                 "rule_id": "rule_s_200_100_001_02",
-                "title": "Organism name not an ontology term.",
-                "description": "Organism name in column Characteristics[Organism] should be defined as ontology terms.",
+                "title": "Organism name not a valid ontology term.",
+                "description": "Organism name in column Characteristics[Organism] should be a valid ontology term.",
                 "type": "ERROR",
                 "section": "samples",
                 "priority": "CRITICAL"

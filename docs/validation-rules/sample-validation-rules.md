@@ -44,8 +44,8 @@
 | 42 | rule_s_200_090_004_02 | ERROR | Values do not meet minimum length requirement. | Each row should have a value equal or greater than the minimum length. |
 | 43 | rule_s_200_090_004_03 | ERROR | Values do not meet maximum length requirement. | Each row should have a value equal or less than the maximum length. |
 | 44 | rule_s_200_090_005_01 | ERROR | Values for Protocol REF column not valid in sample file. | All rows should be filled with the same value (case sensitive). |
-| 45 | rule_s_200_100_001_01 | ERROR | Organism name not an ontology term. | Organism name in column Characteristics[Organism] should be defined as ontology terms. Choose the 'Homo sapiens' taxonomy term instead of 'human' or 'man'. |
-| 46 | rule_s_200_100_001_02 | ERROR | Organism name not an ontology term. | Organism name in column Characteristics[Organism] should be defined as ontology terms. |
+| 45 | rule_s_200_100_001_01 | ERROR | Organism name not an ontology term. | Organism name in column Characteristics[Organism] should be defined as an ontology term. Select the 'Homo sapiens' taxonomy term instead of 'human' or 'man'. |
+| 46 | rule_s_200_100_001_02 | ERROR | Organism name not a valid ontology term. | Organism name in column Characteristics[Organism] should be a valid ontology term. |
 | 47 | rule_s_200_100_001_03 | WARNING | Organism name should not contain colon (:) characters. | Organism should not contain the actual ontology/taxonomy name, please include just the appropriate taxonomy term. |
 | 48 | rule_s_200_100_002_01 | ERROR | User defined Characteristics column is empty. | At least one value should be defined in Characteristics column. |
 | 49 | rule_s_200_100_002_02 | WARNING | Term Source REF of the user defined characteristics ontology term is not in the priotirised control list. | We highly recommend to use the prioritised ontology Source Refs for the characteristics ontology term. |

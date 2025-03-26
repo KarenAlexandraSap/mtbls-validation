@@ -125,7 +125,7 @@ rule_a_100_100_001_05 contains result if {
 
 # METADATA
 # title: Missing 'Protocol REF' column in assay file.
-# description: Add missing Protocol REF column or related protocol section.
+# description: Add missing 'Protocol REF' column or related protocol section in assay file.
 # custom:
 #  rule_id: rule_a_100_100_001_06
 #  type: ERROR
@@ -148,7 +148,7 @@ rule_a_100_100_001_06 contains result if {
 
 # METADATA
 # title: Empty columns in assay file.
-# description: Empty columns must not exist in assay file. All column headers should be defined.
+# description: Empty columns must not exist in assay file. All column headers must be defined.
 # custom:
 #  rule_id: rule_a_100_100_001_07
 #  type: ERROR
@@ -191,7 +191,7 @@ rule_a_100_100_001_08 contains result if {
 	
 	default_headers := [header | some header in def._DEFAULT_ASSAY_HEADERS[file_name].headers; not endswith(header.columnHeader, " Data File")]
 
-	matches := [sprintf("[Expeced column at '%v': '%v', found '%v']", [x1, x2, x3]) |
+	matches := [sprintf("[Expected column at '%v': '%v', found '%v']", [x1, x2, x3]) |
 		some j, header in headers
 		header.columnHeader != default_headers[j].columnHeader
 		x1 := header.columnIndex + 1
@@ -302,6 +302,41 @@ rule_a_100_100_001_11 contains result if {
 	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Assay parameter(s) not referenced in i_Investigation.txt", matches)
 }
 
+# METADATA
+# title: Column name defined in MetaboLights template does not exist in assay file.
+# description: Add all missing columns defined in MetaboLights assay template.
+# custom:
+#  rule_id: rule_a_100_100_001_12
+#  type: ERROR
+#  priority: CRITICAL
+#  section: assays.columns
+rule_a_100_100_001_12 contains result if {
+	templates := data.metabolights.validation.v2.templates
+	def := data.metabolights.validation.v2.phase1.definitions
+	some file_name, assay_file in input.assays
+	header_names := [header.columnHeader |
+		some header in assay_file.table.headers
+		not startswith(header.columnHeader, "Comment[")
+		not startswith(header.columnHeader, "Protocol REF")
+		not startswith(header.columnHeader, "Term Source REF")
+		not startswith(header.columnHeader, "Term Accession Number")
+		
+	]
+	some header_set in def._DEFAULT_ASSAY_HEADERS[file_name]
+	header_set.version == "v1.0"
+
+	matches := [header.columnHeader |
+		some header in header_set.headers
+		not startswith(header.columnHeader, "Comment[")
+		not startswith(header.columnHeader, "Protocol REF")
+		not startswith(header.columnHeader, "Term Source REF")
+		not startswith(header.columnHeader, "Term Accession Number")
+		not header.columnHeader in header_names
+		
+	]
+	count(matches) > 0
+	result := f.format_with_file_and_values(rego.metadata.rule(), file_name, matches)
+}
 
 # METADATA
 # title: Assay file not referenced in investigation file.

@@ -771,6 +771,65 @@ rule_a_200_300_002_01 contains result if {
 	result := f.format_with_values(rego.metadata.rule(), file_name, header.columnIndex + 1, header.columnHeader, [msg])
 }
 
+
+# METADATA
+# title: Scan Polarity column values are not same as assay file name.
+# description: Values for Scan Polarity column is not same as assay file name.
+# custom:
+#  rule_id: rule_a_200_300_003_01
+#  type: WARNING
+#  priority: CRITICAL
+#  section: assays.mass_spectrometry
+rule_a_200_300_003_01 contains result if {
+	some file_name, sheet in input.assays
+	some header_index, header in sheet.table.headers
+	header.columnHeader == "Parameter Value[Scan polarity]"
+	column_name := header.columnName
+	scan_polarities = {x |
+		some x in sheet.table.data[column_name]
+	}
+	count(scan_polarities) == 1
+	some scan_polarity in scan_polarities
+	scan_polarity in {"positive", "negative", "alternating"}
+	
+	techniques := {technique |
+		some header_name, items in data.metabolights.validation.v2.controlLists.assayColumns
+		header_name == "Parameter Value[Scan polarity]"
+		some controlList in items.controlList
+		some value in controlList.values
+		scan_polarity == value.term
+
+		some technique in controlList.techniques			
+	}
+	count(techniques) > 0
+	not contains(file_name, scan_polarity)
+
+	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Expected scan polarity value in assay filename", scan_polarities)
+}
+
+
+# METADATA
+# title: Scan Polarity column values are not unique.
+# description: Define only one scan polarity value in each assay file.
+# custom:
+#  rule_id: rule_a_200_300_003_02
+#  type: ERROR
+#  priority: CRITICAL
+#  section: assays.mass_spectrometry
+rule_a_200_300_003_02 contains result if {
+	some file_name, sheet in input.assays
+	some header_index, header in sheet.table.headers
+	header.columnHeader == "Parameter Value[Scan polarity]"
+	column_name := header.columnName
+	scan_polarities = {x |
+		some x in sheet.table.data[column_name]
+	}
+	count(scan_polarities) > 1	
+
+	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "There are multiple scan polarity values in Parameter Value[Scan polarity] column.", scan_polarities)
+}
+
+
 # METADATA
 # title: Derived Spectral Data Files, Acquisition Parameter Data File and Free Induction Decay Data File values are empty in NMR assays.
 # description: At least one file should be defined in Derived Spectral Data Files, Free Induction Decay Data File or Acquisition Parameter Data File columns.
@@ -863,7 +922,7 @@ rule_a_200_500_001_01 contains result if {
 
 
 # METADATA
-# title: Column Type column values are not same as assay file name
+# title: Column Type column values are not same as assay file name.
 # description: if all values in Column Type are in a control list, technique name defined in control list should be in assay file name.
 # custom:
 #  rule_id: rule_a_200_600_001_01
@@ -895,39 +954,4 @@ rule_a_200_600_001_01 contains result if {
 	values_str := concat(", ", techniques)
 	not contains(file_name, values_str)
 	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Expected technique name in assay filename", techniques)
-}
-
-# METADATA
-# title: Scan Polarity column values are not same as assay file name
-# description: Values for Scan Polarity column not same as assay file name
-# custom:
-#  rule_id: rule_a_200_600_002_01
-#  type: WARNING
-#  priority: CRITICAL
-#  section: assays.chromatography
-rule_a_200_600_002_01 contains result if {
-	some file_name, sheet in input.assays
-	some header_index, header in sheet.table.headers
-	header.columnHeader == "Parameter Value[Scan polarity]"
-	column_name := header.columnName
-	scan_polarities = {x |
-		some x in sheet.table.data[column_name]
-	}
-	count(scan_polarities) == 1
-	some scan_polarity in scan_polarities
-	scan_polarity in {"positive", "negative", "alternating"}
-	
-	techniques := {technique |
-		some header_name, items in data.metabolights.validation.v2.controlLists.assayColumns
-		header_name == "Parameter Value[Scan polarity]"
-		some controlList in items.controlList
-		some value in controlList.values
-		scan_polarity == value.term
-
-		some technique in controlList.techniques			
-	}
-	count(techniques) > 0
-	not contains(file_name, scan_polarity)
-
-	result := f.format_with_file_description_and_values(rego.metadata.rule(), file_name, "Expected scan polarity value in assay filename", scan_polarities)
 }

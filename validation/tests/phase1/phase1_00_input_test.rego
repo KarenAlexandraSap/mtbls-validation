@@ -23,7 +23,7 @@ test_rule___100_100_001_01_not_violation_01 if {
 # METADATA
 # title: Input data is defined.
 # description: Input data is defined.
-test_rule___100_100_001_01_not_violation_01 if {
+test_rule___100_100_001_01_not_violation_02 if {
 	result := rules.rule___100_100_001_01 with input as data.tests.data.schemaValidation.valid_01
 	count(result) == 0
 }

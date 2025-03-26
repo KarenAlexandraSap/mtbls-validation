@@ -347,7 +347,7 @@ rule_s_200_090_005_01 contains result if {
 
 # METADATA
 # title: Organism name not an ontology term.
-# description: Organism name in column Characteristics[Organism] should be defined as ontology terms. Choose the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.
+# description: Organism name in column Characteristics[Organism] should be defined as an ontology term. Select the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.
 # custom:
 #  rule_id: rule_s_200_100_001_01
 #  type: ERROR
@@ -373,8 +373,8 @@ rule_s_200_100_001_01 contains result if {
 }
 
 # METADATA
-# title: Organism name not an ontology term.
-# description: Organism name in column Characteristics[Organism] should be defined as ontology terms.
+# title: Organism name not a valid ontology term.
+# description: Organism name in column Characteristics[Organism] should be a valid ontology term.
 # custom:
 #  rule_id: rule_s_200_100_001_02
 #  type: ERROR

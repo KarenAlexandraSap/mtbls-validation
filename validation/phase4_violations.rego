@@ -18,7 +18,7 @@ import input.referencedAssignmentFiles
 
 # METADATA
 # title: Referenced data files not within study FILES folder.
-# description: Referenced data files must exist within study FILES folder. Reference data files with format FILES/{sub folder if exists}/{file name} in assay file.
+# description: Referenced data files must exist within study FILES folder. Reference data files with format FILES/(sub folder if exists)/(file name) in assay file.
 # custom:
 #  rule_id: rule_f_400_090_001_01
 #  type: ERROR
@@ -49,7 +49,7 @@ rule_f_400_090_001_01 contains result if {
 
 # METADATA
 # title: Referenced data files do not start with FILES/ prefix.
-# description: Reference data files with format FILES/{sub folder if exists}/{file name} in assay file.
+# description: Reference data files with format FILES/(sub folder if exists}/(file name} in assay file.
 # custom:
 #  rule_id: rule_f_400_090_001_02
 #  type: ERROR
@@ -210,7 +210,7 @@ rule_f_400_090_001_09 contains result if {
 
 # METADATA
 # title: Referenced raw data files not within RAW_FILES folder.
-# description: Referenced raw data files should be located within FILES/RAW_FILES/{sub folder if exists}/{file name} and upload your data to appropriate folder.
+# description: Referenced raw data files should be located within FILES/RAW_FILES/(sub folder if exists}/(file name} and upload your data to appropriate folder.
 # custom:
 #  rule_id: rule_f_400_090_002_01
 #  type: WARNING
@@ -235,7 +235,7 @@ rule_f_400_090_002_01 contains result if {
 
 # METADATA
 # title: Referenced derived data files not within DERIVED_FILES folder.
-# description: Reference your derived file DERIVED_FILES/{sub folder if exists}/{file name} and upload your data to appropriate folder.
+# description: Reference your derived file DERIVED_FILES/(sub folder if exists}/(file name} and upload your data to appropriate folder.
 # custom:
 #  rule_id: rule_f_400_090_003_01
 #  type: WARNING
