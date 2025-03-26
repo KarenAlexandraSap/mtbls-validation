@@ -823,6 +823,7 @@ rule_a_200_300_003_02 contains result if {
 	column_name := header.columnName
 	scan_polarities = {x |
 		some x in sheet.table.data[column_name]
+		count(x) > 0
 	}
 	count(scan_polarities) > 1	
 

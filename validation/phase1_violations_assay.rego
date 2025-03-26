@@ -338,6 +338,53 @@ rule_a_100_100_001_12 contains result if {
 	result := f.format_with_file_and_values(rego.metadata.rule(), file_name, matches)
 }
 
+
+
+
+# METADATA
+# title: Column header structure is not correct in assay file.
+# description: Column header structure is not correct in assay file. Any ontology and unit column should have the leading columns, Term Source REF and Term Accession Number. Single columns must not have leading columns.
+# custom:
+#  rule_id: rule_a_100_100_001_13
+#  type: ERROR
+#  priority: CRITICAL
+#  section: assays.columns
+rule_a_100_100_001_13 contains result if {
+	some file_name, assay_file in input.assays
+	headers := {header |
+		some header in assay_file.table.headers
+		not startswith(header.columnHeader, "Comment[")
+	}
+
+	some technique_name, templates in data.metabolights.validation.v2.templates.assayFileHeaderTemplates
+
+	technique_name == assay_file.assayTechnique.name
+
+	some template in templates
+	template.version == "v1.0"
+
+	unique_header_names := {header.columnHeader: columns | 
+		some header in template.headers
+		columns := [ x |
+			some x in template.headers
+			x.columnHeader == header.columnHeader
+		]
+	}
+	default_headers := {header_name: first_header | 
+		some header_name, header_list in unique_header_names
+		first_header = header_list[0]	
+	}
+	some j, header in headers
+	default_headers[header.columnHeader]
+	header.columnStructure != default_headers[header.columnHeader].columnStructure
+	x1 := header.columnIndex + 1
+	x2 := header.columnHeader
+	x3 := header.columnStructure
+	x4 := default_headers[header.columnHeader].columnStructure
+	msg = sprintf("[Column Index: %v: structure of '%v' column is '%v', but expected structure is '%v']", [x1, x2, x3, x4])
+	result := f.format(rego.metadata.rule(), msg, file_name)
+}
+
 # METADATA
 # title: Assay file not referenced in investigation file.
 # description: Assay file must be referenced in i_Investigation.txt.

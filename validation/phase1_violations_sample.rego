@@ -295,8 +295,6 @@ rule_s_100_100_001_11 contains result if {
 
 	count(matches) > 0
 	headers_str = concat(", ", matches)
-	# msg := sprintf("Column structure is not valid in the file '%v'. Invalid columns: %v", [file_name, headers_str])
-	# source := file_name
 	result := f.format_with_file_and_values(rego.metadata.rule(), file_name, matches)
 }
 
