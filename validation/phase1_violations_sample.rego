@@ -500,7 +500,7 @@ rule_s_100_100_002_02 contains result if {
 
 # METADATA
 # title: Sample file not referenced in investigation file.
-# description: Only one sample file is allowed and its name should be 's_<accession number>.txt'.
+# description: Only one sample file is allowed and its name should be 's_~accession number~.txt'.
 # custom:
 #  rule_id: rule_s_100_100_003_01
 #  type: ERROR

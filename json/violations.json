@@ -1,6 +1,6 @@
 {
     "validation_version": "2.0.14",
-    "created_at": "2025-04-02T12:09:34.015518+00:00",
+    "created_at": "2025-04-02T12:18:08.548256+00:00",
     "violations": [
         {
             "rule_id": "rule___100_100_001_01",
@@ -845,7 +845,7 @@
         {
             "rule_id": "rule_i_100_300_002_01",
             "title": "Study Identifier not valid.",
-            "description": "Study Identifier should be valid format (e.g., MTBLS<positive_number> or REQ{datetime}).",
+            "description": "Study Identifier should be valid format (e.g., MTBLS~positive_number~ or REQ{datetime}).",
             "type": "ERROR",
             "section": "investigation",
             "priority": "CRITICAL"
@@ -1733,7 +1733,7 @@
         {
             "rule_id": "rule_s_100_100_003_01",
             "title": "Sample file not referenced in investigation file.",
-            "description": "Only one sample file is allowed and its name should be 's_<accession number>.txt'.",
+            "description": "Only one sample file is allowed and its name should be 's_~accession number~.txt'.",
             "type": "ERROR",
             "section": "samples",
             "priority": "CRITICAL"
@@ -2096,14 +2096,6 @@
             "rule_id": "rule_i_100_100",
             "title": "Validation summary for Ontology Source Reference section of i_Investigation.txt.",
             "description": "There is no error in Ontology Source Reference section of i_Investigation.txt.",
-            "type": "INFO",
-            "section": "investigation",
-            "priority": ""
-        },
-        {
-            "rule_id": "rule_i_100_200",
-            "title": "Validation summary for Investigation section of i_Investigation.txt.",
-            "description": "There is no error in Investigation section of i_Investigation.txt.",
             "type": "INFO",
             "section": "investigation",
             "priority": ""
