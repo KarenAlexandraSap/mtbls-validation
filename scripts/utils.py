@@ -36,6 +36,10 @@ def get_rules(
             df = selected_rows
         else:
             df = pd.concat([df, selected_rows], ignore_index=True)
+    
+    rules: dict[str, pd.Series] = {}
+    if df is None:
+        return rules
     df.reindex()
     df = df.fillna("")
     df = df[
@@ -52,7 +56,6 @@ def get_rules(
             "DESCRIPTION",
         ]
     ]
-    rules: dict[str, pd.Series] = {}
     if df is not None:
         for _, row in df.iterrows():
             rules[row.iloc[5]] = row
@@ -82,6 +85,9 @@ def get_unit_tests_methods(
             df = selected_rows
         else:
             df = pd.concat([df, selected_rows], ignore_index=True)
+    rules: dict[str, pd.Series] = {}
+    if df is None:
+        return rules
     df.reindex()
     df = df.fillna("")
     df = df[
@@ -98,7 +104,6 @@ def get_unit_tests_methods(
             "DESCRIPTION",
         ]
     ]
-    rules: dict[str, pd.Series] = {}
     if df is not None:
         for _, row in df.iterrows():
             rules[row.iloc[5]] = row

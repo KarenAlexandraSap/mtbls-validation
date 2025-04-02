@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, OrderedDict, Tuple
+from typing import Any, OrderedDict, Tuple, Union
 
 from pydantic import BaseModel
 
@@ -74,7 +74,7 @@ def create_recommended_assay_control_lists() -> OrderedDict[
 
 
 def create_recommended_control_lists(
-    templates_path: str, title: str = None, file_name: str = None
+    templates_path: str, title: Union[None, str] = None, file_name: Union[None, str] = None
 ) -> OrderedDict[str, list[OntologyTerm]]:
     field_control_list_path = [str(x) for x in Path(f"{templates_path}").glob("*.json")]
 
