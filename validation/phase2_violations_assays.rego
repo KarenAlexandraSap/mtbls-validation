@@ -529,6 +529,36 @@ rule_a_200_090_005_01 contains result if {
 }
 
 # METADATA
+# title: Invalid column value.
+# description: Some column values are not allowed. Please use valid ontology term or controlled vocabulary.
+# custom:
+#  rule_id: rule_a_200_090_006_01
+#  type: ERROR
+#  priority: CRITICAL
+#  section: samples.general
+rule_a_200_090_006_01 contains result if {
+	some file_name, sheet in input.assays
+	some header in sheet.table.headers
+
+	column_index := header.columnIndex
+
+	column_name := sheet.table.columns[column_index]
+	row_offset := sheet.table.rowOffset
+
+	unexpected_terms := {term | 
+		some name, black_list_control in data.metabolights.validation.v2.blackLists.assayColumns
+		name == header.columnHeader
+
+		some term in black_list_control.unexpectedTerms
+	}
+	count(unexpected_terms) > 0
+	violated_values := f.in_control_list_check(input.assays, file_name, column_name, unexpected_terms, row_offset)
+
+	count(violated_values) > 0
+	result := f.format_with_values(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values)
+}
+
+# METADATA
 # title: Values for Sample Name column not in sample file.
 # description: All Sample Name column values should be defined in sample file.
 # custom:

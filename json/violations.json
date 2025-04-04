@@ -1,6 +1,6 @@
 {
-    "validation_version": "2.0.14",
-    "created_at": "2025-04-02T12:18:08.548256+00:00",
+    "validation_version": "2.0.15",
+    "created_at": "2025-04-04T08:21:20.397702+00:00",
     "violations": [
         {
             "rule_id": "rule___100_100_001_01",
@@ -571,6 +571,14 @@
             "priority": "CRITICAL"
         },
         {
+            "rule_id": "rule_a_200_090_006_01",
+            "title": "Invalid column value.",
+            "description": "Some column values are not allowed. Please use valid ontology term or controlled vocabulary.",
+            "type": "ERROR",
+            "section": "samples",
+            "priority": "CRITICAL"
+        },
+        {
             "rule_id": "rule_a_200_100_001_01",
             "title": "Values for Sample Name column not in sample file.",
             "description": "All Sample Name column values should be defined in sample file.",
@@ -845,7 +853,7 @@
         {
             "rule_id": "rule_i_100_300_002_01",
             "title": "Study Identifier not valid.",
-            "description": "Study Identifier should be valid format (e.g., MTBLS~positive_number~ or REQ{datetime}).",
+            "description": "Study Identifier should be valid format (e.g., MTBLS(positive_number) or REQ(datetime)).",
             "type": "ERROR",
             "section": "investigation",
             "priority": "CRITICAL"
@@ -1733,7 +1741,7 @@
         {
             "rule_id": "rule_s_100_100_003_01",
             "title": "Sample file not referenced in investigation file.",
-            "description": "Only one sample file is allowed and its name should be 's_~accession number~.txt'.",
+            "description": "Only one sample file is allowed and its name should be 's_(accession number).txt'.",
             "type": "ERROR",
             "section": "samples",
             "priority": "CRITICAL"
@@ -1875,20 +1883,12 @@
             "priority": "HIGH"
         },
         {
-            "rule_id": "rule_s_200_100_001_01",
-            "title": "Organism name not an ontology term.",
-            "description": "Organism name in column Characteristics[Organism] should be defined as an ontology term. Select the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.",
+            "rule_id": "rule_s_200_090_006_01",
+            "title": "Invalid column value.",
+            "description": "Some column values are not allowed. Please use valid ontology term or controlled vocabulary.",
             "type": "ERROR",
             "section": "samples",
-            "priority": "CRITICAL"
-        },
-        {
-            "rule_id": "rule_s_200_100_001_02",
-            "title": "Organism name not a valid ontology term.",
-            "description": "Organism name in column Characteristics[Organism] should be a valid ontology term.",
-            "type": "ERROR",
-            "section": "samples",
-            "priority": "CRITICAL"
+            "priority": "HIGH"
         },
         {
             "rule_id": "rule_s_200_100_001_03",

@@ -29,10 +29,6 @@ CL_ORGANISM_PART_TERM_REF_SOURCES = {x | x := data.metabolights.validation.v2.co
 
 CL_ORGANISM_PART_TERM_REF_SOURCES_STR = concat(", ", CL_ORGANISM_PART_TERM_REF_SOURCES)
 
-CL_INVALID_ORGANISM_TERMS = {x | x := data.metabolights.validation.v2.configuration.invalidOrganismTerms[_]}
-
-CL_INVALID_HOMO_SAPIENS_ORGANISM_TERMS = {x | x := data.metabolights.validation.v2.configuration.invalidOrganismTermsForHomoSapiens[_]}
-
 CL_DERIVED_FILE_EXTENSIONS := data.metabolights.validation.v2.configuration.derivedFileExtensions
 
 CL_DERIVED_FILE_EXTENSIONS_STR := concat(",", CL_DERIVED_FILE_EXTENSIONS)

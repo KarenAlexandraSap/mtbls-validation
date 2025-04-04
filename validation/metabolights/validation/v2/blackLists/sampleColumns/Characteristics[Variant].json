@@ -1,0 +1,12 @@
+{
+    "Characteristics[Variant]": {
+        "unexpectedTerms": [
+          "unknown",
+          "undefined",
+          "n/a",
+          "na",
+          "not applicable",
+          "not available"
+        ]
+      }
+}

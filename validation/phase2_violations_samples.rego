@@ -341,63 +341,37 @@ rule_s_200_090_005_01 contains result if {
 	result := f.format_with_desc(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values, "Expected value", default_value_str)
 }
 
+
+# METADATA
+# title: Invalid column value.
+# description: Some column values are not allowed. Please use valid ontology term or controlled vocabulary.
+# custom:
+#  rule_id: rule_s_200_090_006_01
+#  type: ERROR
+#  priority: HIGH
+#  section: samples.general
+rule_s_200_090_006_01 contains result if {
+	some file_name, sheet in input.samples
+	some header in sheet.table.headers
+
+	column_index := header.columnIndex
+
+	column_name := sheet.table.columns[column_index]
+	row_offset := sheet.table.rowOffset
+	unexpected_terms := {term | 
+		some name, black_list_control in data.metabolights.validation.v2.blackLists.sampleColumns
+		name == header.columnHeader
+		some term in black_list_control.unexpectedTerms
+	}
+	count(unexpected_terms) > 0
+	violated_values := f.in_control_list_check(input.samples, file_name, column_name, unexpected_terms, row_offset)
+	count(violated_values) > 0
+	result := f.format_with_values(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values)
+}
+
 # #########################################################################################################
 # # SAMPLES SHEET SOURCE SECTION VALIDATION RULES
 # #########################################################################################################
-
-# METADATA
-# title: Organism name not an ontology term.
-# description: Organism name in column Characteristics[Organism] should be defined as an ontology term. Select the 'Homo sapiens' taxonomy term instead of 'human' or 'man'.
-# custom:
-#  rule_id: rule_s_200_100_001_01
-#  type: ERROR
-#  priority: CRITICAL
-#  section: samples.source
-rule_s_200_100_001_01 contains result if {
-	file_column_header := "Characteristics[Organism]"
-	some file_name, sheet in input.samples
-	some header in sheet.table.headers
-
-	header.columnHeader == file_column_header
-	column_index := header.columnIndex
-
-	column_name := sheet.table.columns[column_index]
-	row_offset := sheet.table.rowOffset
-	invalid_organisms := {term | some term in data.metabolights.validation.v2.configuration.invalidOrganismTermsForHomoSapiens}
-	violated_values := f.in_control_list_check(input.samples, file_name, column_name, invalid_organisms, row_offset)
-	count(violated_values) > 0
-	term_ref_sources = {source | some source in data.metabolights.validation.v2.controlLists.prioritisedOrganismRefSources}
-	term_ref_sources_str = concat(", ", term_ref_sources)
-
-	result := f.format_with_desc(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values, "Prioritized organism ontology reference sources", term_ref_sources_str)
-}
-
-# METADATA
-# title: Organism name not a valid ontology term.
-# description: Organism name in column Characteristics[Organism] should be a valid ontology term.
-# custom:
-#  rule_id: rule_s_200_100_001_02
-#  type: ERROR
-#  priority: CRITICAL
-#  section: samples.source
-rule_s_200_100_001_02 contains result if {
-	file_column_header := "Characteristics[Organism]"
-	some file_name, sheet in input.samples
-	some header in sheet.table.headers
-
-	header.columnHeader == file_column_header
-	column_index := header.columnIndex
-
-	column_name := sheet.table.columns[column_index]
-	row_offset := sheet.table.rowOffset
-	invalid_organisms := {term | some term in data.metabolights.validation.v2.configuration.invalidOrganismTerms}
-	violated_values := f.in_control_list_check(input.samples, file_name, column_name, invalid_organisms, row_offset)
-	count(violated_values) > 0
-	term_ref_sources = {source | some source in data.metabolights.validation.v2.controlLists.prioritisedOrganismRefSources}
-	term_ref_sources_str = concat(", ", term_ref_sources)
-
-	result := f.format_with_desc(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values, "Prioritized organism ontology reference sources", term_ref_sources_str)
-}
 
 # METADATA
 # title: Organism name should not contain colon ( ) characters.
@@ -427,6 +401,7 @@ rule_s_200_100_001_03 contains result if {
 	term_ref_sources_str = concat(", ", term_ref_sources)
 	result := f.format_with_desc(rego.metadata.rule(), file_name, column_index + 1, header.columnHeader, violated_values, "Prioritized organism ontology reference sources", term_ref_sources_str)
 }
+
 
 # METADATA
 # title: User defined Characteristics column is empty.

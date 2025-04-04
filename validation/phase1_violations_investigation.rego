@@ -249,7 +249,7 @@ rule_i_100_300_001_02 contains result if {
 
 # METADATA
 # title: Study Identifier not valid.
-# description: Study Identifier should be valid format (e.g., MTBLS~positive_number~ or REQ{datetime}).
+# description: Study Identifier should be valid format (e.g., MTBLS(positive_number) or REQ(datetime)).
 # custom:
 #  rule_id: rule_i_100_300_002_01
 #  type: ERROR
