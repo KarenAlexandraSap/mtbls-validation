@@ -33,7 +33,11 @@
       "not available",
       "human",
       "man",
-      "sheep"
+      "sheep",
+      "none",
+      "null",
+      "not specified",
+      "not provided"
     ]
   }
 }

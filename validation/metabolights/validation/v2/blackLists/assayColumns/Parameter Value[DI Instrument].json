@@ -81,7 +81,11 @@
       "n/a",
       "na",
       "not applicable",
-      "not available"
+      "not available",
+      "none",
+      "null",
+      "not specified",
+      "not provided"
     ]
   }
 }

@@ -1,5 +1,51 @@
 # NMR Assay File Prioritised Control Lists Terms
 
+### Parameter Value[Instrument] Column
+
+| # |Term  | Term Source  | Term Accession |
+|---|------|--------------|----------------|
+| 1 | Agilent DD2 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000395 |
+| 2 | Bruker 400 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000396 |
+| 3 | Bruker 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000397 |
+| 4 | Bruker 600 MHz Ultrashield spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000399 |
+| 5 | Bruker 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000398 |
+| 6 | Bruker AVANCE 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000401 |
+| 7 | Bruker AVANCE 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000402 |
+| 8 | Bruker AVANCE 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000403 |
+| 9 | Bruker AVANCE 850 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000404 |
+| 10 | Bruker AVANCE 900 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000405 |
+| 11 | Bruker AVANCE AV 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000406 |
+| 12 | Bruker AVANCE AV 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000407 |
+| 13 | Bruker AVANCE DRX 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000408 |
+| 14 | Bruker AVANCE DRX 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000409 |
+| 15 | Bruker AVANCE DRX 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000410 |
+| 16 | Bruker AVANCE HD 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000411 |
+| 17 | Bruker AVANCE II 500 MHz Ultrashield spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000413 |
+| 18 | Bruker AVANCE II 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000412 |
+| 19 | Bruker AVANCE II 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000416 |
+| 20 | Bruker AVANCE II 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000417 |
+| 21 | Bruker AVANCE II 800 MHz US2 spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000418 |
+| 22 | Bruker AVANCE II+ 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000414 |
+| 23 | Bruker AVANCE II+ 800 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000415 |
+| 24 | Bruker AVANCE III 400 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000419 |
+| 25 | Bruker AVANCE III 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000420 |
+| 26 | Bruker AVANCE III 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000421 |
+| 27 | Bruker AVANCE III 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000422 |
+| 28 | Bruker AVANCE III 800 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000423 |
+| 29 | Bruker AVANCE III HD 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000424 |
+| 30 | Bruker AVANCE III HD 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000425 |
+| 31 | Bruker AVANCE III HD 800 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000426 |
+| 32 | Bruker AVANCE NEO 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_002109 |
+| 33 | Bruker AVANCE NEO 800 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_002110 |
+| 34 | Bruker Ascend 700 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000400 |
+| 35 | Varian Mercury AS400 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000427 |
+| 36 | Varian Unity Inova 400 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000428 |
+| 37 | Varian Unity Inova 500 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000429 |
+| 38 | Varian Unity Inova 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000430 |
+| 39 | Varian VNMR 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000431 |
+| 40 | Varian VNMRS 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000432 |
+| 41 | Varian VNMRS DirectDrive 600 MHz spectrometer | MTBLS | http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000433 |
+
 ### Parameter Value[NMR Probe] Column
 
 | # |Term  | Term Source  | Term Accession |

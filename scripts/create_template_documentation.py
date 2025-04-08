@@ -27,24 +27,26 @@ def create_recommended_assay_control_lists() -> OrderedDict[
             file_content = json.load(f)
 
         for name, template in file_content.items():
-            control_list = template["controlList"]
-            techniques = control_list[0]["techniques"]
-            values = control_list[0]["values"]
-            terms = [
-                OntologyTerm(
-                    term=x["term"],
-                    source_ref=x["termSourceRef"],
-                    term_accession=x["termAccessionNumber"],
-                )
-                for x in values
-            ]
-            terms.sort(key=lambda x: x.term + x.source_ref)
-            column_name = name
-            for technique in techniques:
-                if technique not in recommended_terms:
-                    recommended_terms[technique] = OrderedDict()
+            control_lists = template["controlList"]
+            for control_list in control_lists:
 
-                recommended_terms[technique][column_name] = terms
+                techniques = control_list["techniques"]
+                values = control_list["values"]
+                terms = [
+                    OntologyTerm(
+                        term=x["term"],
+                        source_ref=x["termSourceRef"],
+                        term_accession=x["termAccessionNumber"],
+                    )
+                    for x in values
+                ]
+                terms.sort(key=lambda x: x.term + x.source_ref)
+                column_name = name
+                for technique in techniques:
+                    if technique not in recommended_terms:
+                        recommended_terms[technique] = OrderedDict()
+
+                    recommended_terms[technique][column_name] = terms
 
     target_parent_path = Path(f"{recommended_terms_path}/assay-file-control-lists")
 
