@@ -2,6 +2,10 @@
 
 ## Validation Rule Versions
 
+### 11/04/2025 -  v2.0.16
+
+- Fix: rule_f_400_090_002_01. Empty values will filtered and a message will be created only for non empty rows.
+
 ### 07/04/2025 -  v2.0.16
 
 - mzMLb file format is now accepted (rule_a_200_500_001_01) as a valid derived file format.

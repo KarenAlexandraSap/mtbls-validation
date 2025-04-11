@@ -224,6 +224,7 @@ rule_f_400_090_002_01 contains result if {
     row_offset = sheet.table.rowOffset
 	violated_values := {sprintf("[row: %03v, file name: '%v']", [row, value]) |
 		some idx, value in sheet.table.data[header.columnName]
+        count(value) > 0
         not startswith(value, "FILES/RAW_FILES/")
         row := idx + 1 + row_offset
 	}

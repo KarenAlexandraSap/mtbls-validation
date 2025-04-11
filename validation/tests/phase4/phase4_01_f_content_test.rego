@@ -1441,7 +1441,7 @@ test_rule_f_400_090_002_01_no_violation_01 if {
 			],
 			"data": {
 				"Sample Name": ["1", "2", "3", "4"],
-				"Raw Spectral Data File": ["FILES/RAW_FILES/data1.raw", "FILES/RAW_FILES/data2.raw", "FILES/RAW_FILES/data3.raw", "FILES/RAW_FILES/data4.raw"],
+				"Raw Spectral Data File": ["FILES/RAW_FILES/data1.raw", "FILES/RAW_FILES/data2.raw", "FILES/RAW_FILES/data3.raw", ""],
 				"Derived Spectral Data File": ["FILES/derived_data1.raw", "FILES/derived_data2.raw", "FILES/derived_data3.raw", "FILES/derived_data4.raw"],
 				"Free Induction Decay Data File": ["FILES/fid_001.zip", "FILES/fid_001.zip", "FILES/fid_001.zip", "FILES/fid_001.zip"],
 				"Acquisition Parameter Data File": ["FILES/acqu_001.zip", "FILES/acqu_001.zip", "FILES/acqu_001.zip", "FILES/acqu_001.zip"],
