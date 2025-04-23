@@ -77,3 +77,6 @@ logs.txt
 
 # SSL
 ssl/
+
+# Ignore custom personal workspace
+custom_work/
